@@ -59,32 +59,18 @@ Every folder represents either daily practice, topic-wise assignments, or notes 
 ---
 
 ## 📁 Repository Structure
-
 ```
-java-learning-journey/
-│
 ├── DailyCodes/          # Day-wise practice files — small programs, syntax drills, quick experiments
-│   ├── Day01_Basics/
-│   ├── Day02_Operators/
+│   ├── Datatypes/
+│   ├── JVM_0/
+│   ├── Operators/
+│   ├── TypeCasting/
+│   ├── ControlStatements/
 │   └── ...
 │
 ├── Assignments/          # Topic-wise assignments and exercises to reinforce concepts
-│   ├── OOP/
-│   ├── Collections/
-│   └── ...
 │
-├── Notes/                # (Planned) Concept notes, diagrams, and explanations of internals
-│
-├── Projects/             # (Planned) Small mini-projects applying multiple concepts together
-│
-├── progress.yml          # Structured log: drives the auto-generated sections below
-├── scripts/
-│   └── generate_readme.py
-├── .github/workflows/
-│   └── update-readme.yml
-└── README.md
 ```
-
 ---
 
 ## 🚀 How to Run the Code
