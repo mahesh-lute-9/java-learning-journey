@@ -1,0 +1,49 @@
+# =============================================================================
+# progress.yml — Source of truth for the auto-generated README sections
+# =============================================================================
+#
+# Every time you finish a day/topic, add ONE new entry to this list.
+# When you push this file to GitHub, the "Update README" workflow will
+# automatically regenerate:
+#   - The Progress Log table
+#   - The Notes & Key Takeaways section
+#   - The References & Resources section
+#
+# FIELD GUIDE:
+#   date      : "YYYY-MM-DD"  (required) — used for sorting and display
+#   day       : number        (required) — your running day count
+#   topic     : string         (required) — short title of what you studied
+#   folder    : string         (optional) — relative path to the code/folder
+#               for this entry (creates a clickable link in the table)
+#   notes     : list of strings (optional) — key takeaways, in your own words
+#   resources : list of {title, url} (optional) — articles/videos/docs used
+#
+# You can leave "notes" and/or "resources" empty ([] or omit them) on days
+# where you don't have any — only non-empty fields show up in the README.
+#
+# Keep entries in any order — the script sorts by date automatically.
+# =============================================================================
+
+- date: "2026-06-16"
+  day: 1
+  topic: "Java Basics - Variables, Data Types & Type Casting"
+  folder: "DailyCodes/Day01_Basics"
+  notes:
+    - "Java has 8 primitive types; everything else is a reference type."
+    - "Widening (int -> long) happens automatically; narrowing (long -> int) needs an explicit cast and can lose data."
+    - "'final' on a variable means the reference can't be reassigned, not that the object itself is immutable."
+  resources:
+    - title: "Oracle Docs - Primitive Data Types"
+      url: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"
+    - title: "Baeldung - Type Casting in Java"
+      url: "https://www.baeldung.com/java-type-casting"
+
+# - date: "2026-06-17"
+#   day: 2
+#   topic: "Operators & Control Flow"
+#   folder: "DailyCodes/Day02_Operators"
+#   notes:
+#     - "Example takeaway goes here."
+#   resources:
+#     - title: "Example Article Title"
+#       url: "https://example.com/article"
