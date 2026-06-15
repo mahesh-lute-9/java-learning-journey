@@ -8,6 +8,10 @@
 
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
+<!-- LAST_UPDATED_START -->
+_Last updated: 2026-06-15 20:57 UTC · 1 day(s) logged_
+<!-- LAST_UPDATED_END -->
+
 ---
 
 ## 📖 About This Repository
@@ -50,7 +54,7 @@ Every folder represents either daily practice, topic-wise assignments, or notes 
 
 **Legend:** 🟢 In Progress · ✅ Completed · ⚪ Upcoming
 
-> This roadmap will be updated as topics are completed — checkmarks and statuses are kept current with the actual content in the repo.
+> This roadmap is updated manually as phases complete — it's a high-level map, while the Progress Log below tracks day-to-day detail automatically.
 
 ---
 
@@ -73,10 +77,13 @@ java-learning-journey/
 │
 ├── Projects/             # (Planned) Small mini-projects applying multiple concepts together
 │
+├── progress.yml          # Structured log: drives the auto-generated sections below
+├── scripts/
+│   └── generate_readme.py
+├── .github/workflows/
+│   └── update-readme.yml
 └── README.md
 ```
-
-> 📌 Folder structure will evolve as the journey progresses. New top-level folders (`Notes/`, `Projects/`, `Internals/`) will be added once content for them exists.
 
 ---
 
@@ -104,13 +111,38 @@ java-learning-journey/
 
 ## 📊 Progress Log
 
-| Date | Topic Covered | Folder/Link |
-|------|----------------|-------------|
-| _e.g. 12 June 2026_ | Variables, Data Types, Type Casting | `DailyCodes/Day01_Basics` |
-| _e.g. 13 June 2026_ | Operators & Control Flow | `DailyCodes/Day02_Operators` |
-| ... | ... | ... |
+_This table is auto-generated from `progress.yml` by a GitHub Actions workflow. Do not edit it directly — edit `progress.yml` instead._
 
-> This table is updated regularly to track what's been covered and when — a quick way to see momentum and revisit older topics.
+<!-- PROGRESS_LOG_START -->
+| Date | Day | Topic | Folder |
+|------|-----|-------|--------|
+| 2026-06-16 | 1 | Java Basics - Variables, Data Types & Type Casting | [DailyCodes/Day01_Basics](DailyCodes/Day01_Basics) |
+<!-- PROGRESS_LOG_END -->
+
+---
+
+## 📝 Notes & Key Takeaways
+
+_Auto-generated from the `notes` field of each entry in `progress.yml`._
+
+<!-- NOTES_START -->
+### 2026-06-16 — Java Basics - Variables, Data Types & Type Casting
+- Java has 8 primitive types; everything else is a reference type.
+- Widening (int -> long) happens automatically; narrowing (long -> int) needs an explicit cast and can lose data.
+- 'final' on a variable means the reference can't be reassigned, not that the object itself is immutable.
+<!-- NOTES_END -->
+
+---
+
+## 🔗 References & Resources
+
+_Auto-generated from the `resources` field of each entry in `progress.yml` — articles, docs, and videos used while learning each topic._
+
+<!-- RESOURCES_START -->
+### 2026-06-16 — Java Basics - Variables, Data Types & Type Casting
+- [Oracle Docs - Primitive Data Types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
+- [Baeldung - Type Casting in Java](https://www.baeldung.com/java-type-casting)
+<!-- RESOURCES_END -->
 
 ---
 
