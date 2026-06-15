@@ -9,7 +9,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-06-15 20:57 UTC · 1 day(s) logged_
+_Last updated: 2026-06-15 21:34 UTC · 5 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -116,7 +116,11 @@ _This table is auto-generated from `progress.yml` by a GitHub Actions workflow. 
 <!-- PROGRESS_LOG_START -->
 | Date | Day | Topic | Folder |
 |------|-----|-------|--------|
-| 2026-06-16 | 1 | Java Basics - Variables, Data Types & Type Casting | [DailyCodes/Day01_Basics](DailyCodes/Day01_Basics) |
+| 2026-05-26 | 1 | Data Types - Practicing real-world datatype scenarios | [DailyCodes/Datatypes](DailyCodes/Datatypes) |
+| 2026-05-26 | 2 | JVM Basics - How Java code runs under the hood | [DailyCodes/JVM_0](DailyCodes/JVM_0) |
+| 2026-06-02 | 3 | Operators - Deep dive into Bitwise operators | [DailyCodes/Operators](DailyCodes/Operators) |
+| 2026-06-14 | 4 | Type Casting - Implicit & Explicit conversions | [DailyCodes/TypeCasting](DailyCodes/TypeCasting) |
+| 2026-06-16 | 5 | Control Statements - for-each loop in detail | [DailyCodes/ControlStatements](DailyCodes/ControlStatements) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -126,10 +130,20 @@ _This table is auto-generated from `progress.yml` by a GitHub Actions workflow. 
 _Auto-generated from the `notes` field of each entry in `progress.yml`._
 
 <!-- NOTES_START -->
-### 2026-06-16 — Java Basics - Variables, Data Types & Type Casting
-- Java has 8 primitive types; everything else is a reference type.
-- Widening (int -> long) happens automatically; narrowing (long -> int) needs an explicit cast and can lose data.
-- 'final' on a variable means the reference can't be reassigned, not that the object itself is immutable.
+### 2026-05-26 — Data Types - Practicing real-world datatype scenarios
+- Practiced various datatype scenarios and edge cases to build intuition for how Java handles them.
+
+### 2026-05-26 — JVM Basics - How Java code runs under the hood
+- Learned the basics of how the JVM works and added explanations alongside existing programs to connect theory with code.
+
+### 2026-06-02 — Operators - Deep dive into Bitwise operators
+- Practiced operators with a focus on Bitwise operators (&, |, ^, ~, <<, >>, >>>) and how they manipulate bits directly.
+
+### 2026-06-14 — Type Casting - Implicit & Explicit conversions
+- Practiced converting between primitive types - implicit/widening (e.g. int to long) happens automatically, while explicit/narrowing (e.g. double to int) requires a cast and can lose precision.
+
+### 2026-06-16 — Control Statements - for-each loop in detail
+- Explored the for-each loop in detail - how it works under the hood with Iterable/Iterator - and practiced several programs using it.
 <!-- NOTES_END -->
 
 ---
@@ -139,9 +153,7 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 _Auto-generated from the `resources` field of each entry in `progress.yml` — articles, docs, and videos used while learning each topic._
 
 <!-- RESOURCES_START -->
-### 2026-06-16 — Java Basics - Variables, Data Types & Type Casting
-- [Oracle Docs - Primitive Data Types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
-- [Baeldung - Type Casting in Java](https://www.baeldung.com/java-type-casting)
+_No references yet. Add a `resources` list to any entry in `progress.yml`._
 <!-- RESOURCES_END -->
 
 ---
