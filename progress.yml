@@ -24,24 +24,53 @@
 # Keep entries in any order — the script sorts by date automatically.
 # =============================================================================
 
-- date: "2026-06-16"
+- date: "2026-05-26"
   day: 1
-  topic: "Java Basics - Variables, Data Types & Type Casting"
-  folder: "DailyCodes/Day01_Basics"
+  topic: "Data Types - Practicing real-world datatype scenarios"
+  folder: "DailyCodes/Datatypes"
   notes:
-    - "Java has 8 primitive types; everything else is a reference type."
-    - "Widening (int -> long) happens automatically; narrowing (long -> int) needs an explicit cast and can lose data."
-    - "'final' on a variable means the reference can't be reassigned, not that the object itself is immutable."
-  resources:
-    - title: "Oracle Docs - Primitive Data Types"
-      url: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"
-    - title: "Baeldung - Type Casting in Java"
-      url: "https://www.baeldung.com/java-type-casting"
+    - "Practiced various datatype scenarios and edge cases to build intuition for how Java handles them."
+  resources: []
 
+- date: "2026-05-26"
+  day: 2
+  topic: "JVM Basics - How Java code runs under the hood"
+  folder: "DailyCodes/JVM_0"
+  notes:
+    - "Learned the basics of how the JVM works and added explanations alongside existing programs to connect theory with code."
+  resources: []
+
+- date: "2026-06-02"
+  day: 3
+  topic: "Operators - Deep dive into Bitwise operators"
+  folder: "DailyCodes/Operators"
+  notes:
+    - "Practiced operators with a focus on Bitwise operators (&, |, ^, ~, <<, >>, >>>) and how they manipulate bits directly."
+  resources: []
+
+- date: "2026-06-14"
+  day: 4
+  topic: "Type Casting - Implicit & Explicit conversions"
+  folder: "DailyCodes/TypeCasting"
+  notes:
+    - "Practiced converting between primitive types - implicit/widening (e.g. int to long) happens automatically, while explicit/narrowing (e.g. double to int) requires a cast and can lose precision."
+  resources: []
+
+- date: "2026-06-16"
+  day: 5
+  topic: "Control Statements - for-each loop in detail"
+  folder: "DailyCodes/ControlStatements"
+  notes:
+    - "Explored the for-each loop in detail - how it works under the hood with Iterable/Iterator - and practiced several programs using it."
+  resources: []
+
+# -----------------------------------------------------------------------
+# Add new entries below this line as you progress. Example template:
+# -----------------------------------------------------------------------
 # - date: "2026-06-17"
-#   day: 2
-#   topic: "Operators & Control Flow"
-#   folder: "DailyCodes/Day02_Operators"
+#   day: 6
+#   topic: "Example Topic Title"
+#   folder: "DailyCodes/ExampleFolder"
 #   notes:
 #     - "Example takeaway goes here."
 #   resources:
