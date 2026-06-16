@@ -42,10 +42,10 @@
 
 - date: "2026-06-02"
   day: 3
-  topic: "Operators - Deep dive into Bitwise operators"
+  topic: "Operators - Deep dive into types of operators"
   folder: "DailyCodes/Operators"
   notes:
-    - "Practiced operators with a focus on Bitwise operators (&, |, ^, ~, <<, >>, >>>) and how they manipulate bits directly."
+    - "Practiced operators with a focus on all the types of operators with programs"
   resources: []
 
 - date: "2026-06-14"
@@ -58,10 +58,19 @@
 
 - date: "2026-06-16"
   day: 5
-  topic: "Control Statements - for-each loop in detail"
+  topic: "Control Statements - if, if_else, if_else_ladder, switch, loops (for, while, do-while), continue and break keywords"
   folder: "DailyCodes/ControlStatements"
   notes:
-    - "Explored the for-each loop in detail - how it works under the hood with Iterable/Iterator - and practiced several programs using it."
+    - "Explored all Control statements in detail - how it works under the hood with Iterable/Iterator - and practiced several programs using it."
+  resources: []
+  
+
+- date: "2026-06-17"
+  day: 6
+  topic: "Input Output in Java"
+  folder: "DailyCodes/IO"
+  notes:
+    - "Understand diff types of inputs and explored all the concept behind input output in Java.  Practiced codes using Scanner class"
   resources: []
 
 # -----------------------------------------------------------------------
