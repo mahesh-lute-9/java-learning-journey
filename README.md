@@ -9,7 +9,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-06-16 18:14 UTC · 6 day(s) logged_
+_Last updated: 2026-06-17 03:35 UTC · 6 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -107,7 +107,7 @@ _This table is auto-generated from `progress.yml` by a GitHub Actions workflow. 
 | 2026-06-02 | 3 | Operators - Deep dive into types of operators | [DailyCodes/Operators](DailyCodes/Operators) |
 | 2026-06-14 | 4 | Type Casting - Implicit & Explicit conversions | [DailyCodes/TypeCasting](DailyCodes/TypeCasting) |
 | 2026-06-16 | 5 | Control Statements - if, if_else, if_else_ladder, switch, loops (for, while, do-while), continue and break keywords | [DailyCodes/ControlStatements](DailyCodes/ControlStatements) |
-| 2026-06-17 | 6 | Input Output in Java using Scanner class | [DailyCodes/IO](DailyCodes/IO) |
+| 2026-06-17 | 6 | Input Output in Java using Scanner and BufferedReader class | [DailyCodes/IO](DailyCodes/IO) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -132,8 +132,8 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 ### 2026-06-16 — Control Statements - if, if_else, if_else_ladder, switch, loops (for, while, do-while), continue and break keywords
 - Explored all Control statements in detail - how it works under the hood with Iterable/Iterator - and practiced several programs using it.
 
-### 2026-06-17 — Input Output in Java using Scanner class
-- Understand diff types of inputs and explored all the concept behind input output in Java.  Practiced codes using Scanner class
+### 2026-06-17 — Input Output in Java using Scanner and BufferedReader class
+- Understand diff types of inputs and explored all the concept behind input output in Java.  Practiced codes using Scanner(util) and BufferedReader(io) class
 <!-- NOTES_END -->
 
 ---
