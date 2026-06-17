@@ -29,7 +29,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
 
         Java abstracts all these as Streams.
 
-
+-------------------------------------------------------------------------------------------------
     2. Stream Concept
 
         A stream is simply:
@@ -50,7 +50,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
                  /      \
         Byte Streams   Character Streams
 
-
+-------------------------------------------------------------------------------------------------
     3. Byte Streams
 
     Used for:
@@ -124,7 +124,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
 
         is extremely common.
 
-
+-------------------------------------------------------------------------------------------------
     
     4. OutputStream
 
@@ -142,6 +142,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
 
         Hello Java
 
+-------------------------------------------------------------------------------------------------
 
     5. Character Streams
 
@@ -193,7 +194,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
     File:
         
         Welcome
-
+-------------------------------------------------------------------------------------------------
 
     6. Buffered Streams
 
@@ -255,7 +256,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
         Python
         C++
 
-
+-------------------------------------------------------------------------------------------------
     
     7. Why BufferedReader was preferred over Scanner
 
@@ -291,7 +292,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
 
         int x = Integer.parseInt(br.readLine());
 
-
+-------------------------------------------------------------------------------------------------
 
     8. System.in
 
@@ -321,7 +322,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
 
     This is called Stream Chaining.
 
-
+-------------------------------------------------------------------------------------------------
 
     9. Stream Chaining
 
@@ -345,7 +346,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
 
     Each layer adds functionality.
 
-
+--------------------------------------------------------------------------------------------------
 
     10. Serialization
 
@@ -397,7 +398,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
             Passwords
             OTPs
             Security tokens
-
+--------------------------------------------------------------------------------------------------
 
     11. PrintWriter
 
@@ -425,7 +426,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
         100
         true
 
-
+-------------------------------------------------------------------------------------------------
     12. RandomAccessFile
 
         This is extremely interesting.
@@ -450,7 +451,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
 
         and writes there.
 
-
+------------------------------------------------------------------------------------------------
 
     13. NIO (New I/O)
 
@@ -482,7 +483,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
         Simple and elegant.
 
 
-
+-----------------------------------------------------------------------------------------------
     
     14. Files class (Very Important)
             
@@ -509,7 +510,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
                 System.out.println("Found");
             }
 
-
+-------------------------------------------------------------------------------------------------
 
     15. Byte vs Character Streams
 
@@ -521,7 +522,7 @@ Java I/O (Input/Output) is much more than just Scanner and System.out.println().
         PDF	CSV
         Video	JSON
 
-
+------------------------------------------------------------------------------------------------
     
     16. Complete Hierarchy to Remember
     
@@ -554,7 +555,7 @@ FileInputStream BufferedInputStream ObjectInputStream
           2. BufferedWriter
           3. PrintWriter
 
-
+-------------------------------------------------------------------------------------------------
     
     17. The Modern Recommendation
 
@@ -592,3 +593,703 @@ FileInputStream BufferedInputStream ObjectInputStream
             NIO (Path, Files)
                 ↓
             Channels + Buffers
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    INTERVIEW QUESTIONS ON INPUT OUTPUT IN JAVA WITH ANSWERS---
+
+
+    Here are some **top Java I/O interview questions** frequently asked in product-based companies and large organizations. I've included
+    concise but interview-ready answers.
+
+# 1. What is I/O in Java?
+
+**Answer:**
+
+I/O stands for **Input and Output**.
+
+It is the mechanism through which Java programs:
+
+* Read data from keyboard, files, network, etc.
+* Write data to console, files, network, etc.
+
+Java provides the `java.io` package for traditional I/O and `java.nio` for modern I/O operations.
+
+---
+
+# 2. What is a Stream in Java?
+
+**Answer:**
+
+A stream is a sequence of data flowing between:
+
+```text
+Source ------> Destination
+```
+
+Examples:
+
+* File → Program
+* Keyboard → Program
+* Program → File
+
+Streams are categorized into:
+
+1. Byte Streams
+2. Character Streams
+
+---
+
+# 3. Difference between Byte Stream and Character Stream?
+
+| Byte Stream    | Character Stream   |
+| -------------- | ------------------ |
+| Handles bytes  | Handles characters |
+| Binary data    | Text data          |
+| `InputStream`  | `Reader`           |
+| `OutputStream` | `Writer`           |
+| Images, PDFs   | Text files         |
+
+---
+
+# 4. Why does `read()` return int instead of byte?
+
+**Answer:**
+
+Because:
+
+```java
+int ch = fis.read();
+```
+
+`read()` returns:
+
+```text
+0 to 255 -> valid byte
+
+-1 -> End of File (EOF)
+```
+
+A `byte` cannot represent `-1` and all byte values simultaneously.
+
+Therefore Java uses `int`.
+
+---
+
+# 5. Difference between Scanner and BufferedReader?
+
+**Answer:**
+
+| Scanner                    | BufferedReader    |
+| -------------------------- | ----------------- |
+| Slower                     | Faster            |
+| Parses primitives directly | Reads only String |
+| Uses regex internally      | No regex overhead |
+| Easy syntax                | Manual conversion |
+
+Example:
+
+```java
+int x = sc.nextInt();
+```
+
+vs
+
+```java
+int x =
+Integer.parseInt(br.readLine());
+```
+
+---
+
+# 6. Why is BufferedReader faster than Scanner?
+
+**Answer:**
+
+Two reasons:
+
+### Scanner
+
+* Uses regex
+* Tokenizes input
+* Additional parsing overhead
+
+### BufferedReader
+
+* Reads large chunks into memory
+* Simply returns strings
+
+Hence:
+
+```text
+BufferedReader > Scanner
+```
+
+in terms of speed.
+
+---
+
+# 7. Explain Stream Chaining.
+
+**Answer:**
+
+Wrapping one stream inside another.
+
+Example:
+
+```java
+BufferedReader br =
+new BufferedReader(
+
+new InputStreamReader(
+
+System.in
+
+));
+
+```
+
+Hierarchy:
+
+```text
+System.in
+
+↓
+
+InputStreamReader
+
+↓
+
+BufferedReader
+```
+
+Each wrapper adds functionality.
+
+---
+
+# 8. What is InputStreamReader?
+
+**Answer:**
+
+It converts:
+
+```text
+Byte Stream
+
+↓
+
+Character Stream
+```
+
+Example:
+
+```java
+new InputStreamReader(System.in)
+```
+
+Because:
+
+```java
+System.in
+```
+
+is an InputStream.
+
+---
+
+# 9. Difference between FileInputStream and FileReader?
+
+| FileInputStream     | FileReader       |
+| ------------------- | ---------------- |
+| Reads bytes         | Reads characters |
+| Binary files        | Text files       |
+| Images              | txt files        |
+| Extends InputStream | Extends Reader   |
+
+---
+
+# 10. Difference between FileWriter and BufferedWriter?
+
+**FileWriter**
+
+Writes directly:
+
+```java
+fw.write("Hello");
+```
+
+---
+
+**BufferedWriter**
+
+Stores data in buffer:
+
+```java
+bw.write("Hello");
+```
+
+and writes in bulk.
+
+Faster.
+
+---
+
+# 11. What is Buffering?
+
+**Answer:**
+
+Buffering means:
+
+> Temporarily storing data in memory before reading or writing.
+
+Without buffering:
+
+```text
+Program -> Disk
+
+Program -> Disk
+
+Program -> Disk
+```
+
+Many expensive operations.
+
+With buffering:
+
+```text
+Disk
+
+↓
+
+Buffer
+
+↓
+
+Program
+```
+
+Less disk access.
+
+Better performance.
+
+---
+
+# 12. What is Serialization?
+
+**Answer:**
+
+Serialization means:
+
+> Converting an object into a byte stream.
+
+Used for:
+
+* Saving objects to files
+* Sending objects over network
+* Caching
+
+---
+
+Example:
+
+```java
+class Student
+implements Serializable{
+
+int id;
+
+String name;
+
+}
+```
+
+---
+
+# 13. What is Deserialization?
+
+**Answer:**
+
+Converting byte stream back into object.
+
+```java
+ObjectInputStream ois;
+
+Student s =
+
+(Student)ois.readObject();
+```
+
+---
+
+# 14. What is Serializable Interface?
+
+**Answer:**
+
+```java
+java.io.Serializable
+```
+
+It is a:
+
+```text
+Marker Interface
+```
+
+Meaning:
+
+* No methods
+* Only tells JVM that object can be serialized.
+
+---
+
+# 15. What is a Marker Interface?
+
+**Answer:**
+
+An interface with:
+
+```java
+0 methods
+```
+
+Examples:
+
+```java
+Serializable
+
+Cloneable
+
+Remote
+```
+
+Used to provide metadata to JVM.
+
+---
+
+# 16. What is transient Keyword?
+
+**Answer:**
+
+A `transient` field is:
+
+> Ignored during serialization.
+
+Example:
+
+```java
+class User
+implements Serializable{
+
+String username;
+
+transient String password;
+
+}
+```
+
+After serialization:
+
+```text
+username -> saved
+
+password -> NOT saved
+```
+
+---
+
+# 17. What is serialVersionUID?
+
+**Answer:**
+
+Unique version identifier of a Serializable class.
+
+Example:
+
+```java
+private static final long
+
+serialVersionUID = 1L;
+```
+
+Used to verify:
+
+```text
+Serialized object
+
+and
+
+Current class
+
+are compatible
+```
+
+---
+
+# 18. What happens if serialVersionUID changes?
+
+**Answer:**
+
+JVM throws:
+
+```text
+InvalidClassException
+```
+
+because:
+
+```text
+Old object version
+
+!=
+
+Current class version
+```
+
+---
+
+# 19. Difference between PrintWriter and BufferedWriter?
+
+### BufferedWriter
+
+Only writes text:
+
+```java
+bw.write("Hello");
+```
+
+---
+
+### PrintWriter
+
+Can print:
+
+```java
+pw.println("Hello");
+
+pw.println(10);
+
+pw.println(true);
+```
+
+Convenient formatting.
+
+---
+
+# 20. What is RandomAccessFile?
+
+**Answer:**
+
+A file class that allows:
+
+* Read anywhere
+* Write anywhere
+* Move file pointer
+
+Example:
+
+```java
+RandomAccessFile raf
+
+= new RandomAccessFile(
+"abc.txt","rw");
+
+raf.seek(100);
+```
+
+Moves pointer to:
+
+```text
+Byte position = 100
+```
+
+---
+
+# 21. Difference between Files and File?
+
+### File
+
+Represents path.
+
+```java
+File f = new File("abc.txt");
+```
+
+---
+
+### Files
+
+Utility class.
+
+```java
+Files.readString()
+
+Files.copy()
+
+Files.move()
+
+Files.delete()
+```
+
+---
+
+# 22. What is NIO?
+
+**Answer:**
+
+NIO means:
+
+```text
+New Input Output
+```
+
+Introduced for:
+
+* Faster I/O
+* Non-blocking I/O
+* Channels
+* Buffers
+
+Package:
+
+```java
+java.nio
+```
+
+---
+
+# 23. Difference between IO and NIO?
+
+| IO           | NIO           |
+| ------------ | ------------- |
+| Stream based | Buffer based  |
+| Blocking     | Non-blocking  |
+| Sequential   | Random access |
+| Slower       | Faster        |
+| Old API      | Modern API    |
+
+---
+
+# 24. What is a Channel in NIO?
+
+**Answer:**
+
+A Channel is like:
+
+```text
+Two-way connection
+```
+
+Can:
+
+```text
+Read
+
+Write
+```
+
+Examples:
+
+```java
+FileChannel
+
+SocketChannel
+
+DatagramChannel
+```
+
+---
+
+# 25. What is try-with-resources?
+
+One of the most asked interview questions.
+
+Before Java 7:
+
+```java
+FileInputStream fis
+= new FileInputStream("a.txt");
+
+try{
+
+}
+
+finally{
+
+fis.close();
+
+}
+```
+
+---
+
+After Java 7:
+
+```java
+try(FileInputStream fis
+
+= new FileInputStream("a.txt")){
+
+// use file
+
+}
+```
+
+JVM automatically closes:
+
+```text
+fis.close()
+```
+
+---
+
+# 26. Which is preferred today: Scanner, BufferedReader, or Files?
+
+**Interview Answer:**
+
+* Console input → Scanner
+* Competitive programming → BufferedReader
+* Small text file → `Files.readString()`
+* Large file → BufferedReader
+* Binary file → FileInputStream
+* Modern applications → NIO (`Files`, `Path`, `Channels`)
+
+---
+
+# 27. Why should streams be closed?
+
+**Answer:**
+
+If streams are not closed:
+
+* Memory leaks
+* File locks remain
+* OS resources are wasted
+
+Use:
+
+```java
+try-with-resources
+```
+
+because it closes resources automatically.
+
+---
+
+## FAANG/Big Tech Favorite Questions
+
+The questions most commonly asked at large companies are:
+
+1. Why does `read()` return int?
+2. Scanner vs BufferedReader?
+3. FileInputStream vs FileReader?
+4. What is Stream Chaining?
+5. Serialization vs Deserialization?
+6. Why is Serializable a Marker Interface?
+7. transient keyword?
+8. serialVersionUID?
+9. IO vs NIO?
+10. What is try-with-resources?
+11. Buffered streams internally how do they improve performance?
+12. Files API vs File class?
+
