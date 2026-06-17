@@ -67,10 +67,10 @@
 
 - date: "2026-06-17"
   day: 6
-  topic: "Input Output in Java using Scanner class"
+  topic: "Input Output in Java using Scanner and BufferedReader class"
   folder: "DailyCodes/IO"
   notes:
-    - "Understand diff types of inputs and explored all the concept behind input output in Java.  Practiced codes using Scanner class"
+    - "Understand diff types of inputs and explored all the concept behind input output in Java.  Practiced codes using Scanner(util) and BufferedReader(io) class"
   resources: []
 
 # -----------------------------------------------------------------------
