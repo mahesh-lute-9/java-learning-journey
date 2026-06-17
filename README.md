@@ -43,7 +43,7 @@ Every folder represents either daily practice, topic-wise assignments, or notes 
 
 | Phase | Topics | Status |
 |-------|--------|--------|
-| **1. Java Basics** | Syntax, variables, data types, operators, control flow, arrays, strings | 🟢 In Progress |
+| **1. Java Basics** | Syntax, variables, data types, operators, control flow, IO, arrays, strings | 🟢 In Progress |
 | **2. Object-Oriented Programming** | Classes & objects, constructors, inheritance, polymorphism, abstraction, encapsulation, interfaces vs abstract classes | ⚪ Upcoming |
 | **3. Core APIs** | Collections Framework, Generics, Exception handling, String pool, I/O & NIO | ⚪ Upcoming |
 | **4. Java 8+ Features** | Lambda expressions, Functional interfaces, Streams API, Optional, Method references, Date/Time API | ⚪ Upcoming |
@@ -66,6 +66,7 @@ Every folder represents either daily practice, topic-wise assignments, or notes 
 │   ├── Operators/
 │   ├── TypeCasting/
 │   ├── ControlStatements/
+|   ├── IO/
 │   └── ...
 │
 ├── Assignments/          # Topic-wise assignments and exercises to reinforce concepts
@@ -168,6 +169,7 @@ _No references yet. Add a `resources` list to any entry in `progress.yml`._
 ## 🤝 Connect With Me
 
 - GitHub: [@mahesh-lute-9](https://github.com/mahesh-lute-9)
+- LinkedIn: [Mahesh L.](https://www.linkedin.com/in/mahesh-lute)
 
 If you're on a similar Java learning journey, feel free to ⭐ star this repo, follow along, or open a discussion!
 
