@@ -169,7 +169,7 @@ _No references yet. Add a `resources` list to any entry in `progress.yml`._
 ## 🤝 Connect With Me
 
 - GitHub: [@mahesh-lute-9](https://github.com/mahesh-lute-9)
-- LinkedIn: [Mahesh L.](https://www.linkedin.com/in/mahesh-lute)
+- LinkedIn: [Mahesh Lute](https://www.linkedin.com/in/mahesh-lute)
 
 If you're on a similar Java learning journey, feel free to ⭐ star this repo, follow along, or open a discussion!
 
