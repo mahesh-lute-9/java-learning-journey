@@ -9,7 +9,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-06-17 21:25 UTC · 6 day(s) logged_
+_Last updated: 2026-06-18 11:48 UTC · 7 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -107,8 +107,9 @@ _This table is auto-generated from `progress.yml` by a GitHub Actions workflow. 
 | 2026-05-26 | 2 | JVM Basics - How Java code runs under the hood | [DailyCodes/JVM_0](DailyCodes/JVM_0) |
 | 2026-06-02 | 3 | Operators - Deep dive into types of operators | [DailyCodes/Operators](DailyCodes/Operators) |
 | 2026-06-14 | 4 | Type Casting - Implicit & Explicit conversions | [DailyCodes/TypeCasting](DailyCodes/TypeCasting) |
-| 2026-06-16 | 5 | Control Statements - if, if_else, if_else_ladder, switch, loops (for, while, do-while), continue and break keywords | [DailyCodes/ControlStatements](DailyCodes/ControlStatements) |
-| 2026-06-17 | 6 | Input Output in Java using Scanner and BufferedReader class | [DailyCodes/IO](DailyCodes/IO) |
+| 2026-06-16 | 5 | Control Statements - if, if-else, switch, loops, break and continue | [DailyCodes/ControlStatements](DailyCodes/ControlStatements) |
+| 2026-06-17 | 6 | Input Output in Java using Scanner and BufferedReader | [DailyCodes/IO](DailyCodes/IO) |
+| 2026-06-18 | 7 | Arrays in Java | [DailyCodes/Arrays](DailyCodes/Arrays) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -125,16 +126,19 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - Learned the basics of how the JVM works and added explanations alongside existing programs to connect theory with code.
 
 ### 2026-06-02 — Operators - Deep dive into types of operators
-- Practiced operators with a focus on all the types of operators with programs
+- Practiced operators with a focus on all the types of operators with programs.
 
 ### 2026-06-14 — Type Casting - Implicit & Explicit conversions
-- Practiced converting between primitive types - implicit/widening (e.g. int to long) happens automatically, while explicit/narrowing (e.g. double to int) requires a cast and can lose precision.
+- Practiced converting between primitive types. Implicit/widening conversions happen automatically, while explicit/narrowing conversions require casting and may lose precision.
 
-### 2026-06-16 — Control Statements - if, if_else, if_else_ladder, switch, loops (for, while, do-while), continue and break keywords
-- Explored all Control statements in detail - how it works under the hood with Iterable/Iterator - and practiced several programs using it.
+### 2026-06-16 — Control Statements - if, if-else, switch, loops, break and continue
+- Explored control flow statements in depth and practiced programs using if-else, switch, loops, break, and continue.
 
-### 2026-06-17 — Input Output in Java using Scanner and BufferedReader class
-- Understand diff types of inputs and explored all the concept behind input output in Java.  Practiced codes using Scanner(util) and BufferedReader(io) class
+### 2026-06-17 — Input Output in Java using Scanner and BufferedReader
+- Learned different types of input methods and practiced programs using Scanner and BufferedReader.
+
+### 2026-06-18 — Arrays in Java
+- Learned what Arrays are, types of arrays in Java, declaration methods, and common operations like traversal, searching, and updating.
 <!-- NOTES_END -->
 
 ---
@@ -144,7 +148,26 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 _Auto-generated from the `resources` field of each entry in `progress.yml` — articles, docs, and videos used while learning each topic._
 
 <!-- RESOURCES_START -->
-_No references yet. Add a `resources` list to any entry in `progress.yml`._
+### 2026-05-26 — Data Types - Practicing real-world datatype scenarios
+- [Data Types in Java](https://www.geeksforgeeks.org/java/java-data-types/)
+
+### 2026-05-26 — JVM Basics - How Java code runs under the hood
+- [JVM Basics](https://www.geeksforgeeks.org/java/how-jvm-works-jvm-architecture/)
+
+### 2026-06-02 — Operators - Deep dive into types of operators
+- [Operators in Java](https://www.geeksforgeeks.org/java/operators-in-java/)
+
+### 2026-06-14 — Type Casting - Implicit & Explicit conversions
+- [Type Casting in Java](https://www.geeksforgeeks.org/java/type-conversion-java-examples/)
+
+### 2026-06-16 — Control Statements - if, if-else, switch, loops, break and continue
+- [Control Flow Statements in Java](https://www.geeksforgeeks.org/java/decision-making-javaif-else-switch-break-continue-jump/)
+
+### 2026-06-17 — Input Output in Java using Scanner and BufferedReader
+- [Input Output in Java](https://www.geeksforgeeks.org/java/java-io-input-output-in-java-with-examples/)
+
+### 2026-06-18 — Arrays in Java
+- [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
 <!-- RESOURCES_END -->
 
 ---
