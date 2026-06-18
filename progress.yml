@@ -30,7 +30,7 @@
   folder: "DailyCodes/Datatypes"
   notes:
     - "Practiced various datatype scenarios and edge cases to build intuition for how Java handles them."
-  resources: []
+  resources: (Data Types in Java)[https://www.geeksforgeeks.org/java/java-data-types/]
 
 - date: "2026-05-26"
   day: 2
@@ -38,7 +38,7 @@
   folder: "DailyCodes/JVM_0"
   notes:
     - "Learned the basics of how the JVM works and added explanations alongside existing programs to connect theory with code."
-  resources: []
+  resources: (JVM Basics)[https://www.geeksforgeeks.org/java/how-jvm-works-jvm-architecture/]
 
 - date: "2026-06-02"
   day: 3
@@ -46,7 +46,7 @@
   folder: "DailyCodes/Operators"
   notes:
     - "Practiced operators with a focus on all the types of operators with programs"
-  resources: []
+  resources: (Operatos in Java)[https://www.geeksforgeeks.org/java/operators-in-java/]
 
 - date: "2026-06-14"
   day: 4
@@ -54,7 +54,7 @@
   folder: "DailyCodes/TypeCasting"
   notes:
     - "Practiced converting between primitive types - implicit/widening (e.g. int to long) happens automatically, while explicit/narrowing (e.g. double to int) requires a cast and can lose precision."
-  resources: []
+  resources: (TypeCasting in Java)[https://www.geeksforgeeks.org/java/type-conversion-java-examples/]
 
 - date: "2026-06-16"
   day: 5
@@ -62,7 +62,7 @@
   folder: "DailyCodes/ControlStatements"
   notes:
     - "Explored all Control statements in detail - how it works under the hood with Iterable/Iterator - and practiced several programs using it."
-  resources: []
+  resources: (Control flow Statements)[https://www.geeksforgeeks.org/java/decision-making-javaif-else-switch-break-continue-jump/]
   
 
 - date: "2026-06-17"
@@ -71,7 +71,16 @@
   folder: "DailyCodes/IO"
   notes:
     - "Understand diff types of inputs and explored all the concept behind input output in Java.  Practiced codes using Scanner(util) and BufferedReader(io) class"
-  resources: []
+  resources: (Input Output in Java)[https://www.geeksforgeeks.org/java/java-io-input-output-in-java-with-examples/]
+
+
+  - date: "2026-06-18"
+  day: 7
+  topic: "Arrays in Java"
+  folder: "DailyCodes/Arrays"
+  notes:
+    - "Learned what is Array? Types of Array in Java, Array declaration methods, diff. operations on Arrays"
+  resources: (Arrays in Java)[https://www.geeksforgeeks.org/java/arrays-in-java/]
 
 # -----------------------------------------------------------------------
 # Add new entries below this line as you progress. Example template:
