@@ -67,6 +67,7 @@ Every folder represents either daily practice, topic-wise assignments, or notes 
 │   ├── TypeCasting/
 │   ├── ControlStatements/
 |   ├── IO/
+ |  ├──  Arrays/
 │   └── ...
 │
 ├── Assignments/          # Topic-wise assignments and exercises to reinforce concepts
