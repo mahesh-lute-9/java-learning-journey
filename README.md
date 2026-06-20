@@ -67,7 +67,8 @@ Every folder represents either daily practice, topic-wise assignments, or notes 
 │   ├── TypeCasting/
 │   ├── ControlStatements/
 |   ├── IO/
- |  ├──  Arrays/
+|   ├──  Arrays/
+|   ├──  IntegerCache/
 │   └── ...
 │
 ├── Assignments/          # Topic-wise assignments and exercises to reinforce concepts
@@ -194,6 +195,7 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 
 - GitHub: [@mahesh-lute-9](https://github.com/mahesh-lute-9)
 - LinkedIn: [Mahesh Lute](https://www.linkedin.com/in/mahesh-lute)
+- Instagram: []()
 
 If you're on a similar Java learning journey, feel free to ⭐ star this repo, follow along, or open a discussion!
 
