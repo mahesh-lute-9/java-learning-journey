@@ -94,6 +94,28 @@
     - title: "Arrays in Java"
       url: "https://www.geeksforgeeks.org/java/arrays-in-java/"
 
+- date: "2026-06-19"
+  day: 8
+  topic: "Arrays in Java"
+  folder: "DailyCodes/Arrays"
+  notes:
+    - "Practiced more by taking diff. scenarios on arrays"
+  resources:
+    - title: "Arrays in Java"
+      url: "https://www.geeksforgeeks.org/java/arrays-in-java/"
+
+  - date: "2026-06-20"
+  day: 9
+  topic: "IntegerCache and wrapper classes in Java"
+  folder: "DailyCodes/IntegerCache"
+  notes:
+    - "IntgerCache a important class which optimises memory management in Java. Understand deeply with source code"
+  resources:
+    - title: "wrapper classes in Java"
+      url: "https://www.geeksforgeeks.org/java/wrapper-classes-java/"
+    - title: "Integer Cache in Java"
+      url: "https://www.geeksforgeeks.org/java/java-integer-cache/"
+
 # -----------------------------------------------------------------------
 # Add new entries below this line as you progress. Example template:
 # -----------------------------------------------------------------------
