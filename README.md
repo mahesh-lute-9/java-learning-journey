@@ -57,24 +57,27 @@ Every folder represents either daily practice, topic-wise assignments, or notes 
 > This roadmap is updated manually as phases complete — it's a high-level map, while the Progress Log below tracks day-to-day detail automatically.
 
 ---
-
-## 📁 Repository Structure
 ```
-├── DailyCodes/          # Day-wise practice files — small programs, syntax drills, quick experiments
+📁 Java-Learning/
+├── DailyCodes/              # Small programs, syntax drills, experiments
 │   ├── Datatypes/
-│   ├── JVM_0/
+│   ├── JVM/
 │   ├── Operators/
 │   ├── TypeCasting/
 │   ├── ControlStatements/
-|   ├── IO/
-|   ├──  Arrays/
-|   ├──  IntegerCache/
+│   ├── IO/
+│   ├── Arrays/
+│   ├── IntegerCache/
 │   └── ...
 │
-├── Assignments/          # Topic-wise assignments and exercises to reinforce concepts
+├── Assignments/             # Topic-wise assignments and exercises
+│   ├── Basics/
+│   ├── Operators/
+│   ├── Arrays/
+│   └── ...
 │
+└── README.md                # Repository overview and learning progress
 ```
----
 
 ## 🚀 How to Run the Code
 
