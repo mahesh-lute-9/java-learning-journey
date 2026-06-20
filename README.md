@@ -9,7 +9,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-06-18 11:49 UTC · 7 day(s) logged_
+_Last updated: 2026-06-20 20:51 UTC · 9 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -115,6 +115,8 @@ _This table is auto-generated from `progress.yml` by a GitHub Actions workflow. 
 | 2026-06-16 | 5 | Control Statements - if, if-else, switch, loops, break and continue | [DailyCodes/ControlStatements](DailyCodes/ControlStatements) |
 | 2026-06-17 | 6 | Input Output in Java using Scanner and BufferedReader | [DailyCodes/IO](DailyCodes/IO) |
 | 2026-06-18 | 7 | Arrays in Java | [DailyCodes/Arrays](DailyCodes/Arrays) |
+| 2026-06-19 | 8 | Arrays in Java - Practice and Scenarios | [DailyCodes/Arrays](DailyCodes/Arrays) |
+| 2026-06-20 | 9 | IntegerCache and Wrapper Classes in Java | [DailyCodes/IntegerCache](DailyCodes/IntegerCache) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -144,6 +146,14 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 
 ### 2026-06-18 — Arrays in Java
 - Learned what Arrays are, types of arrays in Java, declaration methods, and common operations like traversal, searching, and updating.
+
+### 2026-06-19 — Arrays in Java - Practice and Scenarios
+- Practiced arrays with different scenarios including traversal, searching, updating, copying, and edge cases.
+
+### 2026-06-20 — IntegerCache and Wrapper Classes in Java
+- Learned how IntegerCache optimizes memory usage in Java by caching Integer objects in the range -128 to 127.
+- Understood the difference between == and equals() when comparing wrapper objects.
+- Explored Integer.valueOf() implementation and the source code behind IntegerCache.
 <!-- NOTES_END -->
 
 ---
@@ -173,6 +183,13 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 
 ### 2026-06-18 — Arrays in Java
 - [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
+
+### 2026-06-19 — Arrays in Java - Practice and Scenarios
+- [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
+
+### 2026-06-20 — IntegerCache and Wrapper Classes in Java
+- [Wrapper Classes in Java](https://www.geeksforgeeks.org/java/wrapper-classes-java/)
+- [Integer Cache in Java](https://www.geeksforgeeks.org/java/java-integer-cache/)
 <!-- RESOURCES_END -->
 
 ---
