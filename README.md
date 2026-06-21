@@ -45,7 +45,7 @@ Every folder represents either daily practice, topic-wise assignments, or notes 
 
 ## 💡 Why Java Deeply?
 
-Java dominates campus placement interviews at Pune's product-based companies. Most candidates know how to *write* Java — far fewer understand *why* it behaves the way it does at the JVM level.
+Java dominates campus placement interviews & also product-based companies. Most candidates know how to *write* Java — far fewer understand *why* it behaves the way it does at the JVM level.
 
 This repo is my attempt to reach that second level: to understand Integer caching, memory models, garbage collection strategies, and concurrency primitives well enough to answer the **"why"** behind any Java question — not just recite syntax.
 
