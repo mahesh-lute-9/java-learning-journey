@@ -103,7 +103,7 @@ def replace_section(content, start_marker, end_marker, new_text):
             "Make sure they exist exactly as written."
         )
     replacement = f"{start_marker}\n{new_text}\n{end_marker}"
-    return pattern.sub(replacement, content)
+    return pattern.sub(lambda _: replacement, content)
 
 
 def main():
