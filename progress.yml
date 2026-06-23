@@ -1,213 +1,194 @@
 # =============================================================================
 # progress.yml — Source of truth for the auto-generated README sections
 # =============================================================================
-meta:
-  title: "Java Learning Log"
-  language: "Java"
-  started: "2026-05-26"
-  last_updated: "2026-06-23"
+#
+# Fields per entry:
+#   day          – sequential day number
+#   date         – ISO date (YYYY-MM-DD)
+#   topic        – short title shown in the progress table
+#   folder       – path to the day's code relative to repo root
+#   key_concepts – bullet points summarising what to know about this topic
+#   resources    – list of { title, url } reference links
+#
+# To add a new day, copy the template at the bottom and fill it in.
+# =============================================================================
 
-entries:
-  - day: 1
-    date: "2026-05-26"
-    topic: "Data Types - Practicing real-world datatype scenarios"
-    folder: "DailyCodes/Datatypes"
-    notes:
-      - "Practiced various datatype scenarios and edge cases to build intuition for how Java handles them."
-    key_concepts:
-      - "Java has 8 primitives: byte (8-bit), short (16-bit), int (32-bit), long (64-bit), float (32-bit), double (64-bit), char (16-bit Unicode), boolean."
-      - "Reference types (String, arrays, objects) store memory addresses on the Stack, while the actual object lives on the Heap."
-      - "Default values: int/short/byte/long = 0, float/double = 0.0, boolean = false, char = '\\u0000', reference types = null."
-      - "Literal suffixes to remember: L for long (100L), f for float (3.14f), 0x for hex, 0b for binary."
-    resources:
-      - title: "Data Types in Java"
-        url: "https://www.geeksforgeeks.org/java/java-data-types/"
+- day: 1
+  date: "2026-05-26"
+  topic: "Data Types - Practicing real-world datatype scenarios"
+  folder: "DailyCodes/Datatypes"
+  key_concepts:
+    - "Java has 8 primitives: byte (8-bit), short (16-bit), int (32-bit), long (64-bit), float (32-bit), double (64-bit), char (16-bit Unicode), boolean."
+    - "Reference types (String, arrays, objects) store memory addresses on the Stack; the actual object lives on the Heap."
+    - "Default values: int/short/byte/long = 0, float/double = 0.0, boolean = false, char = '\\u0000', reference types = null."
+    - "Literal suffixes: L for long (100L), f for float (3.14f), 0x for hex, 0b for binary."
+  resources:
+    - title: "Data Types in Java"
+      url: "https://www.geeksforgeeks.org/java/java-data-types/"
 
-  - day: 2
-    date: "2026-05-26"
-    topic: "JVM Basics - How Java code runs under the hood"
-    folder: "DailyCodes/JVM_0"
-    notes:
-      - "Learned the basics of how the JVM works and added explanations alongside existing programs to connect theory with code."
-    key_concepts:
-      - "Pipeline: .java source → javac compiler → .class bytecode → JVM → platform-specific machine code."
-      - "JVM has three core parts: ClassLoader (loads .class files), Runtime Data Areas (Heap, Stack, Method Area, PC Register), and Execution Engine."
-      - "The JIT (Just-In-Time) compiler identifies hot code paths and compiles them to native machine code at runtime for performance."
-      - "Garbage Collector runs in the Heap and reclaims memory from objects that have no live references."
-    resources:
-      - title: "JVM Basics"
-        url: "https://www.geeksforgeeks.org/java/how-jvm-works-jvm-architecture/"
+- day: 2
+  date: "2026-05-26"
+  topic: "JVM Basics - How Java code runs under the hood"
+  folder: "DailyCodes/JVM_0"
+  key_concepts:
+    - "Pipeline: .java source → javac compiler → .class bytecode → JVM → platform-specific machine code."
+    - "JVM has three core parts: ClassLoader (loads .class files), Runtime Data Areas (Heap, Stack, Method Area, PC Register), and Execution Engine."
+    - "The JIT (Just-In-Time) compiler identifies hot code paths and compiles them to native machine code at runtime for performance."
+    - "Garbage Collector runs in the Heap and reclaims memory from objects that have no live references."
+  resources:
+    - title: "JVM Basics"
+      url: "https://www.geeksforgeeks.org/java/how-jvm-works-jvm-architecture/"
 
-  - day: 3
-    date: "2026-06-02"
-    topic: "Operators - Deep dive into types of operators"
-    folder: "DailyCodes/Operators"
-    notes:
-      - "Practiced operators with a focus on all the types of operators with programs."
-    key_concepts:
-      - "Arithmetic: +, -, *, /, %. Integer division truncates — 7/2 = 3, not 3.5."
-      - "Relational (==, !=, <, >, <=, >=) always return boolean. Never use == to compare Strings — use .equals()."
-      - "Logical: && and || are short-circuit operators — they stop evaluating as soon as the result is determined."
-      - "Bitwise: &, |, ^, ~, << (left shift), >> (signed right shift), >>> (unsigned right shift) — operate on individual bits."
-      - "Ternary: condition ? valueIfTrue : valueIfFalse — a compact single-expression if-else, good for simple assignments."
-    resources:
-      - title: "Operators in Java"
-        url: "https://www.geeksforgeeks.org/java/operators-in-java/"
+- day: 3
+  date: "2026-06-02"
+  topic: "Operators - Deep dive into types of operators"
+  folder: "DailyCodes/Operators"
+  key_concepts:
+    - "Arithmetic: +, -, *, /, %. Integer division truncates — 7/2 = 3, not 3.5."
+    - "Relational (==, !=, <, >, <=, >=) always return boolean. Never use == to compare Strings — use .equals()."
+    - "Logical: && and || are short-circuit operators — they stop evaluating as soon as the result is determined."
+    - "Bitwise: &, |, ^, ~, << (left shift), >> (signed right shift), >>> (unsigned right shift) — operate on individual bits."
+    - "Ternary: condition ? valueIfTrue : valueIfFalse — a compact single-expression if-else, good for simple assignments."
+  resources:
+    - title: "Operators in Java"
+      url: "https://www.geeksforgeeks.org/java/operators-in-java/"
 
-  - day: 4
-    date: "2026-06-14"
-    topic: "Type Casting - Implicit & Explicit conversions"
-    folder: "DailyCodes/TypeCasting"
-    notes:
-      - "Practiced converting between primitive types."
-      - "Implicit/widening conversions happen automatically, while explicit/narrowing conversions require casting and may lose precision."
-    key_concepts:
-      - "Widening order (safe, automatic): byte → short → int → long → float → double."
-      - "Narrowing can silently corrupt data: (int) 3.99 = 3 (truncated), (byte) 130 = -126 (overflow wraps around)."
-      - "char can be cast to int to get its Unicode value: (int) 'A' = 65."
-      - "String conversions: Integer.parseInt(\"42\") → int, String.valueOf(42) or (\"\" + 42) → String."
-    resources:
-      - title: "Type Casting in Java"
-        url: "https://www.geeksforgeeks.org/java/type-conversion-java-examples/"
+- day: 4
+  date: "2026-06-14"
+  topic: "Type Casting - Implicit & Explicit conversions"
+  folder: "DailyCodes/TypeCasting"
+  key_concepts:
+    - "Widening order (safe, automatic): byte → short → int → long → float → double."
+    - "Narrowing can silently corrupt data: (int) 3.99 = 3 (truncated), (byte) 130 = -126 (overflow wraps around)."
+    - "char can be cast to int to get its Unicode value: (int) 'A' = 65."
+    - "String conversions: Integer.parseInt(\"42\") → int, String.valueOf(42) or (\"\" + 42) → String."
+  resources:
+    - title: "Type Casting in Java"
+      url: "https://www.geeksforgeeks.org/java/type-conversion-java-examples/"
 
-  - day: 5
-    date: "2026-06-16"
-    topic: "Control Statements - if, if-else, switch, loops, break and continue"
-    folder: "DailyCodes/ControlStatements"
-    notes:
-      - "Explored control flow statements in depth and practiced programs using if-else, switch, loops, break, and continue."
-    key_concepts:
-      - "switch works with int, char, String, and enums. Always use break to prevent fall-through to the next case."
-      - "Java 14+ switch expressions use arrow syntax and don't need break: int result = switch(x) { case 1 -> 10; default -> 0; }."
-      - "Enhanced for loop (for-each): for (int x : array) — cleaner for traversal but gives no access to the index."
-      - "Labeled break/continue can exit or skip a specific outer loop in nested scenarios: outer: for(...) { ... break outer; }."
-    resources:
-      - title: "Control Flow Statements in Java"
-        url: "https://www.geeksforgeeks.org/java/decision-making-javaif-else-switch-break-continue-jump/"
+- day: 5
+  date: "2026-06-16"
+  topic: "Control Statements - if, if-else, switch, loops, break and continue"
+  folder: "DailyCodes/ControlStatements"
+  key_concepts:
+    - "switch works with int, char, String, and enums. Always use break to prevent fall-through to the next case."
+    - "Java 14+ switch expressions use arrow syntax and don't need break: int result = switch(x) { case 1 -> 10; default -> 0; }."
+    - "Enhanced for loop (for-each): for (int x : array) — cleaner for traversal but gives no access to the index."
+    - "Labeled break/continue can exit or skip a specific outer loop in nested scenarios: outer: for(...) { ... break outer; }."
+  resources:
+    - title: "Control Flow Statements in Java"
+      url: "https://www.geeksforgeeks.org/java/decision-making-javaif-else-switch-break-continue-jump/"
 
-  - day: 6
-    date: "2026-06-17"
-    topic: "Input Output in Java using Scanner and BufferedReader"
-    folder: "DailyCodes/IO"
-    notes:
-      - "Learned different types of input methods and practiced programs using Scanner and BufferedReader."
-    key_concepts:
-      - "Scanner is simpler but slower — it tokenizes input. BufferedReader reads full lines and is significantly faster for large input."
-      - "Scanner: sc.nextInt(), sc.nextDouble(), sc.next() (single token), sc.nextLine() (full line)."
-      - "BufferedReader always reads a String — you must parse manually: Integer.parseInt(br.readLine())."
-      - "The Scanner nextLine() bug: calling nextLine() right after nextInt() reads the leftover newline. Fix by adding a dummy sc.nextLine() in between."
-      - "Always close streams or use try-with-resources to prevent resource leaks: try (Scanner sc = new Scanner(System.in)) { ... }."
-    resources:
-      - title: "Input Output in Java"
-        url: "https://www.geeksforgeeks.org/java/java-io-input-output-in-java-with-examples/"
+- day: 6
+  date: "2026-06-17"
+  topic: "Input Output in Java using Scanner and BufferedReader"
+  folder: "DailyCodes/IO"
+  key_concepts:
+    - "Scanner is simpler but slower — it tokenizes input. BufferedReader reads full lines and is significantly faster for large input."
+    - "Scanner: sc.nextInt(), sc.nextDouble(), sc.next() (single token), sc.nextLine() (full line)."
+    - "BufferedReader always reads a String — you must parse manually: Integer.parseInt(br.readLine())."
+    - "The Scanner nextLine() bug: calling nextLine() right after nextInt() reads the leftover newline. Fix by adding a dummy sc.nextLine() in between."
+    - "Always close streams or use try-with-resources to prevent resource leaks: try (Scanner sc = new Scanner(System.in)) { ... }."
+  resources:
+    - title: "Input Output in Java"
+      url: "https://www.geeksforgeeks.org/java/java-io-input-output-in-java-with-examples/"
 
-  - day: 7
-    date: "2026-06-18"
-    topic: "Arrays in Java"
-    folder: "DailyCodes/Arrays"
-    notes:
-      - "Learned what Arrays are, types of arrays in Java, declaration methods, and common operations like traversal, searching, and updating."
-    key_concepts:
-      - "Arrays are objects in Java — the reference sits on the Stack, the actual data lives on the Heap."
-      - "Size is fixed at creation and cannot be changed. Use ArrayList if you need a resizable structure."
-      - "Arrays.sort() uses dual-pivot Quicksort for primitives and TimSort (merge + insertion) for objects."
-      - "Useful utility methods: Arrays.fill(), Arrays.copyOf(), Arrays.copyOfRange(), System.arraycopy()."
-      - "Accessing index < 0 or >= array.length throws ArrayIndexOutOfBoundsException at runtime."
-    resources:
-      - title: "Arrays in Java"
-        url: "https://www.geeksforgeeks.org/java/arrays-in-java/"
+- day: 7
+  date: "2026-06-18"
+  topic: "Arrays in Java"
+  folder: "DailyCodes/Arrays"
+  key_concepts:
+    - "Arrays are objects in Java — the reference sits on the Stack, the actual data lives on the Heap."
+    - "Size is fixed at creation and cannot be changed. Use ArrayList if you need a resizable structure."
+    - "Arrays.sort() uses dual-pivot Quicksort for primitives and TimSort (merge + insertion) for objects."
+    - "Useful utility methods: Arrays.fill(), Arrays.copyOf(), Arrays.copyOfRange(), System.arraycopy()."
+    - "Accessing index < 0 or >= array.length throws ArrayIndexOutOfBoundsException at runtime."
+  resources:
+    - title: "Arrays in Java"
+      url: "https://www.geeksforgeeks.org/java/arrays-in-java/"
 
-  - day: 8
-    date: "2026-06-19"
-    topic: "Arrays in Java - Practice and Scenarios"
-    folder: "DailyCodes/Arrays"
-    notes:
-      - "Practiced arrays with different scenarios including traversal, searching, updating, copying, and edge cases."
-    key_concepts:
-      - "2D arrays are arrays of arrays: int[][] matrix = new int[3][4]. Jagged arrays are allowed — rows can have different lengths."
-      - "Linear search is O(n). Binary search is O(log n) but requires the array to be sorted first."
-      - "Arrays.binarySearch() returns a negative value if the element is not found — don't treat it as an index without checking."
-      - "Arrays are passed by reference — modifications inside a method affect the original array. Primitives are passed by value."
-    resources:
-      - title: "Arrays in Java"
-        url: "https://www.geeksforgeeks.org/java/arrays-in-java/"
+- day: 8
+  date: "2026-06-19"
+  topic: "Arrays in Java - Practice and Scenarios"
+  folder: "DailyCodes/Arrays"
+  key_concepts:
+    - "2D arrays are arrays of arrays: int[][] matrix = new int[3][4]. Jagged arrays are allowed — rows can have different lengths."
+    - "Linear search is O(n). Binary search is O(log n) but requires the array to be sorted first."
+    - "Arrays.binarySearch() returns a negative value if the element is not found — don't treat it as an index without checking."
+    - "Arrays are passed by reference — modifications inside a method affect the original array. Primitives are passed by value."
+  resources:
+    - title: "Arrays in Java"
+      url: "https://www.geeksforgeeks.org/java/arrays-in-java/"
 
-  - day: 9
-    date: "2026-06-20"
-    topic: "IntegerCache and Wrapper Classes in Java"
-    folder: "DailyCodes/IntegerCache"
-    notes:
-      - "Learned how IntegerCache optimizes memory usage in Java by caching Integer objects in the range -128 to 127."
-      - "Understood the difference between == and equals() when comparing wrapper objects."
-      - "Explored Integer.valueOf() implementation and the source code behind IntegerCache."
-    key_concepts:
-      - "Autoboxing (int → Integer) internally calls Integer.valueOf(), which reuses cached objects for -128 to 127."
-      - "new Integer(x) always creates a new object, bypassing the cache. It's deprecated since Java 9 — prefer Integer.valueOf()."
-      - "Only Integer, Byte, Short, Long, and Character have caching. Float and Double do not."
-      - "The Integer cache upper bound can be raised via JVM flag: -XX:AutoBoxCacheMax=<size>. The lower bound (-128) is fixed."
-      - "Unboxing a null wrapper (e.g., Integer i = null; int x = i;) throws a NullPointerException — a common autoboxing trap."
-    resources:
-      - title: "Wrapper Classes in Java"
-        url: "https://www.geeksforgeeks.org/java/wrapper-classes-java/"
-      - title: "Integer Cache in Java"
-        url: "https://www.geeksforgeeks.org/java/java-integer-cache/"
+- day: 9
+  date: "2026-06-20"
+  topic: "IntegerCache and Wrapper Classes in Java"
+  folder: "DailyCodes/IntegerCache"
+  key_concepts:
+    - "Autoboxing (int → Integer) internally calls Integer.valueOf(), which reuses cached objects for -128 to 127."
+    - "new Integer(x) always creates a new object, bypassing the cache. Deprecated since Java 9 — prefer Integer.valueOf()."
+    - "Only Integer, Byte, Short, Long, and Character have caching. Float and Double do not."
+    - "The Integer cache upper bound can be raised via JVM flag: -XX:AutoBoxCacheMax=<size>. The lower bound (-128) is fixed."
+    - "Unboxing a null wrapper (e.g., Integer i = null; int x = i;) throws a NullPointerException — a common autoboxing trap."
+  resources:
+    - title: "Wrapper Classes in Java"
+      url: "https://www.geeksforgeeks.org/java/wrapper-classes-java/"
+    - title: "Integer Cache in Java"
+      url: "https://www.geeksforgeeks.org/java/java-integer-cache/"
 
-  - day: 10
-    date: "2026-06-21"
-    topic: "Command Line Arguments in Java"
-    folder: "DailyCodes/CommandLineArgs"
-    notes: []
-    key_concepts:
-      - "args[] in main(String[] args) is a plain String array — every argument arrives as a String regardless of its intended type."
-      - "args[0] is the FIRST argument, not the program name (unlike C/C++). The program name is not included."
-      - "Always guard with args.length before accessing: if (args.length < 1) { ... } to avoid ArrayIndexOutOfBoundsException."
-      - "Parse as needed: int n = Integer.parseInt(args[0]), double d = Double.parseDouble(args[1])."
-      - "Useful for passing runtime configuration (file paths, flags, modes) without hardcoding or recompiling."
-    resources:
-      - title: "Command Line Arguments in Java"
-        url: "https://www.geeksforgeeks.org/java/command-line-arguments-in-java/"
+- day: 10
+  date: "2026-06-21"
+  topic: "Command Line Arguments in Java"
+  folder: "DailyCodes/CommandLineArgs"
+  key_concepts:
+    - "args[] in main(String[] args) is a plain String array — every argument arrives as a String regardless of its intended type."
+    - "args[0] is the FIRST argument, not the program name (unlike C/C++). The program name is not included."
+    - "Always guard with args.length before accessing: if (args.length < 1) { ... } to avoid ArrayIndexOutOfBoundsException."
+    - "Parse as needed: int n = Integer.parseInt(args[0]), double d = Double.parseDouble(args[1])."
+    - "Useful for passing runtime configuration (file paths, flags, modes) without hardcoding or recompiling."
+  resources:
+    - title: "Command Line Arguments in Java"
+      url: "https://www.geeksforgeeks.org/java/command-line-arguments-in-java/"
 
-  - day: 11
-    date: "2026-06-22"
-    topic: "Variables in Java"
-    folder: "DailyCodes/Variables"
-    notes: []
-    key_concepts:
-      - "Three kinds of variables: local (declared in a method/block), instance (declared in a class, one per object), static/class (declared with static, shared across all instances)."
-      - "Local variables have no default value and MUST be initialized before use — the compiler will refuse to compile otherwise."
-      - "Instance and static variables are automatically initialized to defaults: 0, 0.0, false, '\\u0000', or null."
-      - "Storage: local variables live on the Stack; instance and static variables live on the Heap."
-      - "final makes a variable a constant — it must be assigned exactly once and cannot be reassigned afterward."
-    resources:
-      - title: "Variables in Java"
-        url: "https://www.geeksforgeeks.org/java/variables-in-java/"
+- day: 11
+  date: "2026-06-22"
+  topic: "Variables in Java"
+  folder: "DailyCodes/Variables"
+  key_concepts:
+    - "Three kinds: local (method/block scope), instance (one per object), static/class (shared across all instances)."
+    - "Local variables have no default value and MUST be initialized before use — the compiler will refuse otherwise."
+    - "Instance and static variables are automatically initialized to defaults: 0, 0.0, false, '\\u0000', or null."
+    - "Storage: local variables live on the Stack; instance and static variables live on the Heap."
+    - "final makes a variable a constant — it must be assigned exactly once and cannot be reassigned afterward."
+  resources:
+    - title: "Variables in Java"
+      url: "https://www.geeksforgeeks.org/java/variables-in-java/"
 
-  - day: 12
-    date: "2026-06-23"
-    topic: "Varargs in Java"
-    folder: "DailyCodes/Varargs"
-    notes: []
-    key_concepts:
-      - "Varargs syntax: void method(int... nums). Inside the method, nums is treated exactly like an int[] array."
-      - "Varargs must be the LAST parameter, and only one varargs parameter is allowed per method."
-      - "A varargs method can be called with zero arguments, one argument, many arguments, or by passing an existing array directly."
-      - "Overloading with varargs can cause ambiguity — the compiler may fail to resolve which method to call. Avoid it unless necessary."
-      - "Prefer varargs over passing explicit arrays when the number of arguments is genuinely variable and unknown at design time."
-    resources:
-      - title: "Variable Arguments in Java"
-        url: "https://www.geeksforgeeks.org/java/variable-arguments-varargs-in-java/"
+- day: 12
+  date: "2026-06-23"
+  topic: "Varargs in Java"
+  folder: "DailyCodes/Varargs"
+  key_concepts:
+    - "Varargs syntax: void method(int... nums). Inside the method, nums is treated exactly like an int[] array."
+    - "Varargs must be the LAST parameter, and only one varargs parameter is allowed per method."
+    - "A varargs method can be called with zero arguments, one argument, many arguments, or by passing an existing array directly."
+    - "Overloading with varargs can cause ambiguity — the compiler may fail to resolve which method to call. Avoid it unless necessary."
+    - "Prefer varargs over passing explicit arrays when the number of arguments is genuinely variable and unknown at design time."
+  resources:
+    - title: "Variable Arguments in Java"
+      url: "https://www.geeksforgeeks.org/java/variable-arguments-varargs-in-java/"
+
 # -----------------------------------------------------------------------
 # Add new entries below this line as you progress.
-# -----------------------------------------------------------------------
-
-# Example:
+# Template:
 #
-# - date: "2026-06-21"
-#   day: 10
-#   topic: "Strings in Java"
-#   folder: "DailyCodes/Strings"
-#   notes:
-#     - "Learned String immutability and String Pool."
+# - day: 13
+#   date: "YYYY-MM-DD"
+#   topic: "Topic Name"
+#   folder: "DailyCodes/FolderName"
+#   key_concepts:
+#     - ""
 #   resources:
-#     - title: "Strings in Java"
-#       url: "https://www.geeksforgeeks.org/java/string-class-in-java/"
+#     - title: "Title"
+#       url: "https://..."
+# -----------------------------------------------------------------------
