@@ -159,7 +159,7 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 
 _Auto-generated from the `notes` field of each entry in `progress.yml`._
 
-<!-- NOTES_START -->
+<!-- KEY_CONCEPTS_START -->
 ### 2026-05-26 — Data Types - Practicing real-world datatype scenarios
 - Practiced various datatype scenarios and edge cases to build intuition for how Java handles them.
 
@@ -188,7 +188,7 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - Learned how IntegerCache optimizes memory usage in Java by caching Integer objects in the range -128 to 127.
 - Understood the difference between == and equals() when comparing wrapper objects.
 - Explored Integer.valueOf() implementation and the source code behind IntegerCache.
-<!-- NOTES_END -->
+<!-- KEY_CONCEPTS_END -->
 
 ---
 
