@@ -10,7 +10,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-06-20 20:52 UTC · 9 day(s) logged_
+_Last updated: 2026-06-23 10:21 UTC · 12 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -151,6 +151,9 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 | 2026-06-18 | 7 | Arrays in Java | [DailyCodes/Arrays](DailyCodes/Arrays) |
 | 2026-06-19 | 8 | Arrays in Java - Practice and Scenarios | [DailyCodes/Arrays](DailyCodes/Arrays) |
 | 2026-06-20 | 9 | IntegerCache and Wrapper Classes in Java | [DailyCodes/IntegerCache](DailyCodes/IntegerCache) |
+| 2026-06-21 | 10 | Command Line Arguments in Java | [DailyCodes/CommandLineArgs](DailyCodes/CommandLineArgs) |
+| 2026-06-22 | 11 | Variables in Java | [DailyCodes/Variables](DailyCodes/Variables) |
+| 2026-06-23 | 12 | Varargs in Java | [DailyCodes/Varargs](DailyCodes/Varargs) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -160,34 +163,84 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 _Auto-generated from the `notes` field of each entry in `progress.yml`._
 
 <!-- KEY_CONCEPTS_START -->
-### 2026-05-26 — Data Types - Practicing real-world datatype scenarios
-- Practiced various datatype scenarios and edge cases to build intuition for how Java handles them.
+### Day 1 — Data Types - Practicing real-world datatype scenarios
+- Java has 8 primitives: byte (8-bit), short (16-bit), int (32-bit), long (64-bit), float (32-bit), double (64-bit), char (16-bit Unicode), boolean.
+- Reference types (String, arrays, objects) store memory addresses on the Stack; the actual object lives on the Heap.
+- Default values: int/short/byte/long = 0, float/double = 0.0, boolean = false, char = '\u0000', reference types = null.
+- Literal suffixes: L for long (100L), f for float (3.14f), 0x for hex, 0b for binary.
 
-### 2026-05-26 — JVM Basics - How Java code runs under the hood
-- Learned the basics of how the JVM works and added explanations alongside existing programs to connect theory with code.
+### Day 2 — JVM Basics - How Java code runs under the hood
+- Pipeline: .java source → javac compiler → .class bytecode → JVM → platform-specific machine code.
+- JVM has three core parts: ClassLoader (loads .class files), Runtime Data Areas (Heap, Stack, Method Area, PC Register), and Execution Engine.
+- The JIT (Just-In-Time) compiler identifies hot code paths and compiles them to native machine code at runtime for performance.
+- Garbage Collector runs in the Heap and reclaims memory from objects that have no live references.
 
-### 2026-06-02 — Operators - Deep dive into types of operators
-- Practiced operators with a focus on all the types of operators with programs.
+### Day 3 — Operators - Deep dive into types of operators
+- Arithmetic: +, -, *, /, %. Integer division truncates — 7/2 = 3, not 3.5.
+- Relational (==, !=, <, >, <=, >=) always return boolean. Never use == to compare Strings — use .equals().
+- Logical: && and || are short-circuit operators — they stop evaluating as soon as the result is determined.
+- Bitwise: &, |, ^, ~, << (left shift), >> (signed right shift), >>> (unsigned right shift) — operate on individual bits.
+- Ternary: condition ? valueIfTrue : valueIfFalse — a compact single-expression if-else, good for simple assignments.
 
-### 2026-06-14 — Type Casting - Implicit & Explicit conversions
-- Practiced converting between primitive types. Implicit/widening conversions happen automatically, while explicit/narrowing conversions require casting and may lose precision.
+### Day 4 — Type Casting - Implicit & Explicit conversions
+- Widening order (safe, automatic): byte → short → int → long → float → double.
+- Narrowing can silently corrupt data: (int) 3.99 = 3 (truncated), (byte) 130 = -126 (overflow wraps around).
+- char can be cast to int to get its Unicode value: (int) 'A' = 65.
+- String conversions: Integer.parseInt("42") → int, String.valueOf(42) or ("" + 42) → String.
 
-### 2026-06-16 — Control Statements - if, if-else, switch, loops, break and continue
-- Explored control flow statements in depth and practiced programs using if-else, switch, loops, break, and continue.
+### Day 5 — Control Statements - if, if-else, switch, loops, break and continue
+- switch works with int, char, String, and enums. Always use break to prevent fall-through to the next case.
+- Java 14+ switch expressions use arrow syntax and don't need break: int result = switch(x) { case 1 -> 10; default -> 0; }.
+- Enhanced for loop (for-each): for (int x : array) — cleaner for traversal but gives no access to the index.
+- Labeled break/continue can exit or skip a specific outer loop in nested scenarios: outer: for(...) { ... break outer; }.
 
-### 2026-06-17 — Input Output in Java using Scanner and BufferedReader
-- Learned different types of input methods and practiced programs using Scanner and BufferedReader.
+### Day 6 — Input Output in Java using Scanner and BufferedReader
+- Scanner is simpler but slower — it tokenizes input. BufferedReader reads full lines and is significantly faster for large input.
+- Scanner: sc.nextInt(), sc.nextDouble(), sc.next() (single token), sc.nextLine() (full line).
+- BufferedReader always reads a String — you must parse manually: Integer.parseInt(br.readLine()).
+- The Scanner nextLine() bug: calling nextLine() right after nextInt() reads the leftover newline. Fix by adding a dummy sc.nextLine() in between.
+- Always close streams or use try-with-resources to prevent resource leaks: try (Scanner sc = new Scanner(System.in)) { ... }.
 
-### 2026-06-18 — Arrays in Java
-- Learned what Arrays are, types of arrays in Java, declaration methods, and common operations like traversal, searching, and updating.
+### Day 7 — Arrays in Java
+- Arrays are objects in Java — the reference sits on the Stack, the actual data lives on the Heap.
+- Size is fixed at creation and cannot be changed. Use ArrayList if you need a resizable structure.
+- Arrays.sort() uses dual-pivot Quicksort for primitives and TimSort (merge + insertion) for objects.
+- Useful utility methods: Arrays.fill(), Arrays.copyOf(), Arrays.copyOfRange(), System.arraycopy().
+- Accessing index < 0 or >= array.length throws ArrayIndexOutOfBoundsException at runtime.
 
-### 2026-06-19 — Arrays in Java - Practice and Scenarios
-- Practiced arrays with different scenarios including traversal, searching, updating, copying, and edge cases.
+### Day 8 — Arrays in Java - Practice and Scenarios
+- 2D arrays are arrays of arrays: int[][] matrix = new int[3][4]. Jagged arrays are allowed — rows can have different lengths.
+- Linear search is O(n). Binary search is O(log n) but requires the array to be sorted first.
+- Arrays.binarySearch() returns a negative value if the element is not found — don't treat it as an index without checking.
+- Arrays are passed by reference — modifications inside a method affect the original array. Primitives are passed by value.
 
-### 2026-06-20 — IntegerCache and Wrapper Classes in Java
-- Learned how IntegerCache optimizes memory usage in Java by caching Integer objects in the range -128 to 127.
-- Understood the difference between == and equals() when comparing wrapper objects.
-- Explored Integer.valueOf() implementation and the source code behind IntegerCache.
+### Day 9 — IntegerCache and Wrapper Classes in Java
+- Autoboxing (int → Integer) internally calls Integer.valueOf(), which reuses cached objects for -128 to 127.
+- new Integer(x) always creates a new object, bypassing the cache. Deprecated since Java 9 — prefer Integer.valueOf().
+- Only Integer, Byte, Short, Long, and Character have caching. Float and Double do not.
+- The Integer cache upper bound can be raised via JVM flag: -XX:AutoBoxCacheMax=<size>. The lower bound (-128) is fixed.
+- Unboxing a null wrapper (e.g., Integer i = null; int x = i;) throws a NullPointerException — a common autoboxing trap.
+
+### Day 10 — Command Line Arguments in Java
+- args[] in main(String[] args) is a plain String array — every argument arrives as a String regardless of its intended type.
+- args[0] is the FIRST argument, not the program name (unlike C/C++). The program name is not included.
+- Always guard with args.length before accessing: if (args.length < 1) { ... } to avoid ArrayIndexOutOfBoundsException.
+- Parse as needed: int n = Integer.parseInt(args[0]), double d = Double.parseDouble(args[1]).
+- Useful for passing runtime configuration (file paths, flags, modes) without hardcoding or recompiling.
+
+### Day 11 — Variables in Java
+- Three kinds: local (method/block scope), instance (one per object), static/class (shared across all instances).
+- Local variables have no default value and MUST be initialized before use — the compiler will refuse otherwise.
+- Instance and static variables are automatically initialized to defaults: 0, 0.0, false, '\u0000', or null.
+- Storage: local variables live on the Stack; instance and static variables live on the Heap.
+- final makes a variable a constant — it must be assigned exactly once and cannot be reassigned afterward.
+
+### Day 12 — Varargs in Java
+- Varargs syntax: void method(int... nums). Inside the method, nums is treated exactly like an int[] array.
+- Varargs must be the LAST parameter, and only one varargs parameter is allowed per method.
+- A varargs method can be called with zero arguments, one argument, many arguments, or by passing an existing array directly.
+- Overloading with varargs can cause ambiguity — the compiler may fail to resolve which method to call. Avoid it unless necessary.
+- Prefer varargs over passing explicit arrays when the number of arguments is genuinely variable and unknown at design time.
 <!-- KEY_CONCEPTS_END -->
 
 ---
@@ -197,33 +250,42 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 _Auto-generated from the `resources` field of each entry in `progress.yml` — articles, docs, and videos used while learning each topic._
 
 <!-- RESOURCES_START -->
-### 2026-05-26 — Data Types - Practicing real-world datatype scenarios
+### Day 1 — Data Types - Practicing real-world datatype scenarios
 - [Data Types in Java](https://www.geeksforgeeks.org/java/java-data-types/)
 
-### 2026-05-26 — JVM Basics - How Java code runs under the hood
+### Day 2 — JVM Basics - How Java code runs under the hood
 - [JVM Basics](https://www.geeksforgeeks.org/java/how-jvm-works-jvm-architecture/)
 
-### 2026-06-02 — Operators - Deep dive into types of operators
+### Day 3 — Operators - Deep dive into types of operators
 - [Operators in Java](https://www.geeksforgeeks.org/java/operators-in-java/)
 
-### 2026-06-14 — Type Casting - Implicit & Explicit conversions
+### Day 4 — Type Casting - Implicit & Explicit conversions
 - [Type Casting in Java](https://www.geeksforgeeks.org/java/type-conversion-java-examples/)
 
-### 2026-06-16 — Control Statements - if, if-else, switch, loops, break and continue
+### Day 5 — Control Statements - if, if-else, switch, loops, break and continue
 - [Control Flow Statements in Java](https://www.geeksforgeeks.org/java/decision-making-javaif-else-switch-break-continue-jump/)
 
-### 2026-06-17 — Input Output in Java using Scanner and BufferedReader
+### Day 6 — Input Output in Java using Scanner and BufferedReader
 - [Input Output in Java](https://www.geeksforgeeks.org/java/java-io-input-output-in-java-with-examples/)
 
-### 2026-06-18 — Arrays in Java
+### Day 7 — Arrays in Java
 - [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
 
-### 2026-06-19 — Arrays in Java - Practice and Scenarios
+### Day 8 — Arrays in Java - Practice and Scenarios
 - [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
 
-### 2026-06-20 — IntegerCache and Wrapper Classes in Java
+### Day 9 — IntegerCache and Wrapper Classes in Java
 - [Wrapper Classes in Java](https://www.geeksforgeeks.org/java/wrapper-classes-java/)
 - [Integer Cache in Java](https://www.geeksforgeeks.org/java/java-integer-cache/)
+
+### Day 10 — Command Line Arguments in Java
+- [Command Line Arguments in Java](https://www.geeksforgeeks.org/java/command-line-arguments-in-java/)
+
+### Day 11 — Variables in Java
+- [Variables in Java](https://www.geeksforgeeks.org/java/variables-in-java/)
+
+### Day 12 — Varargs in Java
+- [Variable Arguments in Java](https://www.geeksforgeeks.org/java/variable-arguments-varargs-in-java/)
 <!-- RESOURCES_END -->
 
 ---
