@@ -2,16 +2,16 @@
 """
 generate_readme.py
 
-Regenerates the Progress Log, Notes & Key Takeaways, References & Resources,
+Regenerates the Progress Log, Key Concepts, References & Resources,
 and Last Updated sections of README.md based on entries in progress.yml.
 
 This script looks for HTML comment marker pairs in README.md and replaces
 everything between them:
 
-    <!-- PROGRESS_LOG_START -->  ... <!-- PROGRESS_LOG_END -->
-    <!-- NOTES_START -->         ... <!-- NOTES_END -->
-    <!-- RESOURCES_START -->     ... <!-- RESOURCES_END -->
-    <!-- LAST_UPDATED_START -->  ... <!-- LAST_UPDATED_END -->
+    <!-- PROGRESS_LOG_START -->     ... <!-- PROGRESS_LOG_END -->
+    <!-- KEY_CONCEPTS_START -->     ... <!-- KEY_CONCEPTS_END -->
+    <!-- RESOURCES_START -->        ... <!-- RESOURCES_END -->
+    <!-- LAST_UPDATED_START -->     ... <!-- LAST_UPDATED_END -->
 
 Run automatically by .github/workflows/update-readme.yml on every push to
 main that touches progress.yml. Can also be run locally:
@@ -59,18 +59,18 @@ def build_progress_table(entries):
     return "\n".join(lines)
 
 
-def build_notes_section(entries):
+def build_key_concepts_section(entries):
     blocks = []
     for e in entries:
-        notes = e.get("notes") or []
-        if not notes:
+        concepts = e.get("key_concepts") or []
+        if not concepts:
             continue
-        header = f"### {e.get('date', '')} — {e.get('topic', '')}"
-        bullets = "\n".join(f"- {n}" for n in notes)
+        header = f"### Day {e.get('day', '')} — {e.get('topic', '')}"
+        bullets = "\n".join(f"- {c}" for c in concepts)
         blocks.append(f"{header}\n{bullets}")
 
     if not blocks:
-        return "_No notes yet. Add a `notes` list to any entry in `progress.yml`._"
+        return "_No key concepts yet. Add a `key_concepts` list to any entry in `progress.yml`._"
     return "\n\n".join(blocks)
 
 
@@ -80,7 +80,7 @@ def build_resources_section(entries):
         resources = e.get("resources") or []
         if not resources:
             continue
-        header = f"### {e.get('date', '')} — {e.get('topic', '')}"
+        header = f"### Day {e.get('day', '')} — {e.get('topic', '')}"
         links = "\n".join(
             f"- [{r.get('title', r.get('url', 'Untitled'))}]({r.get('url', '#')})"
             for r in resources
@@ -118,9 +118,9 @@ def main():
     )
     readme = replace_section(
         readme,
-        "<!-- NOTES_START -->",
-        "<!-- NOTES_END -->",
-        build_notes_section(entries),
+        "<!-- KEY_CONCEPTS_START -->",
+        "<!-- KEY_CONCEPTS_END -->",
+        build_key_concepts_section(entries),
     )
     readme = replace_section(
         readme,
