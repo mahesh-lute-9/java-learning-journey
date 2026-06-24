@@ -97,6 +97,9 @@ The YAML is the source of truth. The README is always current.
 │   ├── IO/
 │   ├── Arrays/
 │   ├── IntegerCache/
+│   ├── CommandLineArgs/
+│   ├── Variables/
+│   ├── Varargs/
 │   └── ...
 │
 ├── Assignments/             # Topic-wise assignments and exercises
