@@ -16,7 +16,7 @@
 - day: 1
   date: "2026-05-26"
   topic: "Data Types - Practicing real-world datatype scenarios"
-  folder: "DailyCodes/Datatypes"
+  folder: "Topics/Datatypes"
   key_concepts:
     - "Java has 8 primitives: byte (8-bit), short (16-bit), int (32-bit), long (64-bit), float (32-bit), double (64-bit), char (16-bit Unicode), boolean."
     - "Reference types (String, arrays, objects) store memory addresses on the Stack; the actual object lives on the Heap."
@@ -29,7 +29,7 @@
 - day: 2
   date: "2026-05-26"
   topic: "JVM Basics - How Java code runs under the hood"
-  folder: "DailyCodes/JVM_0"
+  folder: "Topics/JVM_Architecture"
   key_concepts:
     - "Pipeline: .java source → javac compiler → .class bytecode → JVM → platform-specific machine code."
     - "JVM has three core parts: ClassLoader (loads .class files), Runtime Data Areas (Heap, Stack, Method Area, PC Register), and Execution Engine."
@@ -42,7 +42,7 @@
 - day: 3
   date: "2026-06-02"
   topic: "Operators - Deep dive into types of operators"
-  folder: "DailyCodes/Operators"
+  folder: "Topics/Operators"
   key_concepts:
     - "Arithmetic: +, -, *, /, %. Integer division truncates — 7/2 = 3, not 3.5."
     - "Relational (==, !=, <, >, <=, >=) always return boolean. Never use == to compare Strings — use .equals()."
@@ -56,7 +56,7 @@
 - day: 4
   date: "2026-06-14"
   topic: "Type Casting - Implicit & Explicit conversions"
-  folder: "DailyCodes/TypeCasting"
+  folder: "Topics/TypeCasting"
   key_concepts:
     - "Widening order (safe, automatic): byte → short → int → long → float → double."
     - "Narrowing can silently corrupt data: (int) 3.99 = 3 (truncated), (byte) 130 = -126 (overflow wraps around)."
@@ -69,7 +69,7 @@
 - day: 5
   date: "2026-06-16"
   topic: "Control Statements - if, if-else, switch, loops, break and continue"
-  folder: "DailyCodes/ControlStatements"
+  folder: "Topics/ControlStatements"
   key_concepts:
     - "switch works with int, char, String, and enums. Always use break to prevent fall-through to the next case."
     - "Java 14+ switch expressions use arrow syntax and don't need break: int result = switch(x) { case 1 -> 10; default -> 0; }."
@@ -82,7 +82,7 @@
 - day: 6
   date: "2026-06-17"
   topic: "Input Output in Java using Scanner and BufferedReader"
-  folder: "DailyCodes/IO"
+  folder: "Topics/IO"
   key_concepts:
     - "Scanner is simpler but slower — it tokenizes input. BufferedReader reads full lines and is significantly faster for large input."
     - "Scanner: sc.nextInt(), sc.nextDouble(), sc.next() (single token), sc.nextLine() (full line)."
@@ -96,7 +96,7 @@
 - day: 7
   date: "2026-06-18"
   topic: "Arrays in Java"
-  folder: "DailyCodes/Arrays"
+  folder: "Topics/Arrays"
   key_concepts:
     - "Arrays are objects in Java — the reference sits on the Stack, the actual data lives on the Heap."
     - "Size is fixed at creation and cannot be changed. Use ArrayList if you need a resizable structure."
@@ -110,7 +110,7 @@
 - day: 8
   date: "2026-06-19"
   topic: "Arrays in Java - Practice and Scenarios"
-  folder: "DailyCodes/Arrays"
+  folder: "Topics/Arrays"
   key_concepts:
     - "2D arrays are arrays of arrays: int[][] matrix = new int[3][4]. Jagged arrays are allowed — rows can have different lengths."
     - "Linear search is O(n). Binary search is O(log n) but requires the array to be sorted first."
@@ -123,7 +123,7 @@
 - day: 9
   date: "2026-06-20"
   topic: "IntegerCache and Wrapper Classes in Java"
-  folder: "DailyCodes/IntegerCache"
+  folder: "Topics/IntegerCache"
   key_concepts:
     - "Autoboxing (int → Integer) internally calls Integer.valueOf(), which reuses cached objects for -128 to 127."
     - "new Integer(x) always creates a new object, bypassing the cache. Deprecated since Java 9 — prefer Integer.valueOf()."
@@ -139,7 +139,7 @@
 - day: 10
   date: "2026-06-21"
   topic: "Command Line Arguments in Java"
-  folder: "DailyCodes/CommandLineArgs"
+  folder: "Topics/CommandLineArgs"
   key_concepts:
     - "args[] in main(String[] args) is a plain String array — every argument arrives as a String regardless of its intended type."
     - "args[0] is the FIRST argument, not the program name (unlike C/C++). The program name is not included."
@@ -153,7 +153,7 @@
 - day: 11
   date: "2026-06-22"
   topic: "Variables in Java"
-  folder: "DailyCodes/Variables"
+  folder: "Topics/Variables"
   key_concepts:
     - "Three kinds: local (method/block scope), instance (one per object), static/class (shared across all instances)."
     - "Local variables have no default value and MUST be initialized before use — the compiler will refuse otherwise."
@@ -167,7 +167,7 @@
 - day: 12
   date: "2026-06-23"
   topic: "Varargs in Java"
-  folder: "DailyCodes/Varargs"
+  folder: "Topics/Varargs"
   key_concepts:
     - "Varargs syntax: void method(int... nums). Inside the method, nums is treated exactly like an int[] array."
     - "Varargs must be the LAST parameter, and only one varargs parameter is allowed per method."
@@ -178,14 +178,68 @@
     - title: "Variable Arguments in Java"
       url: "https://www.geeksforgeeks.org/java/variable-arguments-varargs-in-java/"
 
+- day: 13
+  date: "2026-06-29"
+  topic: "String in Java - Immutability, String Pool and Key Methods"
+  folder: "Topics/Strings/String"
+  key_concepts:
+    - "String is immutable in Java — once created, its value cannot be changed; every modification (concat, replace, etc.) produces a new String object."
+    - "Two creation methods: literal (\"hello\") stores the string in the String Pool (Heap); new String(\"hello\") always creates a new Heap object outside the pool."
+    - "String Pool: JVM deduplicates literals — \"abc\" == \"abc\" is true (same pool reference), but new String(\"abc\") == new String(\"abc\") is false (different Heap objects)."
+    - "Always use .equals() for value comparison, never ==. Use String.intern() to explicitly move a heap string into the pool and enable reference equality."
+    - "Key methods: length(), charAt(i), substring(start, end), indexOf(), contains(), replace(), toUpperCase(), toLowerCase(), trim(), strip(), split(), startsWith(), endsWith(), isEmpty(), isBlank()."
+  resources:
+    - title: "Strings in Java - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/strings-in-java/"
+    - title: "String class in Java - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/string-class-in-java/"
+    - title: "Java String Pool - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/java-string-pool/"
+    - title: "String (Java 17 Official Docs)"
+      url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/String.html"
+
+- day: 14
+  date: "2026-06-29"
+  topic: "StringBuilder in Java - Mutable Strings and Performance"
+  folder: "Topics/Strings/StringBuilder"
+  key_concepts:
+    - "StringBuilder is mutable — it modifies the character sequence in place without creating new objects, making it memory-efficient for repeated changes."
+    - "Not thread-safe (no synchronization), but significantly faster than StringBuffer in single-threaded applications."
+    - "Key methods: append(), insert(index, str), delete(start, end), deleteCharAt(i), replace(start, end, str), reverse(), charAt(i), setCharAt(i, ch), length(), capacity(), toString()."
+    - "Internally backed by a resizable char[] array with a default initial capacity of 16; auto-grows when exceeded using: newCapacity = (oldCapacity * 2) + 2."
+    - "Prefer StringBuilder over String + in loops — repeated String concatenation creates O(n) intermediate objects and runs in O(n²) time; StringBuilder runs in O(n)."
+  resources:
+    - title: "StringBuilder class in Java - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/stringbuilder-class-in-java-with-examples/"
+    - title: "StringBuilder (Java 17 Official Docs)"
+      url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringBuilder.html"
+
+- day: 15
+  date: "2026-06-30"
+  topic: "StringBuffer in Java - Thread-Safe Mutable Strings"
+  folder: "Topics/Strings/StringBuffer"
+  key_concepts:
+    - "StringBuffer is mutable and thread-safe — all its methods are synchronized, preventing race conditions when accessed concurrently by multiple threads."
+    - "API is nearly identical to StringBuilder: append(), insert(), delete(), replace(), reverse(), charAt(), length(), toString() — same contract, different thread-safety guarantee."
+    - "Slower than StringBuilder due to synchronization overhead — use StringBuffer only when the buffer is genuinely shared across threads."
+    - "Decision rule: no modification needed → String; single-threaded modification → StringBuilder (faster); multi-threaded modification → StringBuffer (safe)."
+    - "Both StringBuilder and StringBuffer default to an initial capacity of 16 and share the same growth strategy: newCapacity = (oldCapacity * 2) + 2."
+  resources:
+    - title: "StringBuffer class in Java - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/stringbuffer-class-in-java/"
+    - title: "String vs StringBuilder vs StringBuffer in Java"
+      url: "https://www.geeksforgeeks.org/java/string-vs-stringbuilder-vs-stringbuffer-in-java/"
+    - title: "StringBuffer (Java 17 Official Docs)"
+      url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringBuffer.html"
+
 # -----------------------------------------------------------------------
 # Add new entries below this line as you progress.
 # Template:
 #
-# - day: 13
+# - day: 16
 #   date: "YYYY-MM-DD"
 #   topic: "Topic Name"
-#   folder: "DailyCodes/FolderName"
+#   folder: "Topics/FolderName"
 #   key_concepts:
 #     - ""
 #   resources:
