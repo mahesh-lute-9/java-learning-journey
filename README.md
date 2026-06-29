@@ -6,11 +6,12 @@
 ![Last Commit](https://img.shields.io/github/last-commit/mahesh-lute-9/java-learning-journey)
 ![Repo Size](https://img.shields.io/github/repo-size/mahesh-lute-9/java-learning-journey)
 ![Stars](https://img.shields.io/github/stars/mahesh-lute-9/java-learning-journey?style=social)
+![Views](https://komarev.com/ghpvc/?username=mahesh-lute-9&label=Repo%20Views&color=0078D7&style=flat)
 
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-06-29 23:32 UTC · 15 day(s) logged_
+_Last updated: 2026-06-30 · 15 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -68,7 +69,7 @@ The depth here is intentional, and it's placement-driven.
 
 **Legend:** ✅ Completed · 🟢 In Progress · ⚪ Upcoming · 🔍 Exploring early
 
-> **Note:** Phase 1 is complete. Phase 6 (JVM Internals) has been partially explored out-of-order — understanding how the JVM works early makes everything else click faster. This roadmap tracks high-level phases; the Progress Log below captures daily detail.
+> **Note:** Phase 1 is complete (Days 1–15), finishing with the full Strings topic including String internals, StringBuilder, and StringBuffer. Phase 6 (JVM Internals) has been partially explored out-of-order — understanding how the JVM works early makes everything else click faster. This roadmap tracks high-level phases; the Progress Log below captures daily detail.
 
 ---
 
@@ -88,9 +89,9 @@ The YAML is the source of truth. The README is always current.
 
 ```
 📁 java-learning-journey/
-├── DailyCodes/              # Small programs, syntax drills, experiments
+├── Topics/                  # Topic-wise practice code and notes
 │   ├── Datatypes/
-│   ├── JVM_0/
+│   ├── JVM_Architecture/
 │   ├── Operators/
 │   ├── TypeCasting/
 │   ├── ControlStatements/
@@ -100,7 +101,11 @@ The YAML is the source of truth. The README is always current.
 │   ├── CommandLineArgs/
 │   ├── Variables/
 │   ├── Varargs/
-│   └── ...
+│   └── Strings/
+│       ├── String/
+│       ├── StringBuilder/
+│       ├── StringBuffer/
+│       └── notes.md
 │
 ├── Assignments/             # Topic-wise assignments and exercises
 │   ├── Basics/
@@ -124,12 +129,12 @@ cd java-learning-journey
 
 **2. Compile a file** _(replace folder and class name as needed)_
 ```bash
-javac DailyCodes/Operators/OperatorsDemo.java
+javac Topics/Operators/OperatorsDemo.java
 ```
 
 **3. Run the compiled class**
 ```bash
-java -cp DailyCodes/Operators OperatorsDemo
+java -cp Topics/Operators OperatorsDemo
 ```
 
 > 💡 Recommended: **JDK 17+** and an IDE like **IntelliJ IDEA**, **Eclipse**, or **VS Code** (with the Java Extension Pack).
