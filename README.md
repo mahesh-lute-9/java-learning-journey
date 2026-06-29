@@ -11,7 +11,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-06-30 · 15 day(s) logged_
+_Last updated: 2026-06-29 23:38 UTC · 15 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
