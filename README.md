@@ -10,7 +10,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-06-23 10:21 UTC · 12 day(s) logged_
+_Last updated: 2026-06-29 23:32 UTC · 15 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -145,18 +145,21 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 <!-- PROGRESS_LOG_START -->
 | Date | Day | Topic | Folder |
 |------|-----|-------|--------|
-| 2026-05-26 | 1 | Data Types - Practicing real-world datatype scenarios | [DailyCodes/Datatypes](DailyCodes/Datatypes) |
-| 2026-05-26 | 2 | JVM Basics - How Java code runs under the hood | [DailyCodes/JVM_0](DailyCodes/JVM_0) |
-| 2026-06-02 | 3 | Operators - Deep dive into types of operators | [DailyCodes/Operators](DailyCodes/Operators) |
-| 2026-06-14 | 4 | Type Casting - Implicit & Explicit conversions | [DailyCodes/TypeCasting](DailyCodes/TypeCasting) |
-| 2026-06-16 | 5 | Control Statements - if, if-else, switch, loops, break and continue | [DailyCodes/ControlStatements](DailyCodes/ControlStatements) |
-| 2026-06-17 | 6 | Input Output in Java using Scanner and BufferedReader | [DailyCodes/IO](DailyCodes/IO) |
-| 2026-06-18 | 7 | Arrays in Java | [DailyCodes/Arrays](DailyCodes/Arrays) |
-| 2026-06-19 | 8 | Arrays in Java - Practice and Scenarios | [DailyCodes/Arrays](DailyCodes/Arrays) |
-| 2026-06-20 | 9 | IntegerCache and Wrapper Classes in Java | [DailyCodes/IntegerCache](DailyCodes/IntegerCache) |
-| 2026-06-21 | 10 | Command Line Arguments in Java | [DailyCodes/CommandLineArgs](DailyCodes/CommandLineArgs) |
-| 2026-06-22 | 11 | Variables in Java | [DailyCodes/Variables](DailyCodes/Variables) |
-| 2026-06-23 | 12 | Varargs in Java | [DailyCodes/Varargs](DailyCodes/Varargs) |
+| 2026-05-26 | 1 | Data Types - Practicing real-world datatype scenarios | [Topics/Datatypes](Topics/Datatypes) |
+| 2026-05-26 | 2 | JVM Basics - How Java code runs under the hood | [Topics/JVM_Architecture](Topics/JVM_Architecture) |
+| 2026-06-02 | 3 | Operators - Deep dive into types of operators | [Topics/Operators](Topics/Operators) |
+| 2026-06-14 | 4 | Type Casting - Implicit & Explicit conversions | [Topics/TypeCasting](Topics/TypeCasting) |
+| 2026-06-16 | 5 | Control Statements - if, if-else, switch, loops, break and continue | [Topics/ControlStatements](Topics/ControlStatements) |
+| 2026-06-17 | 6 | Input Output in Java using Scanner and BufferedReader | [Topics/IO](Topics/IO) |
+| 2026-06-18 | 7 | Arrays in Java | [Topics/Arrays](Topics/Arrays) |
+| 2026-06-19 | 8 | Arrays in Java - Practice and Scenarios | [Topics/Arrays](Topics/Arrays) |
+| 2026-06-20 | 9 | IntegerCache and Wrapper Classes in Java | [Topics/IntegerCache](Topics/IntegerCache) |
+| 2026-06-21 | 10 | Command Line Arguments in Java | [Topics/CommandLineArgs](Topics/CommandLineArgs) |
+| 2026-06-22 | 11 | Variables in Java | [Topics/Variables](Topics/Variables) |
+| 2026-06-23 | 12 | Varargs in Java | [Topics/Varargs](Topics/Varargs) |
+| 2026-06-29 | 13 | String in Java - Immutability, String Pool and Key Methods | [Topics/Strings/String](Topics/Strings/String) |
+| 2026-06-29 | 14 | StringBuilder in Java - Mutable Strings and Performance | [Topics/Strings/StringBuilder](Topics/Strings/StringBuilder) |
+| 2026-06-30 | 15 | StringBuffer in Java - Thread-Safe Mutable Strings | [Topics/Strings/StringBuffer](Topics/Strings/StringBuffer) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -244,6 +247,27 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - A varargs method can be called with zero arguments, one argument, many arguments, or by passing an existing array directly.
 - Overloading with varargs can cause ambiguity — the compiler may fail to resolve which method to call. Avoid it unless necessary.
 - Prefer varargs over passing explicit arrays when the number of arguments is genuinely variable and unknown at design time.
+
+### Day 13 — String in Java - Immutability, String Pool and Key Methods
+- String is immutable in Java — once created, its value cannot be changed; every modification (concat, replace, etc.) produces a new String object.
+- Two creation methods: literal ("hello") stores the string in the String Pool (Heap); new String("hello") always creates a new Heap object outside the pool.
+- String Pool: JVM deduplicates literals — "abc" == "abc" is true (same pool reference), but new String("abc") == new String("abc") is false (different Heap objects).
+- Always use .equals() for value comparison, never ==. Use String.intern() to explicitly move a heap string into the pool and enable reference equality.
+- Key methods: length(), charAt(i), substring(start, end), indexOf(), contains(), replace(), toUpperCase(), toLowerCase(), trim(), strip(), split(), startsWith(), endsWith(), isEmpty(), isBlank().
+
+### Day 14 — StringBuilder in Java - Mutable Strings and Performance
+- StringBuilder is mutable — it modifies the character sequence in place without creating new objects, making it memory-efficient for repeated changes.
+- Not thread-safe (no synchronization), but significantly faster than StringBuffer in single-threaded applications.
+- Key methods: append(), insert(index, str), delete(start, end), deleteCharAt(i), replace(start, end, str), reverse(), charAt(i), setCharAt(i, ch), length(), capacity(), toString().
+- Internally backed by a resizable char[] array with a default initial capacity of 16; auto-grows when exceeded using: newCapacity = (oldCapacity * 2) + 2.
+- Prefer StringBuilder over String + in loops — repeated String concatenation creates O(n) intermediate objects and runs in O(n²) time; StringBuilder runs in O(n).
+
+### Day 15 — StringBuffer in Java - Thread-Safe Mutable Strings
+- StringBuffer is mutable and thread-safe — all its methods are synchronized, preventing race conditions when accessed concurrently by multiple threads.
+- API is nearly identical to StringBuilder: append(), insert(), delete(), replace(), reverse(), charAt(), length(), toString() — same contract, different thread-safety guarantee.
+- Slower than StringBuilder due to synchronization overhead — use StringBuffer only when the buffer is genuinely shared across threads.
+- Decision rule: no modification needed → String; single-threaded modification → StringBuilder (faster); multi-threaded modification → StringBuffer (safe).
+- Both StringBuilder and StringBuffer default to an initial capacity of 16 and share the same growth strategy: newCapacity = (oldCapacity * 2) + 2.
 <!-- KEY_CONCEPTS_END -->
 
 ---
@@ -289,6 +313,21 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 
 ### Day 12 — Varargs in Java
 - [Variable Arguments in Java](https://www.geeksforgeeks.org/java/variable-arguments-varargs-in-java/)
+
+### Day 13 — String in Java - Immutability, String Pool and Key Methods
+- [Strings in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/strings-in-java/)
+- [String class in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/string-class-in-java/)
+- [Java String Pool - GeeksforGeeks](https://www.geeksforgeeks.org/java/java-string-pool/)
+- [String (Java 17 Official Docs)](https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/String.html)
+
+### Day 14 — StringBuilder in Java - Mutable Strings and Performance
+- [StringBuilder class in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/stringbuilder-class-in-java-with-examples/)
+- [StringBuilder (Java 17 Official Docs)](https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringBuilder.html)
+
+### Day 15 — StringBuffer in Java - Thread-Safe Mutable Strings
+- [StringBuffer class in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/stringbuffer-class-in-java/)
+- [String vs StringBuilder vs StringBuffer in Java](https://www.geeksforgeeks.org/java/string-vs-stringbuilder-vs-stringbuffer-in-java/)
+- [StringBuffer (Java 17 Official Docs)](https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringBuffer.html)
 <!-- RESOURCES_END -->
 
 ---
