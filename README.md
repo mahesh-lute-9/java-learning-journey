@@ -357,6 +357,19 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 
 ---
 
+## 🔗 Interview Prep Roadmap
+
+This repo covers Core Java foundations — from basics to JVM internals.
+
+For the full structured interview prep roadmap built on top of this foundation 
+(SQL & DBMS, DSA, Spring Boot, System Design) — tracked with daily logs and 
+problem solutions — see:
+
+👉 **[backend-dev-prep](https://github.com/mahesh-lute-9/backend-dev-prep)** — 
+Java Backend Developer Prep for FAANG/product companies
+
+---
+
 ## 🤝 Connect With Me
 
 - GitHub: [@mahesh-lute-9](https://github.com/mahesh-lute-9)
