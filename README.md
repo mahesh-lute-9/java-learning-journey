@@ -105,6 +105,7 @@ The YAML is the source of truth. The README is always current.
 │       ├── String/
 │       ├── StringBuilder/
 │       ├── StringBuffer/
+|       ├── StringPool/
 │       └── notes.md
 │
 ├── Assignments/             # Topic-wise assignments and exercises
