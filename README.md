@@ -11,7 +11,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-06-29 23:38 UTC · 15 day(s) logged_
+_Last updated: 2026-07-02 20:15 UTC · 17 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -166,6 +166,8 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 | 2026-06-29 | 13 | String in Java - Immutability, String Pool and Key Methods | [Topics/Strings/String](Topics/Strings/String) |
 | 2026-06-29 | 14 | StringBuilder in Java - Mutable Strings and Performance | [Topics/Strings/StringBuilder](Topics/Strings/StringBuilder) |
 | 2026-06-30 | 15 | StringBuffer in Java - Thread-Safe Mutable Strings | [Topics/Strings/StringBuffer](Topics/Strings/StringBuffer) |
+| 2026-07-01 | 16 | String Pool - Interview-Oriented Programs and JVM Memory Diagrams | [Topics/Strings/StringPool](Topics/Strings/StringPool) |
+| 2026-07-02 | 17 | StringTokenizer in Java - Parsing and Comparison with split() | [Topics/Strings/StringTokenizer](Topics/Strings/StringTokenizer) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -229,9 +231,7 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 ### Day 9 — IntegerCache and Wrapper Classes in Java
 - Autoboxing (int → Integer) internally calls Integer.valueOf(), which reuses cached objects for -128 to 127.
 - new Integer(x) always creates a new object, bypassing the cache. Deprecated since Java 9 — prefer Integer.valueOf().
-- Only Integer, Byte, Short, Long, and Character have caching. Float and Double do not.
 - The Integer cache upper bound can be raised via JVM flag: -XX:AutoBoxCacheMax=<size>. The lower bound (-128) is fixed.
-- Unboxing a null wrapper (e.g., Integer i = null; int x = i;) throws a NullPointerException — a common autoboxing trap.
 
 ### Day 10 — Command Line Arguments in Java
 - args[] in main(String[] args) is a plain String array — every argument arrives as a String regardless of its intended type.
@@ -274,6 +274,20 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - Slower than StringBuilder due to synchronization overhead — use StringBuffer only when the buffer is genuinely shared across threads.
 - Decision rule: no modification needed → String; single-threaded modification → StringBuilder (faster); multi-threaded modification → StringBuffer (safe).
 - Both StringBuilder and StringBuffer default to an initial capacity of 16 and share the same growth strategy: newCapacity = (oldCapacity * 2) + 2.
+
+### Day 16 — String Pool - Interview-Oriented Programs and JVM Memory Diagrams
+- String literals are placed in the String Pool (part of the Heap since Java 7); new String() always creates a separate object outside the pool, even for identical content.
+- == compares object references, .equals() compares actual character content — pool reference equality only holds when both sides are literals (or interned).
+- Compile-time concatenation of literals (e.g. "a" + "b") is folded by the compiler into a single pooled constant; runtime concatenation (using variables) always produces a new Heap object, regardless of whether an identical literal exists in the pool.
+- Object-creation counting questions (a common interview trap) require tracking literals vs new String() vs concatenation separately, since each follows different pooling rules.
+- The String Pool is a deduplicated cache within Heap memory, distinct from general object allocation — this separation is what interview questions on 'how many objects were created' are testing.
+
+### Day 17 — StringTokenizer in Java - Parsing and Comparison with split()
+- StringTokenizer breaks a string into tokens using a set of delimiter characters (default: whitespace); nextToken() retrieves tokens one at a time, countTokens() reports how many remain.
+- Custom delimiters are passed as a String of individual characters to the constructor (e.g. new StringTokenizer(str, ",;")) — each character is treated as a separate possible delimiter, not as a multi-character substring.
+- The returnDelims constructor flag causes delimiter characters to be returned as tokens themselves, useful when the delimiter positions matter for parsing.
+- StringTokenizer is a legacy class that predates the Collections Framework — String.split() (regex-based) and Scanner are the generally recommended modern alternatives for new code.
+- Practical parsing use cases include splitting CSV rows and log file lines into fields, though split() is preferred in most real-world code for its regex flexibility.
 <!-- KEY_CONCEPTS_END -->
 
 ---
@@ -308,7 +322,6 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 - [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
 
 ### Day 9 — IntegerCache and Wrapper Classes in Java
-- [Wrapper Classes in Java](https://www.geeksforgeeks.org/java/wrapper-classes-java/)
 - [Integer Cache in Java](https://www.geeksforgeeks.org/java/java-integer-cache/)
 
 ### Day 10 — Command Line Arguments in Java
@@ -334,6 +347,14 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 - [StringBuffer class in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/stringbuffer-class-in-java/)
 - [String vs StringBuilder vs StringBuffer in Java](https://www.geeksforgeeks.org/java/string-vs-stringbuilder-vs-stringbuffer-in-java/)
 - [StringBuffer (Java 17 Official Docs)](https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringBuffer.html)
+
+### Day 16 — String Pool - Interview-Oriented Programs and JVM Memory Diagrams
+- [Java String Pool - GeeksforGeeks](https://www.geeksforgeeks.org/java/java-string-pool/)
+- [String class in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/string-class-in-java/)
+
+### Day 17 — StringTokenizer in Java - Parsing and Comparison with split()
+- [StringTokenizer Class in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/stringtokenizer-class-in-java/)
+- [StringTokenizer (Java 17 Official Docs)](https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringTokenizer.html)
 <!-- RESOURCES_END -->
 
 ---
