@@ -229,7 +229,7 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - Arrays.binarySearch() returns a negative value if the element is not found — don't treat it as an index without checking.
 - Arrays are passed by reference — modifications inside a method affect the original array. Primitives are passed by value.
 
-### Day 9 — IntegerCache and Wrapper Classes in Java
+### Day 9 — IntegerCache in Java
 - Autoboxing (int → Integer) internally calls Integer.valueOf(), which reuses cached objects for -128 to 127.
 - new Integer(x) always creates a new object, bypassing the cache. Deprecated since Java 9 — prefer Integer.valueOf().
 - The Integer cache upper bound can be raised via JVM flag: -XX:AutoBoxCacheMax=<size>. The lower bound (-128) is fixed.
@@ -322,7 +322,7 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 ### Day 8 — Arrays in Java - Practice and Scenarios
 - [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
 
-### Day 9 — IntegerCache and Wrapper Classes in Java
+### Day 9 — IntegerCache in Java
 - [Integer Cache in Java](https://www.geeksforgeeks.org/java/java-integer-cache/)
 
 ### Day 10 — Command Line Arguments in Java
