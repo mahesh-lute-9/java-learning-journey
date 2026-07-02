@@ -11,7 +11,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-07-02 20:15 UTC · 17 day(s) logged_
+_Last updated: 2026-07-02 · 17 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -69,7 +69,7 @@ The depth here is intentional, and it's placement-driven.
 
 **Legend:** ✅ Completed · 🟢 In Progress · ⚪ Upcoming · 🔍 Exploring early
 
-> **Note:** Phase 1 is complete (Days 1–15), finishing with the full Strings topic including String internals, StringBuilder, and StringBuffer. Phase 6 (JVM Internals) has been partially explored out-of-order — understanding how the JVM works early makes everything else click faster. This roadmap tracks high-level phases; the Progress Log below captures daily detail.
+> **Note:** Phase 1 is complete (Days 1–17), finishing with the full Strings topic — String internals, StringBuilder, StringBuffer, String Pool, and StringTokenizer. Phase 6 (JVM Internals) has been partially explored out-of-order — understanding how the JVM works early makes everything else click faster. This roadmap tracks high-level phases; the Progress Log below captures daily detail.
 
 ---
 
@@ -106,6 +106,7 @@ The YAML is the source of truth. The README is always current.
 │       ├── StringBuilder/
 │       ├── StringBuffer/
 |       ├── StringPool/
+|       ├── StringTokenizer/
 │       └── notes.md
 │
 ├── Assignments/             # Topic-wise assignments and exercises
@@ -159,7 +160,7 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 | 2026-06-17 | 6 | Input Output in Java using Scanner and BufferedReader | [Topics/IO](Topics/IO) |
 | 2026-06-18 | 7 | Arrays in Java | [Topics/Arrays](Topics/Arrays) |
 | 2026-06-19 | 8 | Arrays in Java - Practice and Scenarios | [Topics/Arrays](Topics/Arrays) |
-| 2026-06-20 | 9 | IntegerCache and Wrapper Classes in Java | [Topics/IntegerCache](Topics/IntegerCache) |
+| 2026-06-20 | 9 | IntegerCache in Java | [Topics/IntegerCache](Topics/IntegerCache) |
 | 2026-06-21 | 10 | Command Line Arguments in Java | [Topics/CommandLineArgs](Topics/CommandLineArgs) |
 | 2026-06-22 | 11 | Variables in Java | [Topics/Variables](Topics/Variables) |
 | 2026-06-23 | 12 | Varargs in Java | [Topics/Varargs](Topics/Varargs) |
@@ -280,7 +281,7 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - == compares object references, .equals() compares actual character content — pool reference equality only holds when both sides are literals (or interned).
 - Compile-time concatenation of literals (e.g. "a" + "b") is folded by the compiler into a single pooled constant; runtime concatenation (using variables) always produces a new Heap object, regardless of whether an identical literal exists in the pool.
 - Object-creation counting questions (a common interview trap) require tracking literals vs new String() vs concatenation separately, since each follows different pooling rules.
-- The String Pool is a deduplicated cache within Heap memory, distinct from general object allocation — this separation is what interview questions on 'how many objects were created' are testing.
+- The String Pool is a deduplicated cache within Heap memory, distinct from general object allocation — this separation is what interview questions on "how many objects were created" are testing.
 
 ### Day 17 — StringTokenizer in Java - Parsing and Comparison with split()
 - StringTokenizer breaks a string into tokens using a set of delimiter characters (default: whitespace); nextToken() retrieves tokens one at a time, countTokens() reports how many remain.
