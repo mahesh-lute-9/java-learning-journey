@@ -127,12 +127,8 @@
   key_concepts:
     - "Autoboxing (int → Integer) internally calls Integer.valueOf(), which reuses cached objects for -128 to 127."
     - "new Integer(x) always creates a new object, bypassing the cache. Deprecated since Java 9 — prefer Integer.valueOf()."
-    - "Only Integer, Byte, Short, Long, and Character have caching. Float and Double do not."
     - "The Integer cache upper bound can be raised via JVM flag: -XX:AutoBoxCacheMax=<size>. The lower bound (-128) is fixed."
-    - "Unboxing a null wrapper (e.g., Integer i = null; int x = i;) throws a NullPointerException — a common autoboxing trap."
   resources:
-    - title: "Wrapper Classes in Java"
-      url: "https://www.geeksforgeeks.org/java/wrapper-classes-java/"
     - title: "Integer Cache in Java"
       url: "https://www.geeksforgeeks.org/java/java-integer-cache/"
 
@@ -232,11 +228,43 @@
     - title: "StringBuffer (Java 17 Official Docs)"
       url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringBuffer.html"
 
+- day: 16
+  date: "2026-07-01"
+  topic: "String Pool - Interview-Oriented Programs and JVM Memory Diagrams"
+  folder: "Topics/Strings/StringPool"
+  key_concepts:
+    - "String literals are placed in the String Pool (part of the Heap since Java 7); new String() always creates a separate object outside the pool, even for identical content."
+    - "== compares object references, .equals() compares actual character content — pool reference equality only holds when both sides are literals (or interned)."
+    - "Compile-time concatenation of literals (e.g. \"a\" + \"b\") is folded by the compiler into a single pooled constant; runtime concatenation (using variables) always produces a new Heap object, regardless of whether an identical literal exists in the pool."
+    - "Object-creation counting questions (a common interview trap) require tracking literals vs new String() vs concatenation separately, since each follows different pooling rules."
+    - "The String Pool is a deduplicated cache within Heap memory, distinct from general object allocation — this separation is what interview questions on 'how many objects were created' are testing."
+  resources:
+    - title: "Java String Pool - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/java-string-pool/"
+    - title: "String class in Java - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/string-class-in-java/"
+
+- day: 17
+  date: "2026-07-02"
+  topic: "StringTokenizer in Java - Parsing and Comparison with split()"
+  folder: "Topics/Strings/StringTokenizer"
+  key_concepts:
+    - "StringTokenizer breaks a string into tokens using a set of delimiter characters (default: whitespace); nextToken() retrieves tokens one at a time, countTokens() reports how many remain."
+    - "Custom delimiters are passed as a String of individual characters to the constructor (e.g. new StringTokenizer(str, \",;\")) — each character is treated as a separate possible delimiter, not as a multi-character substring."
+    - "The returnDelims constructor flag causes delimiter characters to be returned as tokens themselves, useful when the delimiter positions matter for parsing."
+    - "StringTokenizer is a legacy class that predates the Collections Framework — String.split() (regex-based) and Scanner are the generally recommended modern alternatives for new code."
+    - "Practical parsing use cases include splitting CSV rows and log file lines into fields, though split() is preferred in most real-world code for its regex flexibility."
+  resources:
+    - title: "StringTokenizer Class in Java - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/stringtokenizer-class-in-java/"
+    - title: "StringTokenizer (Java 17 Official Docs)"
+      url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringTokenizer.html"
+
 # -----------------------------------------------------------------------
 # Add new entries below this line as you progress.
 # Template:
 #
-# - day: 16
+# - day: 18
 #   date: "YYYY-MM-DD"
 #   topic: "Topic Name"
 #   folder: "Topics/FolderName"
