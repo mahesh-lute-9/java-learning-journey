@@ -388,7 +388,7 @@ For the full structured interview prep roadmap built on top of this foundation
 (SQL & DBMS, DSA, Spring Boot, System Design) — tracked with daily logs and 
 problem solutions — see:
 
-👉 **[backend-dev-prep](https://github.com/mahesh-lute-9/backend-dev-prep)** — 
+👉 **[backend-dev-prep](https://github.com/mahesh-lute-9/Java-Backend-Development-Prep)** — 
 Java Backend Developer Prep for FAANG/product companies
 
 ---
