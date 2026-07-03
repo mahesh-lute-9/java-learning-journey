@@ -1,7 +1,6 @@
 # ☕ Java Learning Journey — From Basics to Advanced (with Internals)
 
 ![Java](https://img.shields.io/badge/Language-Java-orange?logo=openjdk)
-![JDK](https://img.shields.io/badge/JDK-17%2B-blue?logo=openjdk)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-brightgreen)
 ![Last Commit](https://img.shields.io/github/last-commit/mahesh-lute-9/java-learning-journey)
 ![Repo Size](https://img.shields.io/github/repo-size/mahesh-lute-9/java-learning-journey)
