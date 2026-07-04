@@ -363,7 +363,7 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 
 | Tool | Purpose |
 |------|---------|
-| Java (JDK 17+) | Primary language |
+| Java | Primary language |
 | IntelliJ IDEA / Eclipse / VS Code | IDE |
 | Git & GitHub | Version control & hosting |
 | GitHub Actions | Auto-regenerates README from `progress.yml` on push |
