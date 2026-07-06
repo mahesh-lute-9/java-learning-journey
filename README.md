@@ -10,7 +10,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-07-02 · 17 day(s) logged_
+_Last updated: 2026-07-06 10:43 UTC · 18 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -159,7 +159,7 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 | 2026-06-17 | 6 | Input Output in Java using Scanner and BufferedReader | [Topics/IO](Topics/IO) |
 | 2026-06-18 | 7 | Arrays in Java | [Topics/Arrays](Topics/Arrays) |
 | 2026-06-19 | 8 | Arrays in Java - Practice and Scenarios | [Topics/Arrays](Topics/Arrays) |
-| 2026-06-20 | 9 | IntegerCache in Java | [Topics/IntegerCache](Topics/IntegerCache) |
+| 2026-06-20 | 9 | IntegerCache and Wrapper Classes in Java | [Topics/IntegerCache](Topics/IntegerCache) |
 | 2026-06-21 | 10 | Command Line Arguments in Java | [Topics/CommandLineArgs](Topics/CommandLineArgs) |
 | 2026-06-22 | 11 | Variables in Java | [Topics/Variables](Topics/Variables) |
 | 2026-06-23 | 12 | Varargs in Java | [Topics/Varargs](Topics/Varargs) |
@@ -168,6 +168,7 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 | 2026-06-30 | 15 | StringBuffer in Java - Thread-Safe Mutable Strings | [Topics/Strings/StringBuffer](Topics/Strings/StringBuffer) |
 | 2026-07-01 | 16 | String Pool - Interview-Oriented Programs and JVM Memory Diagrams | [Topics/Strings/StringPool](Topics/Strings/StringPool) |
 | 2026-07-02 | 17 | StringTokenizer in Java - Parsing and Comparison with split() | [Topics/Strings/StringTokenizer](Topics/Strings/StringTokenizer) |
+| 2026-07-05 | 18 | Wrapper Classes in Java - Autoboxing, Unboxing and Interview Concepts | [Topics/WrapperClasses](Topics/WrapperClasses) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -228,7 +229,7 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - Arrays.binarySearch() returns a negative value if the element is not found — don't treat it as an index without checking.
 - Arrays are passed by reference — modifications inside a method affect the original array. Primitives are passed by value.
 
-### Day 9 — IntegerCache in Java
+### Day 9 — IntegerCache and Wrapper Classes in Java
 - Autoboxing (int → Integer) internally calls Integer.valueOf(), which reuses cached objects for -128 to 127.
 - new Integer(x) always creates a new object, bypassing the cache. Deprecated since Java 9 — prefer Integer.valueOf().
 - The Integer cache upper bound can be raised via JVM flag: -XX:AutoBoxCacheMax=<size>. The lower bound (-128) is fixed.
@@ -280,7 +281,7 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - == compares object references, .equals() compares actual character content — pool reference equality only holds when both sides are literals (or interned).
 - Compile-time concatenation of literals (e.g. "a" + "b") is folded by the compiler into a single pooled constant; runtime concatenation (using variables) always produces a new Heap object, regardless of whether an identical literal exists in the pool.
 - Object-creation counting questions (a common interview trap) require tracking literals vs new String() vs concatenation separately, since each follows different pooling rules.
-- The String Pool is a deduplicated cache within Heap memory, distinct from general object allocation — this separation is what interview questions on "how many objects were created" are testing.
+- The String Pool is a deduplicated cache within Heap memory, distinct from general object allocation — this separation is what interview questions on 'how many objects were created' are testing.
 
 ### Day 17 — StringTokenizer in Java - Parsing and Comparison with split()
 - StringTokenizer breaks a string into tokens using a set of delimiter characters (default: whitespace); nextToken() retrieves tokens one at a time, countTokens() reports how many remain.
@@ -288,6 +289,14 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - The returnDelims constructor flag causes delimiter characters to be returned as tokens themselves, useful when the delimiter positions matter for parsing.
 - StringTokenizer is a legacy class that predates the Collections Framework — String.split() (regex-based) and Scanner are the generally recommended modern alternatives for new code.
 - Practical parsing use cases include splitting CSV rows and log file lines into fields, though split() is preferred in most real-world code for its regex flexibility.
+
+### Day 18 — Wrapper Classes in Java - Autoboxing, Unboxing and Interview Concepts
+- Wrapper classes provide an object representation for each of the 8 primitives, letting them be used in Collections, Generics, and anywhere an Object is required.
+- Three ways to create wrapper objects: deprecated constructors (new Integer(5)), valueOf() (preferred, benefits from caching), and autoboxing (compiler-inserted conversion).
+- Autoboxing converts primitive to wrapper automatically (int → Integer via valueOf()); unboxing converts wrapper back to primitive (Integer → int via intValue()).
+- parseX() methods (parseInt(), parseDouble(), etc.) return primitives, while valueOf() methods return wrapper objects — a common interview distinction.
+- Always use .equals() to compare wrapper objects, never == (reference equality only holds for cached values); unboxing a null wrapper throws NullPointerException.
+- Deliberately scoped out IntegerCache internals and JVM caching mechanics — those are covered separately in the dedicated IntegerCache module (Day 9).
 <!-- KEY_CONCEPTS_END -->
 
 ---
@@ -321,7 +330,7 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 ### Day 8 — Arrays in Java - Practice and Scenarios
 - [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
 
-### Day 9 — IntegerCache in Java
+### Day 9 — IntegerCache and Wrapper Classes in Java
 - [Integer Cache in Java](https://www.geeksforgeeks.org/java/java-integer-cache/)
 
 ### Day 10 — Command Line Arguments in Java
@@ -355,6 +364,9 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 ### Day 17 — StringTokenizer in Java - Parsing and Comparison with split()
 - [StringTokenizer Class in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/stringtokenizer-class-in-java/)
 - [StringTokenizer (Java 17 Official Docs)](https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringTokenizer.html)
+
+### Day 18 — Wrapper Classes in Java - Autoboxing, Unboxing and Interview Concepts
+- [Wrapper Classes in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/wrapper-classes-in-java/)
 <!-- RESOURCES_END -->
 
 ---
