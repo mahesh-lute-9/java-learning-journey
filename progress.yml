@@ -260,11 +260,26 @@
     - title: "StringTokenizer (Java 17 Official Docs)"
       url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringTokenizer.html"
 
+- day: 18
+  date: "2026-07-05"
+  topic: "Wrapper Classes in Java - Autoboxing, Unboxing and Interview Concepts"
+  folder: "Topics/WrapperClasses"
+  key_concepts:
+    - "Wrapper classes provide an object representation for each of the 8 primitives, letting them be used in Collections, Generics, and anywhere an Object is required."
+    - "Three ways to create wrapper objects: deprecated constructors (new Integer(5)), valueOf() (preferred, benefits from caching), and autoboxing (compiler-inserted conversion)."
+    - "Autoboxing converts primitive to wrapper automatically (int → Integer via valueOf()); unboxing converts wrapper back to primitive (Integer → int via intValue())."
+    - "parseX() methods (parseInt(), parseDouble(), etc.) return primitives, while valueOf() methods return wrapper objects — a common interview distinction."
+    - "Always use .equals() to compare wrapper objects, never == (reference equality only holds for cached values); unboxing a null wrapper throws NullPointerException."
+    - "Deliberately scoped out IntegerCache internals and JVM caching mechanics — those are covered separately in the dedicated IntegerCache module (Day 9)."
+  resources:
+    - title: "Wrapper Classes in Java - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/wrapper-classes-in-java/"
+
 # -----------------------------------------------------------------------
 # Add new entries below this line as you progress.
 # Template:
 #
-# - day: 18
+# - day: 19
 #   date: "YYYY-MM-DD"
 #   topic: "Topic Name"
 #   folder: "Topics/FolderName"
