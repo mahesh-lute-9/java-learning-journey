@@ -107,6 +107,8 @@ The YAML is the source of truth. The README is always current.
 |       ├── StringPool/
 |       ├── StringTokenizer/
 │       └── notes.md
+│   |
+│   └── WrapperClasses/
 │
 ├── Assignments/             # Topic-wise assignments and exercises
 │   ├── Basics/
