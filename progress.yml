@@ -275,11 +275,26 @@
     - title: "Wrapper Classes in Java - GeeksforGeeks"
       url: "https://www.geeksforgeeks.org/java/wrapper-classes-in-java/"
 
+- day: 19
+  date: "2026-07-07"
+  topic: "Classes and Objects in Java - Foundations of OOP"
+  folder: "Topics/OOP/ClassesAndObjects"
+  key_concepts:
+    - "A class is a blueprint (defines fields and methods); an object is a runtime instance of that class, created using the new keyword."
+    - "Objects are created on the Heap; the reference variable pointing to the object lives on the Stack."
+    - "A class can have instance variables (state, unique per object) and instance methods (behavior, shared across objects but operating on that object's state)."
+    - "Object creation involves three steps: declaration (Type ref), instantiation (new Type()), and initialization (constructor runs to set initial state)."
+    - "Multiple objects of the same class are independent — changing one object's instance variables does not affect another object's copy."
+    - "A .java file can have multiple classes, but only one can be public, and the public class name must match the filename."
+  resources:
+    - title: "Classes and Objects in Java - GeeksforGeeks"
+      url: "https://www.geeksforgeeks.org/java/classes-objects-java/"
+
 # -----------------------------------------------------------------------
 # Add new entries below this line as you progress.
 # Template:
 #
-# - day: 19
+# - day: 20
 #   date: "YYYY-MM-DD"
 #   topic: "Topic Name"
 #   folder: "Topics/FolderName"
