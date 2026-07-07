@@ -58,8 +58,8 @@ The depth here is intentional, and it's placement-driven.
 | Phase | Topics | Status |
 |-------|--------|--------|
 | **1. Java Basics** | Syntax, variables, data types, operators, control flow, IO, arrays, strings | ✅ Completed |
-| **2. Object-Oriented Programming** | Classes & objects, constructors, inheritance, polymorphism, abstraction, encapsulation, interfaces vs abstract classes | ⚪ Upcoming |
-| **3. Core APIs** | Collections Framework, Generics, Exception handling, Wrapper classes, String pool, I/O & NIO | ⚪ Upcoming |
+| **2. Object-Oriented Programming** | Classes & objects, constructors, inheritance, polymorphism, abstraction, encapsulation, interfaces vs abstract classes | 🟢 In Progress (Day 19) |
+| **3. Core APIs** | Collections Framework, Generics, Exception handling, Wrapper classes, String pool, I/O & NIO | 🟢 In Progress (Wrapper Classes & String Pool done) |
 | **4. Java 8+ Features** | Lambda expressions, Functional interfaces, Streams API, Optional, Method references, Date/Time API | ⚪ Upcoming |
 | **5. Multithreading & Concurrency** | Threads, Runnable, Executor framework, synchronization, locks, concurrent collections | ⚪ Upcoming |
 | **6. JVM Internals** | Class loading mechanism, bytecode basics, JVM memory model (Stack, Heap, Metaspace), Garbage Collection algorithms, JIT compiler | 🔍 Early Exploration (Days 2 & 9) |
@@ -68,7 +68,7 @@ The depth here is intentional, and it's placement-driven.
 
 **Legend:** ✅ Completed · 🟢 In Progress · ⚪ Upcoming · 🔍 Exploring early
 
-> **Note:** Phase 1 is complete (Days 1–17), finishing with the full Strings topic — String internals, StringBuilder, StringBuffer, String Pool, and StringTokenizer. Phase 6 (JVM Internals) has been partially explored out-of-order — understanding how the JVM works early makes everything else click faster. This roadmap tracks high-level phases; the Progress Log below captures daily detail.
+> **Note:** Phase 1 is complete (Days 1–12), and Strings + Wrapper Classes from Phase 3 were tackled early (Days 13–18) since string internals came up naturally alongside JVM exploration. Phase 2 (OOP) began on Day 19 with Classes & Objects, and will run through constructors, inheritance, polymorphism, abstraction, interfaces, encapsulation, and association/aggregation/composition before returning to finish the rest of Phase 3 (Collections, Generics, Exception Handling). Phase 6 (JVM Internals) has been partially explored out-of-order — understanding how the JVM works early makes everything else click faster. This roadmap tracks high-level phases; the Progress Log below captures daily detail.
 
 ---
 
@@ -100,15 +100,18 @@ The YAML is the source of truth. The README is always current.
 │   ├── CommandLineArgs/
 │   ├── Variables/
 │   ├── Varargs/
-│   └── Strings/
-│       ├── String/
-│       ├── StringBuilder/
-│       ├── StringBuffer/
-|       ├── StringPool/
-|       ├── StringTokenizer/
-│       └── notes.md
-│   |
-│   └── WrapperClasses/
+│   ├── Strings/
+│   │   ├── String/
+│   │   ├── StringBuilder/
+│   │   ├── StringBuffer/
+│   │   ├── StringPool/
+│   │   ├── StringTokenizer/
+│   │   └── notes.md
+│   │
+│   ├── WrapperClasses/
+│   │
+│   └── OOP/                 # Phase 2 — Object-Oriented Programming
+│       └── ClassesAndObjects/
 │
 ├── Assignments/             # Topic-wise assignments and exercises
 │   ├── Basics/
