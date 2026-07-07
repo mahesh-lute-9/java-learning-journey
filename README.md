@@ -10,7 +10,7 @@
 > 📚 A personal, day-by-day log of my journey learning **Java — from the absolute basics to advanced concepts and JVM internals**. This repo is both my practice notebook and a reference guide for anyone walking the same path.
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-07-06 10:43 UTC · 18 day(s) logged_
+_Last updated: 2026-07-07 10:14 UTC · 19 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -171,6 +171,7 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 | 2026-07-01 | 16 | String Pool - Interview-Oriented Programs and JVM Memory Diagrams | [Topics/Strings/StringPool](Topics/Strings/StringPool) |
 | 2026-07-02 | 17 | StringTokenizer in Java - Parsing and Comparison with split() | [Topics/Strings/StringTokenizer](Topics/Strings/StringTokenizer) |
 | 2026-07-05 | 18 | Wrapper Classes in Java - Autoboxing, Unboxing and Interview Concepts | [Topics/WrapperClasses](Topics/WrapperClasses) |
+| 2026-07-07 | 19 | Classes and Objects in Java - Foundations of OOP | [Topics/OOP/ClassesAndObjects](Topics/OOP/ClassesAndObjects) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -299,6 +300,14 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 - parseX() methods (parseInt(), parseDouble(), etc.) return primitives, while valueOf() methods return wrapper objects — a common interview distinction.
 - Always use .equals() to compare wrapper objects, never == (reference equality only holds for cached values); unboxing a null wrapper throws NullPointerException.
 - Deliberately scoped out IntegerCache internals and JVM caching mechanics — those are covered separately in the dedicated IntegerCache module (Day 9).
+
+### Day 19 — Classes and Objects in Java - Foundations of OOP
+- A class is a blueprint (defines fields and methods); an object is a runtime instance of that class, created using the new keyword.
+- Objects are created on the Heap; the reference variable pointing to the object lives on the Stack.
+- A class can have instance variables (state, unique per object) and instance methods (behavior, shared across objects but operating on that object's state).
+- Object creation involves three steps: declaration (Type ref), instantiation (new Type()), and initialization (constructor runs to set initial state).
+- Multiple objects of the same class are independent — changing one object's instance variables does not affect another object's copy.
+- A .java file can have multiple classes, but only one can be public, and the public class name must match the filename.
 <!-- KEY_CONCEPTS_END -->
 
 ---
@@ -369,6 +378,9 @@ _Auto-generated from the `resources` field of each entry in `progress.yml` — a
 
 ### Day 18 — Wrapper Classes in Java - Autoboxing, Unboxing and Interview Concepts
 - [Wrapper Classes in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/wrapper-classes-in-java/)
+
+### Day 19 — Classes and Objects in Java - Foundations of OOP
+- [Classes and Objects in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/classes-objects-java/)
 <!-- RESOURCES_END -->
 
 ---
