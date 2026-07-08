@@ -179,7 +179,7 @@ _Auto-generated from `progress.yml` by a GitHub Actions workflow. To add a sessi
 
 ---
 
-## 📝 Notes & Key Takeaways
+## Notes & Key Takeaways 📝
 
 _Auto-generated from the `notes` field of each entry in `progress.yml`._
 
@@ -315,7 +315,7 @@ _Auto-generated from the `notes` field of each entry in `progress.yml`._
 
 ---
 
-## 🔗 References & Resources
+## References & Resources 🔗
 
 _Auto-generated from the `resources` field of each entry in `progress.yml` — articles, docs, and videos used while learning each topic._
 
@@ -421,7 +421,7 @@ Java Backend Developer Prep for FAANG/product companies
 
 ---
 
-## 🤝 Connect With Me
+## Connect With Me 🤝
 
 - GitHub: [@mahesh-lute-9](https://github.com/mahesh-lute-9)
 - LinkedIn: [Mahesh Lute](https://www.linkedin.com/in/mahesh-lute)
