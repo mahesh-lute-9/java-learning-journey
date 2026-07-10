@@ -948,3 +948,545 @@ This is one of Java's biggest strengths and the reason behind its famous slogan:
 > **Write Once, Run Anywhere (WORA).**
 
 We'll revisit this architecture in depth when studying the JVM.
+
+---
+
+# 1.6 Procedural Programming (POP)
+
+## Learning Objectives
+
+After completing this section, you will be able to:
+
+- Understand what Procedural Programming is.
+- Explain why Procedural Programming became popular.
+- Understand how programs are organized in POP.
+- Identify its advantages and disadvantages.
+- Explain why Procedural Programming became insufficient for large software systems.
+- Understand the transition toward Object-Oriented Programming.
+
+---
+
+# Introduction
+
+As computers became more powerful and High-Level Programming Languages emerged, software engineers no longer wanted to write programs as long sequences of machine instructions.
+
+Instead, they wanted to organize programs into **smaller reusable pieces**.
+
+This idea led to the birth of **Procedural Programming**.
+
+The word **Procedure** simply means:
+
+> A sequence of instructions that performs a specific task.
+
+In many programming languages, a procedure is also called a **function** or **method**.
+
+Rather than writing everything inside one huge program, developers began dividing programs into multiple procedures.
+
+This made software significantly easier to understand and maintain.
+
+---
+
+# What is Procedural Programming?
+
+**Procedural Programming (POP)** is a programming paradigm in which a program is divided into a collection of procedures (functions), where each procedure performs a specific task.
+
+Instead of focusing on **objects**, Procedural Programming focuses on **functions**.
+
+A program is viewed as a sequence of steps that manipulate data.
+
+The primary building blocks are:
+
+- Variables
+- Functions
+- Loops
+- Conditional Statements
+- Procedures
+
+---
+
+## Simple Example
+
+Imagine building a Banking Application.
+
+Instead of creating objects such as:
+
+```
+Customer
+
+BankAccount
+
+Transaction
+```
+
+Procedural Programming organizes the program like this:
+
+```
+main()
+
+↓
+
+createAccount()
+
+↓
+
+deposit()
+
+↓
+
+withdraw()
+
+↓
+
+calculateInterest()
+
+↓
+
+printStatement()
+```
+
+Every operation is represented by a function.
+
+---
+
+# Characteristics of Procedural Programming
+
+Procedural Programming has several defining characteristics.
+
+### 1. Function-Oriented
+
+The focus is on **functions**, not data.
+
+Example:
+
+```
+calculateSalary()
+
+generateReport()
+
+withdrawMoney()
+
+printInvoice()
+```
+
+The program revolves around what actions need to be performed.
+
+---
+
+### 2. Top-Down Design
+
+Large problems are broken into smaller functions.
+
+```
+Main Problem
+
+│
+
+├── Function A
+
+├── Function B
+
+├── Function C
+
+└── Function D
+```
+
+Each function solves a smaller part of the overall problem.
+
+---
+
+### 3. Shared Data
+
+Most procedures operate on the same shared data.
+
+Example:
+
+```c
+balance
+
+deposit()
+
+withdraw()
+
+calculateInterest()
+```
+
+Every function can modify the same variable.
+
+At first glance this seems convenient.
+
+Later we'll see why it becomes dangerous.
+
+---
+
+### 4. Sequential Execution
+
+Procedures generally execute in sequence.
+
+```
+Start
+
+↓
+
+Input
+
+↓
+
+Process
+
+↓
+
+Output
+
+↓
+
+Exit
+```
+
+The program follows a linear execution flow.
+
+---
+
+# Real-World Analogy
+
+Imagine a restaurant.
+
+Procedural Programming thinks like this:
+
+```
+Take Order
+
+↓
+
+Cook Food
+
+↓
+
+Prepare Bill
+
+↓
+
+Serve Food
+
+↓
+
+Collect Payment
+```
+
+Everything revolves around **tasks**.
+
+Object-Oriented Programming, on the other hand, thinks in terms of entities:
+
+```
+Customer
+
+Chef
+
+Waiter
+
+Kitchen
+
+Order
+
+Bill
+```
+
+Notice the difference.
+
+POP focuses on **actions**.
+
+OOP focuses on **objects**.
+
+---
+
+# Advantages of Procedural Programming
+
+Although Object-Oriented Programming is extremely popular today, Procedural Programming was revolutionary when it was introduced.
+
+It solved many problems of earlier programming styles.
+
+---
+
+## 1. Easy to Learn
+
+Programs consist mainly of:
+
+- Variables
+- Loops
+- Conditions
+- Functions
+
+This makes Procedural Programming ideal for beginners.
+
+---
+
+## 2. Faster Development
+
+Small applications can be developed quickly.
+
+Example:
+
+Calculator
+
+Student Grade System
+
+Temperature Converter
+
+Simple File Utility
+
+---
+
+## 3. Efficient Execution
+
+Procedural programs usually have low runtime overhead because execution follows a straightforward sequence of function calls.
+
+For many small utilities, this simplicity is an advantage.
+
+---
+
+## 4. Good for Algorithmic Problems
+
+Procedural Programming works very well when the main challenge is implementing an algorithm.
+
+Examples include:
+
+- Sorting
+- Searching
+- Mathematical computations
+- Matrix operations
+- Competitive Programming
+
+This is one reason why languages like C remain popular for systems programming and algorithm-heavy tasks.
+
+---
+
+# Disadvantages of Procedural Programming
+
+As software projects grew larger, developers began facing serious challenges.
+
+These limitations eventually led to the development of Object-Oriented Programming.
+
+Let's examine them carefully.
+
+---
+
+## 1. Data is Not Protected
+
+In Procedural Programming, data is often shared across many functions.
+
+```
+balance
+
+↓
+
+deposit()
+
+↓
+
+withdraw()
+
+↓
+
+calculateInterest()
+
+↓
+
+printBalance()
+```
+
+Every function can modify the same data.
+
+This increases the risk of accidental changes and bugs.
+
+---
+
+⚠️ **Problem**
+
+Suppose a programmer accidentally writes:
+
+```c
+balance = -100000;
+```
+
+Every function now operates on incorrect data.
+
+There is no mechanism to restrict access.
+
+This problem is addressed later in OOP through **Encapsulation**.
+
+---
+
+## 2. Difficult to Maintain Large Programs
+
+Imagine an application with:
+
+```
+5 Functions
+```
+
+Easy.
+
+Now imagine:
+
+```
+5,000 Functions
+```
+
+Questions arise:
+
+- Which function modifies a variable?
+- Which function calls another?
+- Where did the bug originate?
+
+As the number of procedures increases, understanding the codebase becomes much harder.
+
+---
+
+## 3. Tight Coupling
+
+Many functions depend on the same global variables.
+
+```
+Global Data
+
+↓
+
+Function A
+
+↓
+
+Function B
+
+↓
+
+Function C
+
+↓
+
+Function D
+```
+
+A small change in shared data can affect many unrelated parts of the program.
+
+This makes maintenance risky.
+
+---
+
+## 4. Code Reusability is Limited
+
+Functions can be reused to some extent.
+
+However, they often depend on global variables or specific program structures.
+
+This makes reusing them in another project difficult.
+
+---
+
+## 5. Poor Real-World Modeling
+
+Suppose you're building an E-commerce application.
+
+The real world contains:
+
+- Customer
+- Product
+- Order
+- Payment
+- Delivery
+
+Procedural Programming instead asks:
+
+```
+createCustomer()
+
+deleteCustomer()
+
+updateCustomer()
+
+payBill()
+
+generateInvoice()
+
+shipProduct()
+```
+
+The software revolves around actions rather than the entities involved.
+
+As applications become more complex, this mismatch between software structure and the real world becomes increasingly problematic.
+
+---
+
+## 6. Scalability Issues
+
+For very large software systems involving thousands of files and developers, Procedural Programming becomes difficult to manage.
+
+Modern enterprise applications often contain:
+
+- Millions of lines of code
+- Hundreds of developers
+- Thousands of classes and modules
+
+Managing such complexity with only functions is challenging.
+
+---
+
+# Why Procedural Programming Was No Longer Enough
+
+As businesses demanded larger applications—banking systems, airline reservations, hospital management, ERP solutions—developers needed a better way to organize software.
+
+They wanted software that was:
+
+- Modular
+- Reusable
+- Secure
+- Easy to maintain
+- Closer to real-world entities
+
+This need paved the way for the next stage in the evolution of programming paradigms.
+
+But before reaching Object-Oriented Programming, one important step appeared:
+
+> **Modular Programming**
+
+It attempted to solve some of these issues by grouping related functions together into modules.
+
+We'll explore that next.
+
+---
+
+## 🧠 Interview Insight
+
+**Q:** Is Procedural Programming obsolete?
+
+**Answer:**
+
+No.
+
+Procedural Programming is still widely used in many areas:
+
+- Embedded Systems
+- Operating Systems
+- Device Drivers
+- Competitive Programming
+- Scientific Computing
+- Utility Programs
+
+In fact, many Object-Oriented languages (including Java) still support procedural programming through methods and static functions.
+
+The difference is that Java encourages combining procedural logic with object-oriented design rather than relying solely on procedures.
+
+---
+
+## 📌 Key Takeaways
+
+- Procedural Programming organizes programs around **functions**.
+- It follows a **top-down** design approach.
+- It works well for small and algorithm-focused applications.
+- Shared data can make large systems difficult to maintain.
+- Limited data protection and weak real-world modeling motivated the development of Object-Oriented Programming.
+- Understanding POP is essential because OOP was designed to address many of its limitations.
+
+---
+
+### What's Next?
+
+In the next section, we'll study **Modular Programming**—an important transitional paradigm that introduced the idea of organizing related functionality into modules before the emergence of full-fledged Object-Oriented Programming.
