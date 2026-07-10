@@ -1,4 +1,4 @@
-# 📘 Java OOP Handbook
+# 📘 About Java OOP Handbook
 ### Java 21 LTS | From Fundamentals to JVM Internals | Interview & Industry Edition
 
 > **Version:** 1.0 (Work in Progress)
