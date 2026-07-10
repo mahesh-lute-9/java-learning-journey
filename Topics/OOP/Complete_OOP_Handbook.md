@@ -466,3 +466,485 @@ A good paradigm helps developers write software that is:
 As software became larger and more complex, new paradigms emerged to solve the shortcomings of older ones.
 
 In the next section, we'll trace that evolution—from machine language to modern object-oriented programming—to understand why OOP became the dominant paradigm in enterprise software.
+
+---
+
+# 1.2 Evolution of Programming Languages
+
+To truly understand **Object-Oriented Programming (OOP)**, we first need to understand **why it was invented**.
+
+OOP did not appear overnight.
+
+It is the result of decades of evolution in software development.
+
+As computers became more powerful and software systems grew from a few hundred lines to millions of lines of code, developers encountered new challenges that older programming styles could not solve efficiently.
+
+Every new programming paradigm was introduced to overcome the limitations of the previous one.
+
+The evolution looks like this:
+
+```
+
+```
+Machine Language
+        │
+        ▼
+Assembly Language
+        │
+        ▼
+Procedural Programming
+        │
+        ▼
+Modular Programming
+        │
+        ▼
+Object-Oriented Programming
+        │
+        ▼
+Modern Hybrid Programming
+```
+
+Each step solved existing problems while introducing new capabilities.
+
+Let's understand each stage.
+
+---
+
+# 1.3 Machine Language (First Generation Language)
+
+## Introduction
+
+The earliest computers understood only **Machine Language**.
+
+Machine Language is the **native language of the CPU**.
+
+It consists entirely of binary digits:
+
+```
+0 and 1
+```
+
+Every instruction executed by the processor is ultimately converted into machine code.
+
+Example:
+
+```text
+10110000 01100001
+00000101 00000001
+11101011 00000100
+```
+
+To humans, this appears meaningless.
+
+To the processor, each sequence represents an instruction such as:
+
+- Move data
+- Add numbers
+- Jump to another instruction
+- Store values in memory
+
+---
+
+## Characteristics
+
+- Executed directly by the CPU
+- Extremely fast
+- Hardware dependent
+- Very difficult for humans
+- No readability
+- No portability
+
+---
+
+## Advantages
+
+- Fastest execution
+- No translation required
+- Maximum hardware control
+
+---
+
+## Limitations
+
+As software grew larger, machine language became almost impossible to manage.
+
+Imagine writing:
+
+```text
+1001010110010011010010101001...
+```
+
+for thousands of lines.
+
+Problems included:
+
+- Difficult to read
+- Difficult to debug
+- Error-prone
+- Hard to remember instruction codes
+- Completely hardware-specific
+- Very expensive to maintain
+
+---
+
+## Real-World Analogy
+
+Imagine giving directions to someone using only **left** and **right** turns, counting every single step.
+
+Example:
+
+```
+Walk 12 steps.
+
+Turn left.
+
+Walk 8 steps.
+
+Turn right.
+
+Walk 3 steps.
+```
+
+Instead of saying:
+
+> "Go to the library."
+
+Machine language works the same way.
+
+Everything must be described in the smallest possible instructions.
+
+---
+
+## Why Did We Move Beyond Machine Language?
+
+Developers needed:
+
+- Better readability
+- Faster development
+- Easier debugging
+- Higher productivity
+
+This led to the creation of **Assembly Language**.
+
+---
+
+🧠 **Interview Insight**
+
+> Every programming language—Java included—is eventually translated into machine instructions before the CPU executes it.
+
+Java follows this path:
+
+```text
+Java Source Code (.java)
+        │
+        ▼
+Java Compiler (javac)
+        │
+        ▼
+Bytecode (.class)
+        │
+        ▼
+Java Virtual Machine (JVM)
+        │
+        ▼
+Machine Code
+        │
+        ▼
+CPU
+```
+
+We'll study this pipeline in detail in the **JVM Internals** section later.
+
+---
+
+# 1.4 Assembly Language (Second Generation Language)
+
+## Introduction
+
+Assembly Language was introduced to make programming easier.
+
+Instead of writing binary digits, programmers could use **mnemonics** (short symbolic instructions).
+
+For example:
+
+Instead of
+
+```text
+10110000
+```
+
+developers could write
+
+```assembly
+MOV
+```
+
+Similarly,
+
+```assembly
+ADD
+SUB
+JMP
+MUL
+DIV
+```
+
+These symbolic instructions were much easier to understand than raw binary.
+
+---
+
+## Characteristics
+
+- Human-readable (compared to binary)
+- Uses symbolic instructions
+- Converted into machine code by an **Assembler**
+- Still hardware dependent
+
+---
+
+## Assembly Language Execution
+
+```
+Assembly Code
+
+        │
+
+Assembler
+
+        │
+
+Machine Code
+
+        │
+
+CPU
+```
+
+---
+
+## Example
+
+Assembly:
+
+```assembly
+MOV AX,10
+MOV BX,20
+ADD AX,BX
+```
+
+Equivalent idea in Java:
+
+```java
+int a = 10;
+int b = 20;
+
+int sum = a + b;
+```
+
+Java is far more expressive because it abstracts away hardware details.
+
+---
+
+## Advantages
+
+- Easier than Machine Language
+- Faster development
+- Better readability
+- Easier debugging
+
+---
+
+## Limitations
+
+Despite improvements, Assembly Language still had serious drawbacks.
+
+### Hardware Dependency
+
+Programs written for one processor often could not run on another.
+
+Example:
+
+```
+Intel Processor
+
+↓
+
+Intel Assembly
+
+≠
+
+ARM Processor
+
+↓
+
+ARM Assembly
+```
+
+---
+
+### Low-Level Thinking
+
+Developers still had to think about:
+
+- Registers
+- Memory addresses
+- CPU instructions
+- Hardware architecture
+
+instead of focusing on solving business problems.
+
+---
+
+### Difficult for Large Applications
+
+Imagine writing an operating system or an e-commerce platform entirely in Assembly.
+
+It would require millions of instructions.
+
+Maintaining such software would be extremely difficult.
+
+---
+
+## Why Did We Move Beyond Assembly?
+
+Software was becoming:
+
+- Larger
+- More complex
+- More expensive
+
+Developers needed programming languages that resembled human thinking rather than processor instructions.
+
+This gave birth to **High-Level Programming Languages**.
+
+---
+
+💡 **Important Concept**
+
+Machine Language and Assembly Language are often called **Low-Level Languages** because they are very close to the hardware.
+
+Java, Python, C++, and C# are **High-Level Languages** because they allow developers to focus on solving problems rather than managing processor instructions.
+
+---
+
+# 1.5 High-Level Programming Languages
+
+## Introduction
+
+High-Level Languages were designed to bridge the gap between humans and computers.
+
+Instead of thinking like the CPU, developers could now think in terms of:
+
+- Variables
+- Functions
+- Loops
+- Conditions
+- Data structures
+- Algorithms
+
+This dramatically increased developer productivity.
+
+Example:
+
+```java
+int total = price * quantity;
+```
+
+Compare this with dozens of Assembly instructions needed to perform the same task.
+
+---
+
+## Characteristics
+
+- Human-readable syntax
+- Platform-independent concepts
+- Easier debugging
+- Easier maintenance
+- Faster development
+- Rich standard libraries
+- Improved portability
+
+---
+
+## Translation Process
+
+High-level languages cannot be executed directly by the CPU.
+
+They must first be translated.
+
+There are two common approaches:
+
+### Compilation
+
+```text
+Source Code
+
+↓
+
+Compiler
+
+↓
+
+Machine Code
+```
+
+Example:
+
+- C
+- C++
+
+---
+
+### Interpretation
+
+```text
+Source Code
+
+↓
+
+Interpreter
+
+↓
+
+Execution
+```
+
+Example:
+
+- Python (traditional execution model)
+
+---
+
+### Hybrid Compilation (Java)
+
+Java combines both approaches.
+
+```text
+Java Source Code
+
+↓
+
+Compiler (javac)
+
+↓
+
+Bytecode
+
+↓
+
+JVM
+
+↓
+
+Machine Code
+
+↓
+
+CPU
+```
+
+This is one of Java's biggest strengths and the reason behind its famous slogan:
+
+> **Write Once, Run Anywhere (WORA).**
+
+We'll revisit this architecture in depth when studying the JVM.
