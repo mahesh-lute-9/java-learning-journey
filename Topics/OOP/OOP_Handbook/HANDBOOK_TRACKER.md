@@ -30,7 +30,7 @@
 
 | # | Chapter | Status | File |
 |---|---------|--------|------|
-| 2 | Class | ⬜ | `02-Class.md` |
+| 2 | Class | ✅ | `02-Class.md` |
 | 3 | Object | ⬜ | `03-Object.md` |
 
 ## Part III — Variables
@@ -133,20 +133,23 @@
 |------|-------------------|-------|
 | 2026-07-11 | Chapter 1 drafted | Repo scaffolded: `Topics/OOP/OOP_Handbook/ (chapter files) and Topics/OOP/README.md (front matter)`. |
 | 2026-07-11 | Chapter 1 rewritten (full version) | Replaced with the expanded, book-style draft. Front matter (Preface, Philosophy, Roadmap, Icons) moved out of the chapter file into `README.md` so it isn't duplicated per chapter. Three duplicated stub sections (short pre-drafts of 1.10, 1.11, 1.12 immediately followed by their own full versions) were removed. Added a "Self Assessment" section per the required chapter template, which was missing. |
+| 2026-07-11 | Chapter 2 completed | Formal definition of a class, syntax anatomy, compiler behaviour (`.class` generation, one-public-class-per-file rule), and Metaspace vs. Heap distinction. Introduced the running `Employee` example that later chapters (Object, Constructors, Encapsulation, Inheritance) will extend rather than redefine. Deliberately deferred: constructors (full detail → Ch5), static members (→ Ch9), initializer blocks (→ Ch6), nested classes (→ Ch23), full class-loading pipeline (→ Ch39). |
+| 2026-07-11 | Chapter 1 trimmed (2,281 → ~350 lines) | Cut generic computer-history padding (deep Machine/Assembly Language sections merged into one tight section), condensed Modular Programming, removed triple-repeated "advantages of OOP" content (was stated separately in §1.9, §1.11, §1.13 of the old draft — now one clean list), cut the 14-category Applications list down to the handful most relevant to enterprise/Spring Boot work. Section numbers changed as a result — see updated references below. Chapter 2's back-reference to Chapter 1 was updated to match (§1.9/§1.11 → §1.5/§1.7). |
 
 ---
 
 ## Concepts Already Explained (do not repeat — link back instead)
 
-- **Programming paradigm evolution** (Machine → Assembly → High-Level → Procedural → Modular → OOP) — Chapter 1, §1.1–1.10.
-- **Why OOP exists / problems it solves** — Chapter 1, §1.10.
-- **Core OOP characteristics** (Objects, Classes, Encapsulation, Abstraction, Inheritance, Polymorphism, Modularity, Reusability, etc.) — Chapter 1, §1.11.
-- **Four Pillars of OOP at a high level** — Chapter 1, §1.12. (Each pillar gets its own dedicated deep-dive chapter later — Ch. 12 Encapsulation, Ch. 15 Inheritance, Ch. 16 Polymorphism, Ch. 17 Abstraction — so Chapter 1's overview should only be referenced there, not repeated.)
-- **Class vs. Object at a high level** — introduced informally in Chapter 1, §1.9 and §1.11; the *formal* definition belongs to Chapter 2.
+- **Programming paradigm evolution** (Machine → Assembly → High-Level → Procedural → Modular → OOP) — Chapter 1, §1.1–1.4.
+- **Why OOP exists / problems it solves** — Chapter 1, §1.6.
+- **Core OOP characteristics** (Objects, Classes, Encapsulation, Abstraction, Inheritance, Polymorphism, Modularity, Reusability, etc.) — Chapter 1, §1.7.
+- **Four Pillars of OOP at a high level** — Chapter 1, §1.8. (Each pillar gets its own dedicated deep-dive chapter later — Ch. 12 Encapsulation, Ch. 15 Inheritance, Ch. 16 Polymorphism, Ch. 17 Abstraction — so Chapter 1's overview should only be referenced there, not repeated.)
+- **Formal definition of a class, class syntax anatomy, one-public-class-per-file rule, class metadata vs. object data (Metaspace vs. Heap), lazy class loading** — Chapter 2, §3–§6.
+- **The running `Employee` example class** — first defined in Chapter 2, §7. Later chapters extend this same class rather than introducing a new one.
 
 ## Next Up
 
-➡️ Chapter 2 — Class
+➡️ Chapter 3 — Object
 
 ---
 
