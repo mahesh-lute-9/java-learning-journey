@@ -23,7 +23,7 @@ Chapter 1 introduced the idea that Object-Oriented Programming organizes softwar
 
 This chapter formally defines what a class is, what the Java compiler does with one, and where a class actually "lives" while your program runs — questions most learners can't answer confidently even after writing hundreds of classes.
 
-> This chapter does not re-explain *why* OOP bundles data and behavior together, or what Identity/State/Behavior mean — that was covered fully in Chapter 1, §1.9 and §1.11. If any of that feels unfamiliar, revisit it there rather than expecting it repeated here.
+> This chapter does not re-explain *why* OOP bundles data and behavior together, or what Identity/State/Behavior mean — that was covered fully in Chapter 1, §1.5 and §1.7. If any of that feels unfamiliar, revisit it there rather than expecting it repeated here.
 
 ---
 
