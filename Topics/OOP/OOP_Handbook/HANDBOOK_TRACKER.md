@@ -50,7 +50,7 @@
 
 | # | Chapter | Status | File |
 |---|---------|--------|------|
-| 7 | Methods | ⬜ | `07-Methods.md` |
+| 7 | Methods | ✅ | `07-Methods.md` |
 
 ## Part VI — Keywords
 
@@ -139,6 +139,7 @@
 | 2026-07-12 | Chapter 4 completed | Instance vs. static vs. local variables, with a unified Stack/Heap/Metaspace memory diagram tying together Ch2 (Metaspace) and Ch3 (Heap, object layout). Covered definite-assignment (why locals get no default value, unlike fields), scope, shadowing (setting up Ch8's `this`), and `var` type inference. Depth calibrated topic-driven per Mahi's latest guidance, not to a fixed line-count target. |
 | 2026-07-12 | Chapter 5 completed | Opened the "Constructor Execution" black box from Ch3 §4: no-return-type rule, the default-constructor-disappears-once-you-add-any-constructor gotcha, overloading, `this(...)` chaining rules, a preview of implicit `super()` (full detail deferred to Ch15), the copy-constructor pattern (deep vs. shallow copy flagged forward to Ch29), and private constructors as a Singleton preview (full pattern deferred). |
 | 2026-07-12 | Chapter 6 completed | Closed the loop on Ch3 §4's "Field Initialization" step: field initializers, instance initializer blocks (run every construction, before ctor body), static initializer blocks (run once, at class load). Assembled the full master object-creation order (Ch3 alloc/default-init → parent init preview → field init/instance blocks in source order → Ch5 ctor body → reference returned). Covered the forward-reference-yields-default-value trap and the compiler fact that instance initializers are inlined into every constructor after `super()`, while static initializers become a single `<clinit>`. |
+| 2026-07-12 | Chapter 7 completed | Method signature (name + params, no return type), overloading resolved at compile time, and — the chapter's core — the definitive pass-by-value proof for both mutation-through-reference and reassignment-of-reference cases, resolving the "tricky question" Ch3 §14 deliberately deferred here. Tied method calls back to Ch4's Stack model via stack frames. Introduced `invokevirtual`/dynamic dispatch only as a forward-looking label, deferred fully to Ch16/Ch40. Distinguished overloading (this chapter) from overriding (Ch16) explicitly to prevent the two being conflated later. |
 
 ---
 
@@ -149,15 +150,16 @@
 - **Core OOP characteristics** (Objects, Classes, Encapsulation, Abstraction, Inheritance, Polymorphism, Modularity, Reusability, etc.) — Chapter 1, §1.7.
 - **Four Pillars of OOP at a high level** — Chapter 1, §1.8. (Each pillar gets its own dedicated deep-dive chapter later — Ch. 12 Encapsulation, Ch. 15 Inheritance, Ch. 16 Polymorphism, Ch. 17 Abstraction — so Chapter 1's overview should only be referenced there, not repeated.)
 - **Formal definition of a class, class syntax anatomy, one-public-class-per-file rule, class metadata vs. object data (Metaspace vs. Heap), lazy class loading** — Chapter 2, §3–§6.
-- **The running `Employee` example class** — first defined in Chapter 2, §7; instantiated with real values in Chapter 3, §9; carries instance/static variables in Chapter 4, §8; full constructor set (overloaded, chained, copy constructor) in Chapter 5, §10; now has static/instance initializer blocks too in Chapter 6, §7. Later chapters extend this same class rather than introducing a new one.
+- **The running `Employee` example class** — first defined in Chapter 2, §7; instantiated with real values in Chapter 3, §9; carries instance/static variables in Chapter 4, §8; full constructor set (overloaded, chained, copy constructor) in Chapter 5, §10; static/instance initializer blocks in Chapter 6, §7; now has behavior methods (`calculateAnnualSalary`, overloaded `raiseSalary`) in Chapter 7, §7. Later chapters extend this same class rather than introducing a new one.
 - **Object creation pipeline (`new` → allocation → default init → field init → constructor → reference return), reference vs. object, object header layout, aliasing, `==` vs. `.equals()` at a conceptual level** — Chapter 3, §3–§8. (Full `.equals()`/`hashCode()` override mechanics still belong to Ch. 19.)
 - **Instance vs. static vs. local variables — memory location, default-value behaviour, scope, shadowing, `var` type inference** — Chapter 4, §2–§7. (Full `this`-based shadowing fix still belongs to Ch. 8; full `static` method/block semantics still belong to Ch. 9.)
 - **Constructors — no return type, default constructor rule, overloading, `this(...)` chaining, implicit `super()` preview, copy constructor, private constructors** — Chapter 5, §3–§8. (Full `super()`/inheritance mechanics still belong to Ch. 15; Singleton pattern still belongs to a later design-pattern discussion; deep vs. shallow copy still belongs to Ch. 29.)
-- **Field initializers, instance initializer blocks, static initializer blocks, the complete object-creation order, forward-reference-to-uninitialized-field trap, and the `<clinit>`/inlined-into-constructors compiler behaviour** — Chapter 6, §3–§6. This is now the definitive, complete version of the initialization sequence — no future chapter should re-derive it, only reference it (with the parent-class-initialization step still to be filled in fully by Ch. 15).
+- **Field initializers, instance initializer blocks, static initializer blocks, the complete object-creation order, forward-reference-to-uninitialized-field trap, and the `<clinit>`/inlined-into-constructors compiler behaviour** — Chapter 6, §3–§6. This is the definitive, complete version of the initialization sequence — no future chapter should re-derive it, only reference it (parent-class-initialization step still to be filled in fully by Ch. 15).
+- **Method signature (excludes return type), overload resolution at compile time, the full pass-by-value proof (mutate-through-reference vs. reassign-reference), stack frames per method call, overloading vs. overriding distinction** — Chapter 7, §2–§6. This is the definitive, complete treatment of Java's parameter-passing rule — no future chapter should re-derive it, only reference it (dynamic dispatch / `invokevirtual` still belongs fully to Ch. 16 and Ch. 40).
 
 ## Next Up
 
-➡️ Chapter 7 — Methods
+➡️ Chapter 8 — `this`
 
 ---
 
