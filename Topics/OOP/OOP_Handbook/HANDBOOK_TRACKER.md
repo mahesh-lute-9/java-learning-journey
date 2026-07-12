@@ -43,7 +43,7 @@
 
 | # | Chapter | Status | File |
 |---|---------|--------|------|
-| 5 | Constructors | ⬜ | `05-Constructors.md` |
+| 5 | Constructors | ✅ | `05-Constructors.md` |
 | 6 | Initialization | ⬜ | `06-Initialization.md` |
 
 ## Part V — Methods
@@ -137,6 +137,7 @@
 | 2026-07-11 | Chapter 1 trimmed (2,281 → ~350 lines) | Cut generic computer-history padding (deep Machine/Assembly Language sections merged into one tight section), condensed Modular Programming, removed triple-repeated "advantages of OOP" content (was stated separately in §1.9, §1.11, §1.13 of the old draft — now one clean list), cut the 14-category Applications list down to the handful most relevant to enterprise/Spring Boot work. Section numbers changed as a result — see updated references below. Chapter 2's back-reference to Chapter 1 was updated to match (§1.9/§1.11 → §1.5/§1.7). |
 | 2026-07-11 | Chapter 3 completed | The five-step object-creation pipeline (allocation → default init → field init → constructor → reference returned), reference-vs-object distinction, object header/memory layout, aliasing, and `==` vs `.equals()` at a conceptual level (full `.equals()`/`hashCode()` override mechanics deferred to Ch19). Extended the running `Employee` example with actual instantiation. |
 | 2026-07-12 | Chapter 4 completed | Instance vs. static vs. local variables, with a unified Stack/Heap/Metaspace memory diagram tying together Ch2 (Metaspace) and Ch3 (Heap, object layout). Covered definite-assignment (why locals get no default value, unlike fields), scope, shadowing (setting up Ch8's `this`), and `var` type inference. Depth calibrated topic-driven per Mahi's latest guidance, not to a fixed line-count target. |
+| 2026-07-12 | Chapter 5 completed | Opened the "Constructor Execution" black box from Ch3 §4: no-return-type rule, the default-constructor-disappears-once-you-add-any-constructor gotcha, overloading, `this(...)` chaining rules, a preview of implicit `super()` (full detail deferred to Ch15), the copy-constructor pattern (deep vs. shallow copy flagged forward to Ch29), and private constructors as a Singleton preview (full pattern deferred). |
 
 ---
 
@@ -147,13 +148,14 @@
 - **Core OOP characteristics** (Objects, Classes, Encapsulation, Abstraction, Inheritance, Polymorphism, Modularity, Reusability, etc.) — Chapter 1, §1.7.
 - **Four Pillars of OOP at a high level** — Chapter 1, §1.8. (Each pillar gets its own dedicated deep-dive chapter later — Ch. 12 Encapsulation, Ch. 15 Inheritance, Ch. 16 Polymorphism, Ch. 17 Abstraction — so Chapter 1's overview should only be referenced there, not repeated.)
 - **Formal definition of a class, class syntax anatomy, one-public-class-per-file rule, class metadata vs. object data (Metaspace vs. Heap), lazy class loading** — Chapter 2, §3–§6.
-- **The running `Employee` example class** — first defined in Chapter 2, §7; instantiated with real values in Chapter 3, §9; now carries instance/static variables in Chapter 4, §8. Later chapters extend this same class rather than introducing a new one.
+- **The running `Employee` example class** — first defined in Chapter 2, §7; instantiated with real values in Chapter 3, §9; carries instance/static variables in Chapter 4, §8; full constructor set (overloaded, chained, copy constructor) in Chapter 5, §10. Later chapters extend this same class rather than introducing a new one.
 - **Object creation pipeline (`new` → allocation → default init → field init → constructor → reference return), reference vs. object, object header layout, aliasing, `==` vs. `.equals()` at a conceptual level** — Chapter 3, §3–§8. (Full `.equals()`/`hashCode()` override mechanics still belong to Ch. 19.)
 - **Instance vs. static vs. local variables — memory location, default-value behaviour, scope, shadowing, `var` type inference** — Chapter 4, §2–§7. (Full `this`-based shadowing fix still belongs to Ch. 8; full `static` method/block semantics still belong to Ch. 9.)
+- **Constructors — no return type, default constructor rule, overloading, `this(...)` chaining, implicit `super()` preview, copy constructor, private constructors** — Chapter 5, §3–§8. (Field initializer / instance initializer block ordering still belongs to Ch. 6; full `super()`/inheritance mechanics still belong to Ch. 15; Singleton pattern still belongs to a later design-pattern discussion; deep vs. shallow copy still belongs to Ch. 29.)
 
 ## Next Up
 
-➡️ Chapter 5 — Constructors
+➡️ Chapter 6 — Initialization
 
 ---
 
