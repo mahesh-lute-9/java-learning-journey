@@ -58,7 +58,7 @@
 |---|---------|--------|------|
 | 8 | this | ✅ | `08-this.md` |
 | 9 | static | ✅ | `09-static.md` |
-| 10 | final | ⬜ | `10-final.md` |
+| 10 | final | ✅ | `10-final.md` |
 | 11 | super | ⬜ | `11-super.md` |
 
 ## Part VII — Object Design
@@ -142,6 +142,7 @@
 | 2026-07-12 | Chapter 7 completed | Method signature (name + params, no return type), overloading resolved at compile time, and — the chapter's core — the definitive pass-by-value proof for both mutation-through-reference and reassignment-of-reference cases, resolving the "tricky question" Ch3 §14 deliberately deferred here. Tied method calls back to Ch4's Stack model via stack frames. Introduced `invokevirtual`/dynamic dispatch only as a forward-looking label, deferred fully to Ch16/Ch40. Distinguished overloading (this chapter) from overriding (Ch16) explicitly to prevent the two being conflated later. |
 | 2026-07-12 | Chapter 8 completed | `this` as the implicit per-call object reference; resolved Ch4 §5.3's shadowing bug properly; covered passing/returning `this` (method chaining, Builder-pattern preview); explained why `this` can't exist in a static context both conceptually (Ch4 §4) and at the bytecode level (`this` is an invisible first parameter of every instance method); noted `this` behaves like an implicit `final` reference, previewing Ch10. Kept intentionally leaner than Ch5-7, matching the topic's genuinely narrower scope per Mahi's topic-driven-depth guidance. |
 | 2026-07-12 | Chapter 9 completed | Capstone chapter for `static` — added static methods (new content) and assembled them with static variables (Ch4 §4) and static blocks (Ch6 §3.3) into one unified table (§6). Covered class-name vs. instance-reference calling style, static utility classes (paired with Ch5 §8's private constructor pattern), and the `invokestatic` vs. `invokevirtual` (Ch7 §6) distinction that explains *why* static methods are hidden, not overridden — a direct preview seed for Ch15/16. Included the null-reference-static-call trivia as a JVM-mechanics-grounded gotcha. |
+| 2026-07-12 | Chapter 10 completed | Formalized `final` across its three distinct targets: variables (incl. blank finals and the "final reference ≠ immutable object" trap tied back to Ch3 §3.2), methods (blocks overriding, not inheriting — distinct axis from Ch9 §5's static hiding), and classes (explains Ch9 §4's `final class SalaryUtils` retroactively). Covered constant folding as real JVM/compiler depth, including the stale-constant-after-library-update gotcha. Explicitly flagged that `final` alone isn't sufficient for true immutability, pointing forward to Ch28. |
 
 ---
 
@@ -152,18 +153,19 @@
 - **Core OOP characteristics** (Objects, Classes, Encapsulation, Abstraction, Inheritance, Polymorphism, Modularity, Reusability, etc.) — Chapter 1, §1.7.
 - **Four Pillars of OOP at a high level** — Chapter 1, §1.8. (Each pillar gets its own dedicated deep-dive chapter later — Ch. 12 Encapsulation, Ch. 15 Inheritance, Ch. 16 Polymorphism, Ch. 17 Abstraction — so Chapter 1's overview should only be referenced there, not repeated.)
 - **Formal definition of a class, class syntax anatomy, one-public-class-per-file rule, class metadata vs. object data (Metaspace vs. Heap), lazy class loading** — Chapter 2, §3–§6.
-- **The running `Employee` example class** — first defined in Chapter 2, §7; instantiated with real values in Chapter 3, §9; carries instance/static variables in Chapter 4, §8; full constructor set in Chapter 5, §10; static/instance initializer blocks in Chapter 6, §7; behavior methods in Chapter 7, §7; uses `this` for shadowing-safe assignment/chaining in Chapter 8, §7; now has a static factory method (`createIntern`) in Chapter 9, §8. Later chapters extend this same class rather than introducing a new one.
+- **The running `Employee` example class** — first defined in Chapter 2, §7; instantiated with real values in Chapter 3, §9; carries instance/static variables in Chapter 4, §8; full constructor set in Chapter 5, §10; static/instance initializer blocks in Chapter 6, §7; behavior methods in Chapter 7, §7; uses `this` for shadowing-safe assignment/chaining in Chapter 8, §7; static factory method in Chapter 9, §8; now has a blank final `employeeId`, a `static final` constant, and a `final` method in Chapter 10, §7. Later chapters extend this same class rather than introducing a new one.
 - **Object creation pipeline (`new` → allocation → default init → field init → constructor → reference return), reference vs. object, object header layout, aliasing, `==` vs. `.equals()` at a conceptual level** — Chapter 3, §3–§8. (Full `.equals()`/`hashCode()` override mechanics still belong to Ch. 19.)
 - **Instance vs. static vs. local variables — memory location, default-value behaviour, scope, shadowing, `var` type inference** — Chapter 4, §2–§7.
 - **Constructors — no return type, default constructor rule, overloading, `this(...)` chaining, implicit `super()` preview, copy constructor, private constructors** — Chapter 5, §3–§8. (Full `super()`/inheritance mechanics still belong to Ch. 15; Singleton pattern still belongs to a later design-pattern discussion; deep vs. shallow copy still belongs to Ch. 29.)
 - **Field initializers, instance initializer blocks, static initializer blocks, the complete object-creation order, forward-reference-to-uninitialized-field trap, and the `<clinit>`/inlined-into-constructors compiler behaviour** — Chapter 6, §3–§6. Definitive; only reference, don't re-derive (parent-class-initialization step still to be filled in fully by Ch. 15).
 - **Method signature (excludes return type), overload resolution at compile time, the full pass-by-value proof (mutate-through-reference vs. reassign-reference), stack frames per method call, overloading vs. overriding distinction** — Chapter 7, §2–§6. Definitive; only reference, don't re-derive (dynamic dispatch / `invokevirtual` still belongs fully to Ch. 16 and Ch. 40).
-- **`this` — implicit object reference, shadowing fix, passing/returning `this`, unavailable in static context, invisible-first-parameter bytecode fact, behaves like implicit `final`** — Chapter 8, §2–§6. Definitive; only reference, don't re-derive (Builder pattern itself still belongs to a later design-pattern discussion; `final` itself still belongs to Ch. 10).
+- **`this` — implicit object reference, shadowing fix, passing/returning `this`, unavailable in static context, invisible-first-parameter bytecode fact, behaves like implicit `final`** — Chapter 8, §2–§6. Definitive; only reference, don't re-derive (Builder pattern itself still belongs to a later design-pattern discussion).
 - **`static` methods (no `this`, no direct instance access, `invokestatic`, resolved at compile time), class-name-vs-instance calling style, static utility classes, method hiding vs. overriding, and the unified static-variable/static-block/static-method picture** — Chapter 9, §2–§7. Definitive; only reference, don't re-derive (full override vs. hiding mechanics still belong to Ch. 15/16; static nested classes still belong fully to Ch. 23).
+- **`final` variables (incl. blank finals, final-reference-≠-immutable-object), `final` methods (blocks overriding, not inheriting), `final` classes, and constant folding** — Chapter 10, §2–§6. Definitive; only reference, don't re-derive (true immutability design still belongs fully to Ch. 28; full override mechanics still belong to Ch. 16).
 
 ## Next Up
 
-➡️ Chapter 10 — `final`
+➡️ Chapter 11 — `super`
 
 ---
 
