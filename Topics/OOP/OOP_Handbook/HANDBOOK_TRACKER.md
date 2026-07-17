@@ -101,7 +101,7 @@
 | 25 | Enums | ✅ | `25-Enums.md` |
 | 26 | Records | ✅ | `26-Records.md` |
 | 27 | Sealed Classes | ✅ | `27-Sealed-Classes.md` |
-| 28 | Immutability | ⬜ | `28-Immutability.md` |
+| 28 | Immutability | ✅ | `28-Immutability.md` |
 | 29 | Object Cloning | ⬜ | `29-Object-Cloning.md` |
 | 30 | Reflection | ⬜ | `30-Reflection.md` |
 | 31 | Annotations | ⬜ | `31-Annotations.md` |
@@ -160,6 +160,7 @@
 | 27 | Chapter 25 completed | Delivered enums as genuine singleton-instance classes, not labeled integers — the compiler generates each constant as a `public static final` field inside a static initializer (the exact mechanism from Ch6 §3.3), plus free `toString()`/`name()`/`ordinal()`/`values()`/`valueOf()`. Covered why an enum can never `extends` another class (already uses its one Ch15 §5 parent slot) but can implement interfaces, why enum constructors are always private (an automatic, total version of Ch5 §8's pattern), and per-constant method bodies as anonymous subclasses — a direct, precise callback to Ch24's compiler naming. Strongest contribution: `==` is actually correct and preferred for enum comparison (unlike ordinary objects, Ch19 §4) since every constant is a guaranteed singleton, plus the `ordinal()`-persistence fragility trap. Closed with explicit enum-vs-subclass design guidance contrasting `EmployeeType` against the existing `Manager`/`Intern` hierarchy (Ch15). |
 | 28 | Chapter 26 completed | Delivered records as auto-generated immutable data carriers — a satisfying, concrete callback to Ch22/23's hand-written `ContactInfo`, which turns out to have been silently incomplete by Ch19's standard (no `equals()`/`hashCode()`/`toString()` were ever added to it) the whole time. Explained why a record can never extend another class (implicit `Record` superclass, same structural situation as Ch25's `Enum`) and can never be subclassed (implicitly `final`, preserving its transparency contract). Covered compact constructors for validation (preserving Ch12's "never constructible into an invalid state" principle) and the deliberate `x()`-not-`getX()` accessor naming break from Ch12's convention. Capstone synthesis: explicitly tested whether `Employee` itself could be a record and gave three independent disqualifying reasons (mutable state, inheritance participation, abstraction) — a genuine tie-together of Ch12, Ch15, and Ch17. |
 | 29 | Chapter 27 completed | Sealed `Payable`/`Employee` — closed set of permitted subclasses (`permits`), each forced to declare `final`/`sealed`/`non-sealed` explicitly, no default. Core payoff: compiler-verified exhaustive handling, contrasted against Ch15's fully-open inheritance and Ch25's enum (structurally-identical-variants) case via a precise three-way test. Genuinely strong JVM callback: `PermittedSubclasses` class-file attribute checked again by the JVM verifier — same two-layer enforcement pattern as Ch12 §6's access modifiers. |
+| 30 | Chapter 28 completed | Delivered the full immutability checklist, finally resolving Ch10 §3.4's deferred promise. Core contribution: concretely demonstrated the leak `final` fields alone permit (a `final List` field can still be mutated via the caller's kept reference OR via the getter's returned reference — both independently, both requiring separate defensive copies) and showed records (Ch26) have the identical gap unless a compact constructor defensively copies mutable components. Closed with the thread-safety payoff, tied explicitly back to Ch1 §1.3's original shared-mutable-data problem — a full-circle callback to the handbook's opening argument. |
 
 ---
 
@@ -195,11 +196,12 @@
 - **Anonymous classes — nameless local classes instantiated inline, no explicit constructor (instance initializer block instead), exactly one supertype (never both a class and an interface), identical effectively-final capture rule, sequential `$N` compiler naming, and the precise anonymous-class-vs-lambda `this`-binding distinction** — Chapter 24, §2–§5. (Lambdas and functional interfaces themselves remain outside this handbook's OOP scope, mentioned only for the `this` contrast.)
 - **Enums — each constant a genuine compiler-generated singleton (not a labeled integer), the implicit `Enum` superclass and its single-inheritance consequence, always-private constructors, per-constant method bodies as anonymous subclasses, why `==` is correct/preferred for enum comparison, the `ordinal()` persistence trap, and enum-vs-subclass design guidance** — Chapter 25, §2–§8.
 - **Records — auto-generated private final fields, canonical constructor, named (not `getX()`) accessors, correctly-paired `equals()`/`hashCode()`/`toString()` by construction; implicit `Record` superclass and implicit `final`; compact constructors; three-part disqualification test** — Chapter 26, §2–§8.
-- **Sealed classes — `permits`, mandatory `final`/`sealed`/`non-sealed` choice on every permitted subclass (no default), compiler-verified exhaustive handling as the real payoff, the sealed-vs-enum-vs-open-inheritance three-way test, and the `PermittedSubclasses` class-file attribute checked again at the JVM verifier level (mirrors Ch12 §6)** — Chapter 27, §2–§6. Definitive; only reference, don't re-derive.
+- **Sealed classes — `permits`, mandatory `final`/`sealed`/`non-sealed` choice on every permitted subclass (no default), compiler-verified exhaustive handling, sealed-vs-enum-vs-open-inheritance test, `PermittedSubclasses` class-file attribute checked at the JVM verifier level** — Chapter 27, §2–§6.
+- **Immutability — the full checklist (final fields + no setters + protected class + defensive copies both in and out for mutable-typed fields), the concrete `final`-field-still-leaks demonstration, why records need a compact constructor for mutable components too, and the thread-safety payoff tied back to Ch1 §1.3** — Chapter 28, §2–§6. Definitive; only reference, don't re-derive.
 
 ## Next Up
 
-➡️ Chapter 28 — Immutability
+➡️ Chapter 29 — Object Cloning
 
 ---
 
