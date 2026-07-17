@@ -102,7 +102,7 @@
 | 26 | Records | ✅ | `26-Records.md` |
 | 27 | Sealed Classes | ✅ | `27-Sealed-Classes.md` |
 | 28 | Immutability | ✅ | `28-Immutability.md` |
-| 29 | Object Cloning | ⬜ | `29-Object-Cloning.md` |
+| 29 | Object Cloning | ✅ | `29-Object-Cloning.md` |
 | 30 | Reflection | ⬜ | `30-Reflection.md` |
 | 31 | Annotations | ⬜ | `31-Annotations.md` |
 | 32 | Generics | ⬜ | `32-Generics.md` |
@@ -161,6 +161,7 @@
 | 28 | Chapter 26 completed | Delivered records as auto-generated immutable data carriers — a satisfying, concrete callback to Ch22/23's hand-written `ContactInfo`, which turns out to have been silently incomplete by Ch19's standard (no `equals()`/`hashCode()`/`toString()` were ever added to it) the whole time. Explained why a record can never extend another class (implicit `Record` superclass, same structural situation as Ch25's `Enum`) and can never be subclassed (implicitly `final`, preserving its transparency contract). Covered compact constructors for validation (preserving Ch12's "never constructible into an invalid state" principle) and the deliberate `x()`-not-`getX()` accessor naming break from Ch12's convention. Capstone synthesis: explicitly tested whether `Employee` itself could be a record and gave three independent disqualifying reasons (mutable state, inheritance participation, abstraction) — a genuine tie-together of Ch12, Ch15, and Ch17. |
 | 29 | Chapter 27 completed | Sealed `Payable`/`Employee` — closed set of permitted subclasses (`permits`), each forced to declare `final`/`sealed`/`non-sealed` explicitly, no default. Core payoff: compiler-verified exhaustive handling, contrasted against Ch15's fully-open inheritance and Ch25's enum (structurally-identical-variants) case via a precise three-way test. Genuinely strong JVM callback: `PermittedSubclasses` class-file attribute checked again by the JVM verifier — same two-layer enforcement pattern as Ch12 §6's access modifiers. |
 | 30 | Chapter 28 completed | Delivered the full immutability checklist, finally resolving Ch10 §3.4's deferred promise. Core contribution: concretely demonstrated the leak `final` fields alone permit (a `final List` field can still be mutated via the caller's kept reference OR via the getter's returned reference — both independently, both requiring separate defensive copies) and showed records (Ch26) have the identical gap unless a compact constructor defensively copies mutable components. Closed with the thread-safety payoff, tied explicitly back to Ch1 §1.3's original shared-mutable-data problem — a full-circle callback to the handbook's opening argument. |
+| 31 | Chapter 29 completed | Formalized shallow vs. deep copy precisely, then delivered the classic critique of `Cloneable`/`clone()`: `Cloneable` is a no-method marker interface (unlike every Ch18 interface), `Object.clone()` bypasses the entire Ch3 §4 constructor pipeline via direct memory copy (skipping Ch12 validation entirely), defaults to shallow, and forces handling a `CloneNotSupportedException` that a correct implementation can never trigger. Closed by recommending Ch5 §7's copy constructor as the modern alternative — same deep-copy safety, real constructor pipeline, none of clone()'s baggage. |
 
 ---
 
@@ -197,11 +198,12 @@
 - **Enums — each constant a genuine compiler-generated singleton (not a labeled integer), the implicit `Enum` superclass and its single-inheritance consequence, always-private constructors, per-constant method bodies as anonymous subclasses, why `==` is correct/preferred for enum comparison, the `ordinal()` persistence trap, and enum-vs-subclass design guidance** — Chapter 25, §2–§8.
 - **Records — auto-generated private final fields, canonical constructor, named (not `getX()`) accessors, correctly-paired `equals()`/`hashCode()`/`toString()` by construction; implicit `Record` superclass and implicit `final`; compact constructors; three-part disqualification test** — Chapter 26, §2–§8.
 - **Sealed classes — `permits`, mandatory `final`/`sealed`/`non-sealed` choice on every permitted subclass (no default), compiler-verified exhaustive handling, sealed-vs-enum-vs-open-inheritance test, `PermittedSubclasses` class-file attribute checked at the JVM verifier level** — Chapter 27, §2–§6.
-- **Immutability — the full checklist (final fields + no setters + protected class + defensive copies both in and out for mutable-typed fields), the concrete `final`-field-still-leaks demonstration, why records need a compact constructor for mutable components too, and the thread-safety payoff tied back to Ch1 §1.3** — Chapter 28, §2–§6. Definitive; only reference, don't re-derive.
+- **Immutability — full checklist (final fields + no setters + protected class + defensive copies both directions for mutable-typed fields), the concrete final-field-still-leaks demonstration, records needing compact-constructor copies too, thread-safety payoff tied to Ch1 §1.3** — Chapter 28, §2–§6.
+- **Object Cloning — shallow vs. deep copy defined precisely, `Object.clone()`'s default shallow behavior and total constructor-pipeline bypass, `Cloneable`'s no-method-contract oddity, `CloneNotSupportedException`'s awkwardness, and copy constructors as the recommended modern alternative** — Chapter 29, §2–§5. Definitive; only reference, don't re-derive.
 
 ## Next Up
 
-➡️ Chapter 29 — Object Cloning
+➡️ Chapter 30 — Reflection
 
 ---
 
