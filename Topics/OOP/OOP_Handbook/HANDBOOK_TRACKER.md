@@ -106,7 +106,7 @@
 | 30 | Reflection | ✅ | `30-Reflection.md` |
 | 31 | Annotations | ✅ | `31-Annotations.md` |
 | 32 | Generics | ✅ | `32-Generics.md` |
-| 33 | Comparable vs Comparator | ⬜ | `33-Comparable-vs-Comparator.md` |
+| 33 | Comparable vs Comparator | ✅ | `33-Comparable-vs-Comparator.md` |
 
 ## Part XII — Object-Oriented Design
 
@@ -165,6 +165,7 @@
 | 32 | Chapter 30 completed | Delivered reflection in full, directly connected to Mahi's stated Spring Boot direction. Core contribution: named plainly that reflection can bypass Ch12/Ch13's encapsulation entirely via `setAccessible(true)` — a deliberate, sanctioned escape hatch, not an accidental hole — and walked through conceptually how dependency injection frameworks actually use this (scan → construct via reflection → inject into private fields) to explain what Spring Boot is doing under the hood. Contrasted `Constructor.newInstance()` (goes through the real Ch3 §4 pipeline) against Ch29's `clone()` (bypasses it entirely) — a precise, useful distinction. Covered the three ways to get a `Class` object and reflection's real performance cost vs. Ch16 §4.2's direct `invokevirtual` dispatch. |
 | 33 | Chapter 31 completed | Closed the reflection+annotations story that began in Ch30 §7's imagined `@Autowired` example. Retroactively named `@Override` (used since Ch15 §4.3 without ever being called "an annotation") as a `SOURCE`-retention annotation — a satisfying, precise callback. Covered custom `@interface` declarations (a distinct form from Ch18's ordinary interfaces despite the shared keyword), `@Retention`/`@Target` meta-annotations, and — the chapter's centerpiece — a complete, working mini audit-framework example combining Ch19's `getClass()`, Ch30's reflection, and this chapter's annotations into one end-to-end demonstration of how Spring-style frameworks actually scan/construct/invoke dynamically. |
 | 34 | Chapter 32 completed | Delivered generics from first principles, framed explicitly as the same compile-time-over-runtime-error preference this handbook has repeated since Ch4 §5.1 and Ch15 §4.3. Covered generic classes/methods, bounded type parameters (unlocking `Employee`'s methods on `T` via `<T extends Employee>`), wildcards with the PECS rule, and — genuinely precise, frequently-tested content — exactly why `List<Manager>` is not a subtype of `List<Employee>` despite `Manager IS-A Employee` (Ch15), walked through via the specific unsafe operation it would permit. Closed with type erasure as the key JVM fact: `Box<Employee>`/`Box<Intern>` share one runtime class (contrast Ch2 §5.1's genuinely distinct `Manager`/`Intern` classes), explaining why `new T()` and generic `instanceof` are both illegal. Built a bounded `Repository<T extends Employee>` example previewing Spring Data's pattern. |
+| 35 | Chapter 33 completed | Closed Part XI (Advanced OOP). Delivered `Comparable<T>` (one natural order, inside the class) vs. `Comparator<T>` (unlimited external orders) as a precise structural distinction. Strongest contribution: a concrete `TreeSet` failure scenario showing exactly what breaks when `compareTo()` disagrees with `equals()` (Ch19) — `TreeSet`/`TreeMap` use `compareTo()` alone for uniqueness, never consulting `equals()`/`hashCode()` at all, so two `!equals()` objects with `compareTo() == 0` silently collapse into one element. Also flagged raw `Comparable` (no type argument) as a direct Ch32 generics/type-erasure mistake, and mentioned `thenComparing` chaining briefly without diving into functional-interface territory. |
 
 ---
 
@@ -205,11 +206,12 @@
 - **Object Cloning — shallow vs. deep copy, `Object.clone()`'s default shallow behavior and total constructor-pipeline bypass, `Cloneable`'s no-method-contract oddity, `CloneNotSupportedException`'s awkwardness, copy constructors as the recommended alternative** — Chapter 29, §2–§5.
 - **Reflection — three ways to get a `Class` object, `getDeclaredX()` vs. `getX()`, `setAccessible(true)` as a deliberate bypass of Ch12 §6's two-layer access enforcement, `Constructor.newInstance()` going through the real constructor pipeline (unlike `clone()`), `Method.invoke()` still using real dynamic dispatch underneath, reflection's performance cost vs. `invokevirtual`, the conceptual mechanics of DI frameworks** — Chapter 30, §2–§7.
 - **Annotations — metadata with no inherent behavior of its own; `@interface` as a distinct declaration form from Ch18's ordinary interfaces; `@Retention` (`SOURCE`/`CLASS`/`RUNTIME`) and `@Target`; `@Override` retroactively identified as a `SOURCE`-retention annotation; reading annotations reflectively via `isAnnotationPresent()`/`getAnnotation()`; the complete reflection+annotations picture behind DI frameworks** — Chapter 31, §2–§6.
-- **Generics — generic classes/methods, bounded type parameters, wildcards and the PECS rule, why `List<Manager>` is not a subtype of `List<Employee>`, and type erasure (no `T` at runtime, `new T()`/generic `instanceof` illegal, one shared runtime class per raw type)** — Chapter 32, §2–§8. Definitive; only reference, don't re-derive.
+- **Generics — generic classes/methods, bounded type parameters, wildcards and the PECS rule, why `List<Manager>` is not a subtype of `List<Employee>`, and type erasure** — Chapter 32, §2–§8.
+- **Comparable vs. Comparator — one natural order (in-class) vs. unlimited external orders, the `compareTo()`/`equals()` consistency recommendation and the concrete `TreeSet`/`TreeMap` uniqueness failure when violated, `thenComparing` chaining, and the raw-`Comparable` generics mistake** — Chapter 33, §2–§5. Definitive; only reference, don't re-derive.
 
 ## Next Up
 
-➡️ Chapter 33 — Comparable vs. Comparator
+➡️ Chapter 34 — SOLID Principles (begins Part XII: Object-Oriented Design)
 
 ---
 
