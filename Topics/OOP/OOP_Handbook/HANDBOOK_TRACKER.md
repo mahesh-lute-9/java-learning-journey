@@ -104,7 +104,7 @@
 | 28 | Immutability | ✅ | `28-Immutability.md` |
 | 29 | Object Cloning | ✅ | `29-Object-Cloning.md` |
 | 30 | Reflection | ✅ | `30-Reflection.md` |
-| 31 | Annotations | ⬜ | `31-Annotations.md` |
+| 31 | Annotations | ✅ | `31-Annotations.md` |
 | 32 | Generics | ⬜ | `32-Generics.md` |
 | 33 | Comparable vs Comparator | ⬜ | `33-Comparable-vs-Comparator.md` |
 
@@ -163,6 +163,7 @@
 | 30 | Chapter 28 completed | Delivered the full immutability checklist, finally resolving Ch10 §3.4's deferred promise. Core contribution: concretely demonstrated the leak `final` fields alone permit (a `final List` field can still be mutated via the caller's kept reference OR via the getter's returned reference — both independently, both requiring separate defensive copies) and showed records (Ch26) have the identical gap unless a compact constructor defensively copies mutable components. Closed with the thread-safety payoff, tied explicitly back to Ch1 §1.3's original shared-mutable-data problem — a full-circle callback to the handbook's opening argument. |
 | 31 | Chapter 29 completed | Formalized shallow vs. deep copy precisely, then delivered the classic critique of `Cloneable`/`clone()`: `Cloneable` is a no-method marker interface (unlike every Ch18 interface), `Object.clone()` bypasses the entire Ch3 §4 constructor pipeline via direct memory copy (skipping Ch12 validation entirely), defaults to shallow, and forces handling a `CloneNotSupportedException` that a correct implementation can never trigger. Closed by recommending Ch5 §7's copy constructor as the modern alternative — same deep-copy safety, real constructor pipeline, none of clone()'s baggage. |
 | 32 | Chapter 30 completed | Delivered reflection in full, directly connected to Mahi's stated Spring Boot direction. Core contribution: named plainly that reflection can bypass Ch12/Ch13's encapsulation entirely via `setAccessible(true)` — a deliberate, sanctioned escape hatch, not an accidental hole — and walked through conceptually how dependency injection frameworks actually use this (scan → construct via reflection → inject into private fields) to explain what Spring Boot is doing under the hood. Contrasted `Constructor.newInstance()` (goes through the real Ch3 §4 pipeline) against Ch29's `clone()` (bypasses it entirely) — a precise, useful distinction. Covered the three ways to get a `Class` object and reflection's real performance cost vs. Ch16 §4.2's direct `invokevirtual` dispatch. |
+| 33 | Chapter 31 completed | Closed the reflection+annotations story that began in Ch30 §7's imagined `@Autowired` example. Retroactively named `@Override` (used since Ch15 §4.3 without ever being called "an annotation") as a `SOURCE`-retention annotation — a satisfying, precise callback. Covered custom `@interface` declarations (a distinct form from Ch18's ordinary interfaces despite the shared keyword), `@Retention`/`@Target` meta-annotations, and — the chapter's centerpiece — a complete, working mini audit-framework example combining Ch19's `getClass()`, Ch30's reflection, and this chapter's annotations into one end-to-end demonstration of how Spring-style frameworks actually scan/construct/invoke dynamically. |
 
 ---
 
@@ -201,11 +202,12 @@
 - **Sealed classes — `permits`, mandatory `final`/`sealed`/`non-sealed` choice on every permitted subclass (no default), compiler-verified exhaustive handling, sealed-vs-enum-vs-open-inheritance test, `PermittedSubclasses` class-file attribute checked at the JVM verifier level** — Chapter 27, §2–§6.
 - **Immutability — full checklist (final fields + no setters + protected class + defensive copies both directions for mutable-typed fields), the concrete final-field-still-leaks demonstration, records needing compact-constructor copies too, thread-safety payoff tied to Ch1 §1.3** — Chapter 28, §2–§6.
 - **Object Cloning — shallow vs. deep copy, `Object.clone()`'s default shallow behavior and total constructor-pipeline bypass, `Cloneable`'s no-method-contract oddity, `CloneNotSupportedException`'s awkwardness, copy constructors as the recommended alternative** — Chapter 29, §2–§5.
-- **Reflection — three ways to get a `Class` object, `getDeclaredX()` vs. `getX()`, `setAccessible(true)` as a deliberate bypass of Ch12 §6's two-layer access enforcement, `Constructor.newInstance()` going through the real constructor pipeline (unlike `clone()`), `Method.invoke()` still using real dynamic dispatch underneath, reflection's performance cost vs. `invokevirtual`, and the conceptual mechanics of how dependency injection frameworks use reflection** — Chapter 30, §2–§7. Definitive; only reference, don't re-derive.
+- **Reflection — three ways to get a `Class` object, `getDeclaredX()` vs. `getX()`, `setAccessible(true)` as a deliberate bypass of Ch12 §6's two-layer access enforcement, `Constructor.newInstance()` going through the real constructor pipeline (unlike `clone()`), `Method.invoke()` still using real dynamic dispatch underneath, reflection's performance cost vs. `invokevirtual`, the conceptual mechanics of DI frameworks** — Chapter 30, §2–§7.
+- **Annotations — metadata with no inherent behavior of its own; `@interface` as a distinct declaration form from Ch18's ordinary interfaces; `@Retention` (`SOURCE`/`CLASS`/`RUNTIME`, with `RUNTIME` required for reflection visibility) and `@Target`; `@Override` retroactively identified as a `SOURCE`-retention annotation; reading annotations reflectively via `isAnnotationPresent()`/`getAnnotation()`; the complete reflection+annotations picture behind DI frameworks** — Chapter 31, §2–§6. Definitive; only reference, don't re-derive.
 
 ## Next Up
 
-➡️ Chapter 31 — Annotations
+➡️ Chapter 32 — Generics
 
 ---
 
