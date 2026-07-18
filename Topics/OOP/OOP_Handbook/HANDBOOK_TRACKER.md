@@ -103,7 +103,7 @@
 | 27 | Sealed Classes | ✅ | `27-Sealed-Classes.md` |
 | 28 | Immutability | ✅ | `28-Immutability.md` |
 | 29 | Object Cloning | ✅ | `29-Object-Cloning.md` |
-| 30 | Reflection | ⬜ | `30-Reflection.md` |
+| 30 | Reflection | ✅ | `30-Reflection.md` |
 | 31 | Annotations | ⬜ | `31-Annotations.md` |
 | 32 | Generics | ⬜ | `32-Generics.md` |
 | 33 | Comparable vs Comparator | ⬜ | `33-Comparable-vs-Comparator.md` |
@@ -162,6 +162,7 @@
 | 29 | Chapter 27 completed | Sealed `Payable`/`Employee` — closed set of permitted subclasses (`permits`), each forced to declare `final`/`sealed`/`non-sealed` explicitly, no default. Core payoff: compiler-verified exhaustive handling, contrasted against Ch15's fully-open inheritance and Ch25's enum (structurally-identical-variants) case via a precise three-way test. Genuinely strong JVM callback: `PermittedSubclasses` class-file attribute checked again by the JVM verifier — same two-layer enforcement pattern as Ch12 §6's access modifiers. |
 | 30 | Chapter 28 completed | Delivered the full immutability checklist, finally resolving Ch10 §3.4's deferred promise. Core contribution: concretely demonstrated the leak `final` fields alone permit (a `final List` field can still be mutated via the caller's kept reference OR via the getter's returned reference — both independently, both requiring separate defensive copies) and showed records (Ch26) have the identical gap unless a compact constructor defensively copies mutable components. Closed with the thread-safety payoff, tied explicitly back to Ch1 §1.3's original shared-mutable-data problem — a full-circle callback to the handbook's opening argument. |
 | 31 | Chapter 29 completed | Formalized shallow vs. deep copy precisely, then delivered the classic critique of `Cloneable`/`clone()`: `Cloneable` is a no-method marker interface (unlike every Ch18 interface), `Object.clone()` bypasses the entire Ch3 §4 constructor pipeline via direct memory copy (skipping Ch12 validation entirely), defaults to shallow, and forces handling a `CloneNotSupportedException` that a correct implementation can never trigger. Closed by recommending Ch5 §7's copy constructor as the modern alternative — same deep-copy safety, real constructor pipeline, none of clone()'s baggage. |
+| 32 | Chapter 30 completed | Delivered reflection in full, directly connected to Mahi's stated Spring Boot direction. Core contribution: named plainly that reflection can bypass Ch12/Ch13's encapsulation entirely via `setAccessible(true)` — a deliberate, sanctioned escape hatch, not an accidental hole — and walked through conceptually how dependency injection frameworks actually use this (scan → construct via reflection → inject into private fields) to explain what Spring Boot is doing under the hood. Contrasted `Constructor.newInstance()` (goes through the real Ch3 §4 pipeline) against Ch29's `clone()` (bypasses it entirely) — a precise, useful distinction. Covered the three ways to get a `Class` object and reflection's real performance cost vs. Ch16 §4.2's direct `invokevirtual` dispatch. |
 
 ---
 
@@ -199,11 +200,12 @@
 - **Records — auto-generated private final fields, canonical constructor, named (not `getX()`) accessors, correctly-paired `equals()`/`hashCode()`/`toString()` by construction; implicit `Record` superclass and implicit `final`; compact constructors; three-part disqualification test** — Chapter 26, §2–§8.
 - **Sealed classes — `permits`, mandatory `final`/`sealed`/`non-sealed` choice on every permitted subclass (no default), compiler-verified exhaustive handling, sealed-vs-enum-vs-open-inheritance test, `PermittedSubclasses` class-file attribute checked at the JVM verifier level** — Chapter 27, §2–§6.
 - **Immutability — full checklist (final fields + no setters + protected class + defensive copies both directions for mutable-typed fields), the concrete final-field-still-leaks demonstration, records needing compact-constructor copies too, thread-safety payoff tied to Ch1 §1.3** — Chapter 28, §2–§6.
-- **Object Cloning — shallow vs. deep copy defined precisely, `Object.clone()`'s default shallow behavior and total constructor-pipeline bypass, `Cloneable`'s no-method-contract oddity, `CloneNotSupportedException`'s awkwardness, and copy constructors as the recommended modern alternative** — Chapter 29, §2–§5. Definitive; only reference, don't re-derive.
+- **Object Cloning — shallow vs. deep copy, `Object.clone()`'s default shallow behavior and total constructor-pipeline bypass, `Cloneable`'s no-method-contract oddity, `CloneNotSupportedException`'s awkwardness, copy constructors as the recommended alternative** — Chapter 29, §2–§5.
+- **Reflection — three ways to get a `Class` object, `getDeclaredX()` vs. `getX()`, `setAccessible(true)` as a deliberate bypass of Ch12 §6's two-layer access enforcement, `Constructor.newInstance()` going through the real constructor pipeline (unlike `clone()`), `Method.invoke()` still using real dynamic dispatch underneath, reflection's performance cost vs. `invokevirtual`, and the conceptual mechanics of how dependency injection frameworks use reflection** — Chapter 30, §2–§7. Definitive; only reference, don't re-derive.
 
 ## Next Up
 
-➡️ Chapter 30 — Reflection
+➡️ Chapter 31 — Annotations
 
 ---
 
