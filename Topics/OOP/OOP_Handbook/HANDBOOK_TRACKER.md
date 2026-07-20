@@ -113,7 +113,7 @@
 | # | Chapter | Status | File |
 |---|---------|--------|------|
 | 34 | SOLID Principles | ✅ | `34-SOLID-Principles.md` |
-| 35 | Dependency Injection | ⬜ | `35-Dependency-Injection.md` |
+| 35 | Dependency Injection | ✅ | `35-Dependency-Injection.md` |
 
 ## Part XIII — JVM Internals
 
@@ -167,6 +167,7 @@
 | 34 | Chapter 32 completed | Delivered generics from first principles, framed explicitly as the same compile-time-over-runtime-error preference this handbook has repeated since Ch4 §5.1 and Ch15 §4.3. Covered generic classes/methods, bounded type parameters (unlocking `Employee`'s methods on `T` via `<T extends Employee>`), wildcards with the PECS rule, and — genuinely precise, frequently-tested content — exactly why `List<Manager>` is not a subtype of `List<Employee>` despite `Manager IS-A Employee` (Ch15), walked through via the specific unsafe operation it would permit. Closed with type erasure as the key JVM fact: `Box<Employee>`/`Box<Intern>` share one runtime class (contrast Ch2 §5.1's genuinely distinct `Manager`/`Intern` classes), explaining why `new T()` and generic `instanceof` are both illegal. Built a bounded `Repository<T extends Employee>` example previewing Spring Data's pattern. |
 | 35 | Chapter 33 completed | Closed Part XI (Advanced OOP). Delivered `Comparable<T>` (one natural order, inside the class) vs. `Comparator<T>` (unlimited external orders) as a precise structural distinction. Strongest contribution: a concrete `TreeSet` failure scenario showing exactly what breaks when `compareTo()` disagrees with `equals()` (Ch19) — `TreeSet`/`TreeMap` use `compareTo()` alone for uniqueness, never consulting `equals()`/`hashCode()` at all, so two `!equals()` objects with `compareTo() == 0` silently collapse into one element. Also flagged raw `Comparable` (no type argument) as a direct Ch32 generics/type-erasure mistake, and mentioned `thenComparing` chaining briefly without diving into functional-interface territory. |
 | 36 | Chapter 34 completed | Opened Part XII (Object-Oriented Design). Assembled all five SOLID principles, deliberately reusing rather than re-deriving existing running-example content: SRP ↔ Ch22's `ContactInfo` extraction, OCP ↔ Ch16 §7's polymorphic payroll loop (with an explicit, precise note on Ch27's sealed classes as a *deliberate exception* to OCP, not a contradiction), LSP formalized via an `Intern.getSalary()`-throws-instead-of-returning violation (named as the principle that makes Ch16's whole polymorphism chapter safe to rely on), ISP delivering on Ch18 §7's forward promise via a bloated-`Payable`-split example, and DIP ↔ Ch22 §6.2's `Car`/`Engine` example. Closed with a precise Dependency Inversion (principle) vs. Dependency Injection (pattern/mechanism) distinction, setting up Ch35 directly. |
+| 37 | Chapter 35 completed | Closed Part XII. Delivered the DI pattern in full — constructor injection (recommended, ties to Ch10 final + Ch12 valid-construction), setter injection (optional deps), and field injection (weakest: no final, hidden deps, harder to test, mechanically Ch30 §4's `setAccessible(true)`+`Field.set()`). Genuine capstone moment: walked through exactly how a Spring-style IoC container performs IoC using ONLY mechanics this handbook already built — Ch30's reflection (scanning, `Constructor.newInstance()`, field injection) plus Ch31's annotations (`isAnnotationPresent` on `@Autowired`) — nothing new introduced, just assembled. Named "Inversion of Control" precisely as the broader idea DI implements. Noted current, correct Spring guidance: constructor injection over field injection despite the latter's historical prevalence in tutorials. |
 
 ---
 
@@ -209,11 +210,12 @@
 - **Annotations — metadata with no inherent behavior of its own; `@interface` as a distinct declaration form from Ch18's ordinary interfaces; `@Retention` (`SOURCE`/`CLASS`/`RUNTIME`) and `@Target`; `@Override` retroactively identified as a `SOURCE`-retention annotation; reading annotations reflectively via `isAnnotationPresent()`/`getAnnotation()`; the complete reflection+annotations picture behind DI frameworks** — Chapter 31, §2–§6.
 - **Generics — generic classes/methods, bounded type parameters, wildcards and the PECS rule, why `List<Manager>` is not a subtype of `List<Employee>`, and type erasure** — Chapter 32, §2–§8.
 - **Comparable vs. Comparator — one natural order (in-class) vs. unlimited external orders, the `compareTo()`/`equals()` consistency recommendation and the concrete `TreeSet`/`TreeMap` uniqueness failure when violated, `thenComparing` chaining, the raw-`Comparable` generics mistake** — Chapter 33, §2–§5.
-- **SOLID Principles — SRP (one reason to change), OCP (extensible without modification, with sealed classes as a deliberate exception), LSP (subclass must honor the parent's behavioral contract, not just compile — the principle underwriting Ch16's polymorphism), ISP (many focused interfaces over one bloated one, delivering on Ch18 §7's promise), and DIP (depend on abstractions) explicitly distinguished from the Dependency Injection pattern that implements it** — Chapter 34, §2–§6. Definitive; only reference, don't re-derive. (Full Dependency Injection mechanics still belong to Ch. 35.)
+- **SOLID Principles — SRP, OCP (with sealed classes as a deliberate exception), LSP (underwriting Ch16's polymorphism), ISP, DIP explicitly distinguished from the DI pattern** — Chapter 34, §2–§6.
+- **Dependency Injection — constructor/setter/field injection compared precisely (immutability, hidden dependencies, testability), manual DI (composition root) vs. container-managed DI, the exact Ch30+Ch31 mechanics a Spring-style container uses under the hood, and Inversion of Control as the broader idea DI implements** — Chapter 35, §2–§6. Definitive; only reference, don't re-derive.
 
 ## Next Up
 
-➡️ Chapter 35 — Dependency Injection
+➡️ Chapter 36 — Object Lifecycle (begins Part XIII: JVM Internals)
 
 ---
 
