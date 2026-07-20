@@ -119,7 +119,7 @@
 
 | # | Chapter | Status | File |
 |---|---------|--------|------|
-| 36 | Object Lifecycle | ⬜ | `36-Object-Lifecycle.md` |
+| 36 | Object Lifecycle | ✅ | `36-Object-Lifecycle.md` |
 | 37 | Memory Management | ⬜ | `37-Memory-Management.md` |
 | 38 | Garbage Collection | ⬜ | `38-Garbage-Collection.md` |
 | 39 | Class Loading | ⬜ | `39-Class-Loading.md` |
@@ -168,6 +168,7 @@
 | 35 | Chapter 33 completed | Closed Part XI (Advanced OOP). Delivered `Comparable<T>` (one natural order, inside the class) vs. `Comparator<T>` (unlimited external orders) as a precise structural distinction. Strongest contribution: a concrete `TreeSet` failure scenario showing exactly what breaks when `compareTo()` disagrees with `equals()` (Ch19) — `TreeSet`/`TreeMap` use `compareTo()` alone for uniqueness, never consulting `equals()`/`hashCode()` at all, so two `!equals()` objects with `compareTo() == 0` silently collapse into one element. Also flagged raw `Comparable` (no type argument) as a direct Ch32 generics/type-erasure mistake, and mentioned `thenComparing` chaining briefly without diving into functional-interface territory. |
 | 36 | Chapter 34 completed | Opened Part XII (Object-Oriented Design). Assembled all five SOLID principles, deliberately reusing rather than re-deriving existing running-example content: SRP ↔ Ch22's `ContactInfo` extraction, OCP ↔ Ch16 §7's polymorphic payroll loop (with an explicit, precise note on Ch27's sealed classes as a *deliberate exception* to OCP, not a contradiction), LSP formalized via an `Intern.getSalary()`-throws-instead-of-returning violation (named as the principle that makes Ch16's whole polymorphism chapter safe to rely on), ISP delivering on Ch18 §7's forward promise via a bloated-`Payable`-split example, and DIP ↔ Ch22 §6.2's `Car`/`Engine` example. Closed with a precise Dependency Inversion (principle) vs. Dependency Injection (pattern/mechanism) distinction, setting up Ch35 directly. |
 | 37 | Chapter 35 completed | Closed Part XII. Delivered the DI pattern in full — constructor injection (recommended, ties to Ch10 final + Ch12 valid-construction), setter injection (optional deps), and field injection (weakest: no final, hidden deps, harder to test, mechanically Ch30 §4's `setAccessible(true)`+`Field.set()`). Genuine capstone moment: walked through exactly how a Spring-style IoC container performs IoC using ONLY mechanics this handbook already built — Ch30's reflection (scanning, `Constructor.newInstance()`, field injection) plus Ch31's annotations (`isAnnotationPresent` on `@Autowired`) — nothing new introduced, just assembled. Named "Inversion of Control" precisely as the broader idea DI implements. Noted current, correct Spring guidance: constructor injection over field injection despite the latter's historical prevalence in tutorials. |
+| 38 | Chapter 36 completed | Opened Part XIII (JVM Internals), the handbook's final part. Assembled the complete object lifecycle — class loading (Ch2 §6.2) → creation (synthesized Ch3 §4 + Ch6 §4 + Ch11 §3 into one unified diagram, a genuine capstone visual) → in use → unreachable → GC-eligible → reclaimed (Ch38 in full). Core new contribution: formalized reachability (GC roots: stack variables, live static fields, thread references) as the actual basis for collection eligibility — not reference counting — demonstrated with the "islands of isolation" case (mutually-referencing objects with no external path in are still correctly eligible). Covered `finalize()`'s deprecated status and `try`-with-resources/`AutoCloseable` as the modern replacement. |
 
 ---
 
@@ -211,11 +212,12 @@
 - **Generics — generic classes/methods, bounded type parameters, wildcards and the PECS rule, why `List<Manager>` is not a subtype of `List<Employee>`, and type erasure** — Chapter 32, §2–§8.
 - **Comparable vs. Comparator — one natural order (in-class) vs. unlimited external orders, the `compareTo()`/`equals()` consistency recommendation and the concrete `TreeSet`/`TreeMap` uniqueness failure when violated, `thenComparing` chaining, the raw-`Comparable` generics mistake** — Chapter 33, §2–§5.
 - **SOLID Principles — SRP, OCP (with sealed classes as a deliberate exception), LSP (underwriting Ch16's polymorphism), ISP, DIP explicitly distinguished from the DI pattern** — Chapter 34, §2–§6.
-- **Dependency Injection — constructor/setter/field injection compared precisely (immutability, hidden dependencies, testability), manual DI (composition root) vs. container-managed DI, the exact Ch30+Ch31 mechanics a Spring-style container uses under the hood, and Inversion of Control as the broader idea DI implements** — Chapter 35, §2–§6. Definitive; only reference, don't re-derive.
+- **Dependency Injection — constructor/setter/field injection compared precisely, manual DI vs. container-managed DI, the exact Ch30+Ch31 mechanics a Spring-style container uses, Inversion of Control** — Chapter 35, §2–§6.
+- **Object Lifecycle — the complete birth-to-death picture (class loading → creation → in use → unreachable → GC-eligible → reclaimed), reachability from GC roots as the actual collection-eligibility basis (not reference counting), islands of isolation, and `finalize()`'s deprecated status vs. `try`-with-resources/`AutoCloseable`** — Chapter 36, §2–§6. Definitive; only reference, don't re-derive. (Full GC algorithm/timing mechanics, Heap generational structure — still belong to Ch. 37/38.)
 
 ## Next Up
 
-➡️ Chapter 36 — Object Lifecycle (begins Part XIII: JVM Internals)
+➡️ Chapter 37 — Memory Management
 
 ---
 
