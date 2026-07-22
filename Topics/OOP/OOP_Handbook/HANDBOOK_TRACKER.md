@@ -123,7 +123,7 @@
 | 37 | Memory Management | ✅ | `37-Memory-Management.md` |
 | 38 | Garbage Collection | ✅ | `38-Garbage-Collection.md` |
 | 39 | Class Loading | ✅ | `39-Class-Loading.md` |
-| 40 | Method Dispatch | ⬜ | `40-Method-Dispatch.md` |
+| 40 | Method Dispatch | ✅ | `40-Method-Dispatch.md` |
 
 ---
 
@@ -172,6 +172,13 @@
 | 39 | Chapter 37 completed | Opened the Heap's internal structure — the third and final memory region, after Stack (Ch4 §5) and Metaspace (Ch2 §6.1) were already fully covered elsewhere. Delivered the generational hypothesis as the reasoning behind Eden → Survivor space(s) → Old Generation, minor vs. major/full GC cost asymmetry, and TLABs as the concrete reason ordinary allocation is cheap despite being automatic. Strongest contribution: connected object promotion directly to Ch3 §6's Mark Word — the age counter that was always part of that object header discussion, now given specific, concrete content instead of staying an abstract mention. Related the whole chapter back to typical Spring Boot request-handling workloads (mostly short-lived objects) as a practical, domain-relevant closing point. |
 | 40 | Chapter 38 completed | Delivered the payoff for this handbook's oldest, most-repeated forward pointer (first made Ch3 §10). Covered mark-sweep-compact in full (mark from GC roots, sweep unmarked, compact to eliminate fragmentation — with a concrete reason compaction matters beyond tidiness), then explained precisely why minor GC uses copying instead (Ch37 §2's generational hypothesis makes copying the few survivors cheaper than sweeping a mostly-dead region) while major/full GC uses mark-sweep-compact (Old Gen's much higher live ratio makes copying wasteful there) — a direct, deliberate asymmetry stemming from Ch37's generational split. Explained stop-the-world pauses as a genuine correctness requirement during marking, not an arbitrary inconvenience. Closed with `System.gc()` as hint-not-guarantee, reinforcing Ch36 §9, and brief recognition-level namedrops of Serial/Parallel/G1/ZGC/Shenandoah. |
 | 41 | Chapter 39 completed | Delivered the complete Loading → Linking (Verification, Preparation, Resolution) → Initialization pipeline, closing off forward references from Ch2, Ch4, Ch9, Ch10, Ch12, Ch14, Ch19, Ch27, and Ch30 all at once. Strongest contribution: precisely located Ch12's bytecode verifier and Ch27's `PermittedSubclasses` check inside Verification specifically, rather than a vague "somewhere during loading." Enumerated the exact loading-trigger events, including the compile-time-constant exception (Ch10 §6's constant folding — referencing a constant doesn't load its class at all). Introduced classloader delegation as genuinely new content — the parent-first check that guarantees core Java classes can't be shadowed, plus the name+classloader runtime identity fact. Full pipeline traced concretely against `Manager`/`Employee`/Ch27's sealed hierarchy. |
+| 42 | Chapter 40 completed — **HANDBOOK COMPLETE, 40/40 CHAPTERS.** | Delivered the final synthesis chapter: all four method-invocation bytecode instructions (`invokestatic`, `invokespecial`, `invokevirtual`, `invokeinterface`) — introduced separately across Ch3, Ch5, Ch7, Ch9, Ch11, Ch16, Ch18 — assembled into one unified comparison table and demonstrated together in a single annotated code example spanning the entire running `Employee`/`Manager`/`Payable` domain. Explained precisely why constructors, private methods, and `super.method()` share `invokespecial` (same underlying reason: statically known target, no dispatch decision) and why interfaces need `invokeinterface`'s identity-based lookup instead of `invokevirtual`'s fixed vtable slot (multiple-interface implementation, Ch18 §3, vs. single-inheritance vtables, Ch15 §5). Closed with a full-circle retrospective tying the finished `Employee` hierarchy back to Chapter 1's opening premise, and practical next steps (Spring Boot, spaced-repetition review of Self Assessment questions across all 40 chapters). |
+
+---
+
+## 🎉 HANDBOOK STATUS: COMPLETE
+
+All 40 chapters finished — Part I (Foundations) through Part XIII (JVM Internals). Every chapter follows the required structure (theory, diagrams, JVM internals where relevant, real-world example extending one continuous `Employee`/`Manager`/`Intern`/`Payable`/`Department` domain, best practices, common mistakes, interview Q&A, summary, quick revision, self-assessment) and cross-references rather than repeats earlier chapters throughout, per the handbook's No Repetition Rule.
 
 ---
 
@@ -219,11 +226,12 @@
 - **Object Lifecycle — the complete birth-to-death picture, reachability from GC roots, islands of isolation, `finalize()`'s deprecated status** — Chapter 36, §2–§6.
 - **Memory Management — the generational hypothesis, Heap internal structure, minor vs. major/full GC cost asymmetry, TLABs, object promotion via the Mark Word age counter** — Chapter 37, §2–§6.
 - **Garbage Collection — mark-sweep-compact, copying for minor GC vs. mark-sweep-compact for major/full GC, stop-the-world pauses, `System.gc()` as hint-not-guarantee, modern collector names** — Chapter 38, §2–§7.
-- **Class Loading — the complete Loading→Linking(Verification/Preparation/Resolution)→Initialization pipeline, precisely locating Ch12's verifier and Ch27's `PermittedSubclasses` check inside Verification, the exact loading-trigger events including the compile-time-constant exception, and classloader delegation (parent-first, name+classloader runtime identity)** — Chapter 39, §2–§5. Definitive; only reference, don't re-derive.
+- **Class Loading — the complete Loading→Linking(Verification/Preparation/Resolution)→Initialization pipeline, precisely locating Ch12's verifier and Ch27's `PermittedSubclasses` check inside Verification, the exact loading-trigger events including the compile-time-constant exception, and classloader delegation** — Chapter 39, §2–§5.
+- **Method Dispatch — all four invocation instructions (`invokestatic`, `invokespecial`, `invokevirtual`, `invokeinterface`) unified in one comparison table, why constructors/private methods/`super.method()` share `invokespecial`, why interfaces need `invokeinterface`'s identity lookup instead of a fixed vtable slot, and JIT de-virtualization** — Chapter 40, §2–§5. Final chapter — definitive for the whole handbook.
 
-## Next Up
+## Handbook Status
 
-➡️ Chapter 40 — Method Dispatch (FINAL CHAPTER)
+**COMPLETE — 40 of 40 chapters.** No further chapters remain. If revisiting this handbook in a future session: all content is final; any further work would be revision/polish of existing chapters, not new chapters.
 
 ---
 
