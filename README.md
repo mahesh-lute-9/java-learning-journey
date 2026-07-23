@@ -12,7 +12,7 @@
 > **A structured Java learning ecosystem documenting my journey from Core Java fundamentals to advanced JVM internals while building a comprehensive Java OOP Handbook, interview-oriented notes, practical programs, and automated learning progress.**
 
 <!-- LAST_UPDATED_START -->
-_Last updated: 2026-07-23 UTC · 42 learning sessions logged · Java OOP Handbook Completed_
+_Last updated: 2026-07-23 19:20 UTC · 42 day(s) logged_
 <!-- LAST_UPDATED_END -->
 
 ---
@@ -483,9 +483,50 @@ Please do not edit them manually.
 ```
 
 <!-- PROGRESS_LOG_START -->
-
-(GitHub Actions will generate this section.)
-
+| Date | Day | Topic | Folder |
+|------|-----|-------|--------|
+| 2026-05-26 | 1 | Java Data Types – Understanding Primitive & Reference Types | [Topics/Datatypes](Topics/Datatypes) |
+| 2026-05-26 | 2 | JVM Architecture – Understanding How Java Executes Code | [Topics/JVM_Architecture](Topics/JVM_Architecture) |
+| 2026-06-02 | 3 | Operators in Java – Expressions, Evaluation & Bitwise Operations | [Topics/Operators](Topics/Operators) |
+| 2026-06-14 | 4 | Type Casting – Primitive Conversions and Data Loss | [Topics/TypeCasting](Topics/TypeCasting) |
+| 2026-06-16 | 5 | Control Statements – Decision Making & Iteration | [Topics/ControlStatements](Topics/ControlStatements) |
+| 2026-06-17 | 6 | Input & Output – Scanner, BufferedReader and Console Input | [Topics/IO](Topics/IO) |
+| 2026-06-18 | 7 | Arrays – Fundamentals, Memory & Traversal | [Topics/Arrays](Topics/Arrays) |
+| 2026-06-19 | 8 | Arrays – Practice Problems & Multi-dimensional Arrays | [Topics/Arrays](Topics/Arrays) |
+| 2026-06-20 | 9 | Integer Cache & Wrapper Classes – Autoboxing Internals | [Topics/IntegerCache](Topics/IntegerCache) |
+| 2026-06-21 | 10 | Command Line Arguments – Passing Runtime Parameters | [Topics/CommandLineArgs](Topics/CommandLineArgs) |
+| 2026-06-22 | 11 | Variables in Java – Scope, Lifetime & Memory | [Topics/Variables](Topics/Variables) |
+| 2026-06-23 | 12 | Varargs – Variable Length Arguments | [Topics/Varargs](Topics/Varargs) |
+| 2026-06-29 | 13 | String – Immutability, Pool & Essential Methods | [Topics/Strings/String](Topics/Strings/String) |
+| 2026-06-29 | 14 | StringBuilder – Efficient Mutable Strings | [Topics/Strings/StringBuilder](Topics/Strings/StringBuilder) |
+| 2026-06-30 | 15 | StringBuffer – Thread-safe Mutable Strings | [Topics/Strings/StringBuffer](Topics/Strings/StringBuffer) |
+| 2026-07-01 | 16 | String Pool – JVM Memory & Interview Concepts | [Topics/Strings/StringPool](Topics/Strings/StringPool) |
+| 2026-07-02 | 17 | StringTokenizer – Tokenizing Text Data | [Topics/Strings/StringTokenizer](Topics/Strings/StringTokenizer) |
+| 2026-07-05 | 18 | Wrapper Classes – Object Representation of Primitive Types | [Topics/WrapperClasses](Topics/WrapperClasses) |
+| 2026-07-07 | 19 | Classes & Objects – Building Blocks of Object-Oriented Programming | [Topics/OOP/ClassesAndObjects](Topics/OOP/ClassesAndObjects) |
+| 2026-07-08 | 20 | Introduction to OOP, Class & Object – Foundations of Java Object-Oriented Programming | [Topics/OOP/OOP_Handbook/01_Introduction_to_OOP](Topics/OOP/OOP_Handbook/01_Introduction_to_OOP) |
+| 2026-07-09 | 21 | Constructors & Instance Variables – Object Initialization | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-10 | 22 | Static Variables & Local Variables – Variable Scope and Lifetime | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-11 | 23 | Variable Shadowing, Instance Methods & Static Methods | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-12 | 24 | Method Overloading & Instance Initialization Blocks | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-13 | 25 | Static Initialization Blocks, this Keyword & static Keyword | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-14 | 26 | final Keyword & super Keyword | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-15 | 27 | Encapsulation & Access Modifiers | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-16 | 28 | Packages – Organizing Java Applications | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-17 | 29 | Inheritance – Code Reusability and IS-A Relationship | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-18 | 30 | Polymorphism – Runtime and Compile-time Behavior | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-19 | 31 | Abstraction – Hiding Implementation and Exposing Behavior | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-20 | 32 | Interfaces – Achieving Multiple Inheritance of Type | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-21 | 33 | Object Class & Association – Root of the Java Class Hierarchy | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-22 | 34 | Aggregation & Composition – HAS-A Relationships | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-23 | 35 | Nested Classes & Anonymous Classes | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-24 | 36 | Enums & Records – Modern Java Language Features | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-25 | 37 | Sealed Classes & Immutability | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-26 | 38 | Object Cloning & Reflection | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-27 | 39 | Annotations & Generics | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-28 | 40 | Comparable, Comparator & SOLID Principles | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-29 | 41 | Dependency Injection & Object Lifecycle | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
+| 2026-07-30 | 42 | JVM Memory Management, Garbage Collection, Class Loading & Method Dispatch | [Topics/OOP/OOP_Handbook](Topics/OOP/OOP_Handbook) |
 <!-- PROGRESS_LOG_END -->
 
 ---
@@ -499,9 +540,258 @@ Instead of maintaining separate revision notes, the repository automatically bui
 ```
 
 <!-- KEY_CONCEPTS_START -->
+### Day 1 — Java Data Types – Understanding Primitive & Reference Types
+- Java provides 8 primitive data types for efficient memory usage.
+- Reference variables store object references while objects reside on the Heap.
+- Learned default values, literal representations, and memory allocation.
+- Explored binary, octal, hexadecimal, floating-point, and character literals.
 
-(GitHub Actions will generate this section.)
+### Day 2 — JVM Architecture – Understanding How Java Executes Code
+- Studied the complete Java execution pipeline from source code to machine code.
+- Learned the responsibilities of the Class Loader, Runtime Data Areas, and Execution Engine.
+- Explored the role of the JIT Compiler in runtime optimization.
+- Understood how Garbage Collection automatically manages Heap memory.
 
+### Day 3 — Operators in Java – Expressions, Evaluation & Bitwise Operations
+- Explored arithmetic, relational, logical, assignment, and ternary operators.
+- Learned operator precedence and associativity rules.
+- Practiced bitwise operators and binary manipulation.
+- Understood short-circuit evaluation with logical operators.
+
+### Day 4 — Type Casting – Primitive Conversions and Data Loss
+- Learned widening and narrowing conversions.
+- Explored implicit and explicit casting.
+- Observed overflow, truncation, and precision loss.
+- Converted between primitive types and Strings.
+
+### Day 5 — Control Statements – Decision Making & Iteration
+- Practiced if, if-else, nested if, switch, loops, break, and continue.
+- Learned enhanced for-loops and labeled statements.
+- Explored Java 14+ switch expressions.
+- Solved multiple decision-making practice problems.
+
+### Day 6 — Input & Output – Scanner, BufferedReader and Console Input
+- Compared Scanner and BufferedReader performance.
+- Handled primitive and String input.
+- Learned common Scanner pitfalls such as nextLine() after nextInt().
+- Implemented safe input handling practices.
+
+### Day 7 — Arrays – Fundamentals, Memory & Traversal
+- Learned array declaration, initialization, and traversal.
+- Explored memory representation of arrays.
+- Practiced searching and sorting basics.
+- Used Arrays utility methods for common operations.
+
+### Day 8 — Arrays – Practice Problems & Multi-dimensional Arrays
+- Solved practical array-based coding problems.
+- Worked with 2D and jagged arrays.
+- Implemented linear and binary search.
+- Strengthened indexing and traversal concepts.
+
+### Day 9 — Integer Cache & Wrapper Classes – Autoboxing Internals
+- Studied Integer Cache and object reuse.
+- Learned autoboxing and unboxing.
+- Compared Integer.valueOf() with constructors.
+- Explored wrapper class behavior during comparisons.
+
+### Day 10 — Command Line Arguments – Passing Runtime Parameters
+- Learned how Java receives command-line arguments.
+- Parsed runtime input into primitive types.
+- Handled argument validation safely.
+- Explored practical use cases for runtime configuration.
+
+### Day 11 — Variables in Java – Scope, Lifetime & Memory
+- Studied local, instance, and static variables.
+- Understood variable scope, lifetime, and default values.
+- Learned memory allocation for different variable types.
+- Practiced variable declaration and initialization.
+
+### Day 12 — Varargs – Variable Length Arguments
+- Learned how varargs simplify method invocation.
+- Compared varargs with arrays.
+- Understood method overloading with varargs.
+- Explored compiler behavior for variable arguments.
+
+### Day 13 — String – Immutability, Pool & Essential Methods
+- Learned String immutability and memory model.
+- Explored String Pool and heap allocation.
+- Compared == and equals().
+- Practiced commonly used String methods.
+
+### Day 14 — StringBuilder – Efficient Mutable Strings
+- Learned mutable string manipulation.
+- Compared StringBuilder with String.
+- Studied internal capacity expansion.
+- Practiced append(), insert(), delete(), replace(), and reverse().
+
+### Day 15 — StringBuffer – Thread-safe Mutable Strings
+- Learned synchronized mutable strings.
+- Compared StringBuffer with StringBuilder.
+- Understood performance trade-offs.
+- Practiced common StringBuffer operations.
+
+### Day 16 — String Pool – JVM Memory & Interview Concepts
+- Studied String Pool internals.
+- Learned compile-time vs runtime String creation.
+- Practiced interview-oriented object creation questions.
+- Visualized String memory using JVM diagrams.
+
+### Day 17 — StringTokenizer – Tokenizing Text Data
+- Learned StringTokenizer usage.
+- Compared StringTokenizer with split().
+- Parsed structured text data.
+- Understood legacy parsing techniques.
+
+### Day 18 — Wrapper Classes – Object Representation of Primitive Types
+- Studied wrapper classes for all primitive types.
+- Learned autoboxing and unboxing.
+- Compared parseX() and valueOf().
+- Practiced wrapper class interview questions.
+
+### Day 19 — Classes & Objects – Building Blocks of Object-Oriented Programming
+- Learned the relationship between classes and objects.
+- Studied object creation and initialization.
+- Understood heap and stack memory for objects.
+- Practiced designing simple Java classes.
+
+### Day 20 — Introduction to OOP, Class & Object – Foundations of Java Object-Oriented Programming
+- Revisited the four pillars of Object-Oriented Programming.
+- Differentiated classes from objects using real-world examples.
+- Learned blueprint vs instance concepts.
+- Established the conceptual foundation for the Java OOP Handbook.
+
+### Day 21 — Constructors & Instance Variables – Object Initialization
+- Learned the purpose of constructors in object creation.
+- Explored default, parameterized, and constructor overloading.
+- Studied instance variables and their lifecycle.
+- Understood how constructors initialize object state.
+
+### Day 22 — Static Variables & Local Variables – Variable Scope and Lifetime
+- Compared static, instance, and local variables.
+- Studied memory allocation and lifecycle differences.
+- Learned when shared state is useful.
+- Practiced scope-based coding examples.
+
+### Day 23 — Variable Shadowing, Instance Methods & Static Methods
+- Learned how variable shadowing occurs.
+- Compared instance methods with static methods.
+- Understood method invocation based on object and class.
+- Explored best practices for method design.
+
+### Day 24 — Method Overloading & Instance Initialization Blocks
+- Studied compile-time polymorphism using method overloading.
+- Learned constructor resolution rules.
+- Explored instance initialization blocks.
+- Understood object initialization sequence.
+
+### Day 25 — Static Initialization Blocks, this Keyword & static Keyword
+- Studied static initialization blocks.
+- Learned practical uses of the this keyword.
+- Explored static members and class loading.
+- Practiced constructor chaining using this().
+
+### Day 26 — final Keyword & super Keyword
+- Learned final variables, methods, and classes.
+- Explored inheritance initialization using super.
+- Compared this and super.
+- Practiced constructor chaining with inheritance.
+
+### Day 27 — Encapsulation & Access Modifiers
+- Implemented encapsulation using private fields.
+- Created getter and setter methods.
+- Compared all Java access modifiers.
+- Learned principles of information hiding.
+
+### Day 28 — Packages – Organizing Java Applications
+- Learned package creation and organization.
+- Understood package naming conventions.
+- Worked with import statements.
+- Explored package visibility.
+
+### Day 29 — Inheritance – Code Reusability and IS-A Relationship
+- Studied single, multilevel, and hierarchical inheritance.
+- Learned method overriding.
+- Explored IS-A relationship.
+- Practiced inheritance-based design.
+
+### Day 30 — Polymorphism – Runtime and Compile-time Behavior
+- Compared compile-time and runtime polymorphism.
+- Studied dynamic method dispatch.
+- Explored overriding and overloading together.
+- Implemented polymorphism using inheritance.
+
+### Day 31 — Abstraction – Hiding Implementation and Exposing Behavior
+- Learned the purpose of abstraction in software design.
+- Compared abstract classes with concrete classes.
+- Implemented abstraction using abstract methods.
+- Understood when abstraction improves maintainability.
+
+### Day 32 — Interfaces – Achieving Multiple Inheritance of Type
+- Learned interface declaration and implementation.
+- Compared interfaces with abstract classes.
+- Studied default and static methods.
+- Practiced interface-based design.
+
+### Day 33 — Object Class & Association – Root of the Java Class Hierarchy
+- Explored Object class methods.
+- Learned equals(), hashCode(), toString() and clone().
+- Understood association relationships.
+- Practiced object collaboration design.
+
+### Day 34 — Aggregation & Composition – HAS-A Relationships
+- Compared association, aggregation and composition.
+- Learned ownership relationships.
+- Designed reusable object models.
+- Applied HAS-A relationships in Java.
+
+### Day 35 — Nested Classes & Anonymous Classes
+- Learned member, local and static nested classes.
+- Created anonymous class implementations.
+- Compared nested classes with top-level classes.
+- Understood encapsulation using nested types.
+
+### Day 36 — Enums & Records – Modern Java Language Features
+- Learned enum constants and behavior.
+- Studied Java Records for immutable data models.
+- Compared records with traditional POJOs.
+- Explored practical use cases.
+
+### Day 37 — Sealed Classes & Immutability
+- Studied sealed classes introduced in modern Java.
+- Learned controlled inheritance.
+- Explored immutable object design.
+- Applied best practices for immutable classes.
+
+### Day 38 — Object Cloning & Reflection
+- Learned shallow and deep cloning.
+- Studied Cloneable interface.
+- Explored Java Reflection API.
+- Inspected classes dynamically at runtime.
+
+### Day 39 — Annotations & Generics
+- Learned built-in and custom annotations.
+- Studied Java Generics.
+- Implemented generic classes and methods.
+- Understood compile-time type safety.
+
+### Day 40 — Comparable, Comparator & SOLID Principles
+- Compared Comparable and Comparator.
+- Implemented custom sorting strategies.
+- Studied all five SOLID principles.
+- Applied object-oriented design best practices.
+
+### Day 41 — Dependency Injection & Object Lifecycle
+- Learned Dependency Injection fundamentals.
+- Compared constructor and setter injection.
+- Studied Java object lifecycle.
+- Prepared for Spring Framework concepts.
+
+### Day 42 — JVM Memory Management, Garbage Collection, Class Loading & Method Dispatch
+- Explored JVM runtime memory areas.
+- Studied modern Garbage Collection algorithms.
+- Learned Java Class Loading Mechanism.
+- Understood static, dynamic and virtual method dispatch.
+- Connected OOP concepts with JVM internals.
 <!-- KEY_CONCEPTS_END -->
 
 ---
@@ -523,9 +813,157 @@ Resources include:
 ```
 
 <!-- RESOURCES_START -->
+### Day 1 — Java Data Types – Understanding Primitive & Reference Types
+- [Java Data Types - GeeksforGeeks](https://www.geeksforgeeks.org/java/java-data-types/)
+- [Primitive Data Types - Oracle Docs](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
 
-(GitHub Actions will generate this section.)
+### Day 2 — JVM Architecture – Understanding How Java Executes Code
+- [JVM Architecture - GeeksforGeeks](https://www.geeksforgeeks.org/java/how-jvm-works-jvm-architecture/)
+- [Java Virtual Machine Specification](https://docs.oracle.com/javase/specs/)
 
+### Day 3 — Operators in Java – Expressions, Evaluation & Bitwise Operations
+- [Operators in Java - GeeksforGeeks](https://www.geeksforgeeks.org/java/operators-in-java/)
+
+### Day 4 — Type Casting – Primitive Conversions and Data Loss
+- [Type Casting in Java](https://www.geeksforgeeks.org/java/type-conversion-java-examples/)
+
+### Day 5 — Control Statements – Decision Making & Iteration
+- [Control Flow Statements](https://www.geeksforgeeks.org/java/decision-making-javaif-else-switch-break-continue-jump/)
+
+### Day 6 — Input & Output – Scanner, BufferedReader and Console Input
+- [Java Input Output](https://www.geeksforgeeks.org/java/java-io-input-output-in-java-with-examples/)
+
+### Day 7 — Arrays – Fundamentals, Memory & Traversal
+- [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
+
+### Day 8 — Arrays – Practice Problems & Multi-dimensional Arrays
+- [Arrays in Java](https://www.geeksforgeeks.org/java/arrays-in-java/)
+
+### Day 9 — Integer Cache & Wrapper Classes – Autoboxing Internals
+- [Integer Cache in Java](https://www.geeksforgeeks.org/java/java-integer-cache/)
+- [Wrapper Classes in Java](https://www.geeksforgeeks.org/java/wrapper-classes-in-java/)
+
+### Day 10 — Command Line Arguments – Passing Runtime Parameters
+- [Command Line Arguments in Java](https://www.geeksforgeeks.org/java/command-line-arguments-in-java/)
+
+### Day 11 — Variables in Java – Scope, Lifetime & Memory
+- [Variables in Java](https://www.geeksforgeeks.org/java/variables-in-java/)
+- [Oracle Java Variables](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html)
+
+### Day 12 — Varargs – Variable Length Arguments
+- [Variable Arguments (Varargs)](https://www.geeksforgeeks.org/java/variable-arguments-varargs-in-java/)
+
+### Day 13 — String – Immutability, Pool & Essential Methods
+- [Java String](https://www.geeksforgeeks.org/java/strings-in-java/)
+- [Oracle String API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
+
+### Day 14 — StringBuilder – Efficient Mutable Strings
+- [StringBuilder in Java](https://www.geeksforgeeks.org/java/stringbuilder-class-in-java-with-examples/)
+- [Oracle StringBuilder API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html)
+
+### Day 15 — StringBuffer – Thread-safe Mutable Strings
+- [StringBuffer in Java](https://www.geeksforgeeks.org/java/stringbuffer-class-in-java/)
+- [Oracle StringBuffer API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html)
+
+### Day 16 — String Pool – JVM Memory & Interview Concepts
+- [Java String Pool](https://www.geeksforgeeks.org/java/java-string-pool/)
+
+### Day 17 — StringTokenizer – Tokenizing Text Data
+- [StringTokenizer](https://www.geeksforgeeks.org/java/stringtokenizer-class-in-java/)
+- [Oracle StringTokenizer API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/StringTokenizer.html)
+
+### Day 18 — Wrapper Classes – Object Representation of Primitive Types
+- [Wrapper Classes in Java](https://www.geeksforgeeks.org/java/wrapper-classes-in-java/)
+
+### Day 19 — Classes & Objects – Building Blocks of Object-Oriented Programming
+- [Classes and Objects in Java](https://www.geeksforgeeks.org/java/classes-objects-java/)
+- [Oracle OOP Tutorial](https://docs.oracle.com/javase/tutorial/java/concepts/)
+
+### Day 20 — Introduction to OOP, Class & Object – Foundations of Java Object-Oriented Programming
+- [Object-Oriented Programming in Java](https://www.geeksforgeeks.org/java/object-oriented-programming-oops-concept-in-java/)
+- [Oracle Java OOP Concepts](https://docs.oracle.com/javase/tutorial/java/concepts/)
+
+### Day 21 — Constructors & Instance Variables – Object Initialization
+- [Constructors in Java](https://www.geeksforgeeks.org/java/constructors-in-java/)
+- [Instance Variables in Java](https://www.geeksforgeeks.org/java/instance-variable-in-java/)
+
+### Day 22 — Static Variables & Local Variables – Variable Scope and Lifetime
+- [Static Variables in Java](https://www.geeksforgeeks.org/java/static-keyword-java/)
+- [Local Variables in Java](https://www.geeksforgeeks.org/java/local-variable-in-java/)
+
+### Day 23 — Variable Shadowing, Instance Methods & Static Methods
+- [Methods in Java](https://www.geeksforgeeks.org/java/methods-in-java/)
+- [Static Methods](https://www.geeksforgeeks.org/java/static-method-in-java/)
+
+### Day 24 — Method Overloading & Instance Initialization Blocks
+- [Method Overloading](https://www.geeksforgeeks.org/java/method-overloading-in-java/)
+- [Initialization Blocks](https://www.geeksforgeeks.org/java/order-of-execution-of-initialization-blocks-constructors-in-java/)
+
+### Day 25 — Static Initialization Blocks, this Keyword & static Keyword
+- [this Keyword](https://www.geeksforgeeks.org/java/this-reference-in-java/)
+- [Static Keyword](https://www.geeksforgeeks.org/java/static-keyword-java/)
+
+### Day 26 — final Keyword & super Keyword
+- [final Keyword](https://www.geeksforgeeks.org/java/final-keyword-java/)
+- [super Keyword](https://www.geeksforgeeks.org/java/super-keyword/)
+
+### Day 27 — Encapsulation & Access Modifiers
+- [Encapsulation in Java](https://www.geeksforgeeks.org/java/encapsulation-in-java/)
+- [Access Modifiers](https://www.geeksforgeeks.org/java/access-modifiers-java/)
+
+### Day 28 — Packages – Organizing Java Applications
+- [Packages in Java](https://www.geeksforgeeks.org/java/packages-in-java/)
+
+### Day 29 — Inheritance – Code Reusability and IS-A Relationship
+- [Inheritance in Java](https://www.geeksforgeeks.org/java/inheritance-in-java/)
+
+### Day 30 — Polymorphism – Runtime and Compile-time Behavior
+- [Polymorphism in Java](https://www.geeksforgeeks.org/java/polymorphism-in-java/)
+
+### Day 31 — Abstraction – Hiding Implementation and Exposing Behavior
+- [Abstraction in Java](https://www.geeksforgeeks.org/java/abstraction-in-java-2/)
+
+### Day 32 — Interfaces – Achieving Multiple Inheritance of Type
+- [Interfaces in Java](https://www.geeksforgeeks.org/java/interfaces-in-java/)
+
+### Day 33 — Object Class & Association – Root of the Java Class Hierarchy
+- [Object Class in Java](https://www.geeksforgeeks.org/java/object-class-in-java/)
+
+### Day 34 — Aggregation & Composition – HAS-A Relationships
+- [Aggregation and Composition](https://www.geeksforgeeks.org/java/association-composition-aggregation-java/)
+
+### Day 35 — Nested Classes & Anonymous Classes
+- [Nested Classes in Java](https://www.geeksforgeeks.org/java/nested-classes-java/)
+- [Anonymous Classes](https://www.geeksforgeeks.org/java/anonymous-inner-class-java/)
+
+### Day 36 — Enums & Records – Modern Java Language Features
+- [Enums in Java](https://www.geeksforgeeks.org/java/enum-in-java/)
+- [Records in Java](https://www.geeksforgeeks.org/java-records/)
+
+### Day 37 — Sealed Classes & Immutability
+- [Sealed Classes in Java](https://www.geeksforgeeks.org/java/sealed-classes-in-java/)
+- [Immutable Class in Java](https://www.geeksforgeeks.org/create-immutable-class-java/)
+
+### Day 38 — Object Cloning & Reflection
+- [Object Cloning](https://www.geeksforgeeks.org/java/object-cloning-in-java/)
+- [Reflection in Java](https://www.geeksforgeeks.org/java/reflection-in-java/)
+
+### Day 39 — Annotations & Generics
+- [Annotations in Java](https://www.geeksforgeeks.org/java/annotations-in-java/)
+- [Generics in Java](https://www.geeksforgeeks.org/java/generics-in-java/)
+
+### Day 40 — Comparable, Comparator & SOLID Principles
+- [Comparable vs Comparator](https://www.geeksforgeeks.org/java/comparable-vs-comparator-in-java/)
+- [SOLID Principles](https://www.geeksforgeeks.org/java/solid-principle-in-programming-understand-with-real-life-examples/)
+
+### Day 41 — Dependency Injection & Object Lifecycle
+- [Dependency Injection](https://www.geeksforgeeks.org/dependency-injection-design-pattern/)
+- [Object Lifecycle](https://www.geeksforgeeks.org/lifecycle-of-a-java-object/)
+
+### Day 42 — JVM Memory Management, Garbage Collection, Class Loading & Method Dispatch
+- [JVM Memory Model](https://www.geeksforgeeks.org/java/jvm-works-jvm-architecture/)
+- [Garbage Collection in Java](https://www.geeksforgeeks.org/java/garbage-collection-java/)
+- [Class Loading Mechanism](https://www.geeksforgeeks.org/java/classloader-in-java/)
 <!-- RESOURCES_END -->
 
 ---
