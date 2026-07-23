@@ -1,306 +1,616 @@
 # =============================================================================
-# progress.yml — Source of truth for the auto-generated README sections
+# progress.yml — Source of Truth for the Auto-generated README
 # =============================================================================
 #
-# Fields per entry:
-#   day          – sequential day number
-#   date         – ISO date (YYYY-MM-DD)
-#   topic        – short title shown in the progress table
-#   folder       – path to the day's code relative to repo root
-#   key_concepts – bullet points summarising what to know about this topic
-#   resources    – list of { title, url } reference links
+# This file powers the GitHub Actions workflow that automatically updates
+# the README.md with:
 #
-# To add a new day, copy the template at the bottom and fill it in.
+#   • Progress Log
+#   • Notes & Key Takeaways
+#   • Learning Resources
+#   • Last Updated Information
+#
+# Every learning session represents one actual study session rather than
+# the number of topics covered. Easier topics may be grouped together,
+# while advanced concepts may span an entire session.
+#
 # =============================================================================
 
 - day: 1
   date: "2026-05-26"
-  topic: "Data Types - Practicing real-world datatype scenarios"
+  topic: "Java Data Types – Understanding Primitive & Reference Types"
   folder: "Topics/Datatypes"
   key_concepts:
-    - "Java has 8 primitives: byte (8-bit), short (16-bit), int (32-bit), long (64-bit), float (32-bit), double (64-bit), char (16-bit Unicode), boolean."
-    - "Reference types (String, arrays, objects) store memory addresses on the Stack; the actual object lives on the Heap."
-    - "Default values: int/short/byte/long = 0, float/double = 0.0, boolean = false, char = '\\u0000', reference types = null."
-    - "Literal suffixes: L for long (100L), f for float (3.14f), 0x for hex, 0b for binary."
+    - "Java provides 8 primitive data types for efficient memory usage."
+    - "Reference variables store object references while objects reside on the Heap."
+    - "Learned default values, literal representations, and memory allocation."
+    - "Explored binary, octal, hexadecimal, floating-point, and character literals."
   resources:
-    - title: "Data Types in Java"
+    - title: "Java Data Types - GeeksforGeeks"
       url: "https://www.geeksforgeeks.org/java/java-data-types/"
+    - title: "Primitive Data Types - Oracle Docs"
+      url: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"
 
 - day: 2
   date: "2026-05-26"
-  topic: "JVM Basics - How Java code runs under the hood"
+  topic: "JVM Architecture – Understanding How Java Executes Code"
   folder: "Topics/JVM_Architecture"
   key_concepts:
-    - "Pipeline: .java source → javac compiler → .class bytecode → JVM → platform-specific machine code."
-    - "JVM has three core parts: ClassLoader (loads .class files), Runtime Data Areas (Heap, Stack, Method Area, PC Register), and Execution Engine."
-    - "The JIT (Just-In-Time) compiler identifies hot code paths and compiles them to native machine code at runtime for performance."
-    - "Garbage Collector runs in the Heap and reclaims memory from objects that have no live references."
+    - "Studied the complete Java execution pipeline from source code to machine code."
+    - "Learned the responsibilities of the Class Loader, Runtime Data Areas, and Execution Engine."
+    - "Explored the role of the JIT Compiler in runtime optimization."
+    - "Understood how Garbage Collection automatically manages Heap memory."
   resources:
-    - title: "JVM Basics"
+    - title: "JVM Architecture - GeeksforGeeks"
       url: "https://www.geeksforgeeks.org/java/how-jvm-works-jvm-architecture/"
+    - title: "Java Virtual Machine Specification"
+      url: "https://docs.oracle.com/javase/specs/"
 
 - day: 3
   date: "2026-06-02"
-  topic: "Operators - Deep dive into types of operators"
+  topic: "Operators in Java – Expressions, Evaluation & Bitwise Operations"
   folder: "Topics/Operators"
   key_concepts:
-    - "Arithmetic: +, -, *, /, %. Integer division truncates — 7/2 = 3, not 3.5."
-    - "Relational (==, !=, <, >, <=, >=) always return boolean. Never use == to compare Strings — use .equals()."
-    - "Logical: && and || are short-circuit operators — they stop evaluating as soon as the result is determined."
-    - "Bitwise: &, |, ^, ~, << (left shift), >> (signed right shift), >>> (unsigned right shift) — operate on individual bits."
-    - "Ternary: condition ? valueIfTrue : valueIfFalse — a compact single-expression if-else, good for simple assignments."
+    - "Explored arithmetic, relational, logical, assignment, and ternary operators."
+    - "Learned operator precedence and associativity rules."
+    - "Practiced bitwise operators and binary manipulation."
+    - "Understood short-circuit evaluation with logical operators."
   resources:
-    - title: "Operators in Java"
+    - title: "Operators in Java - GeeksforGeeks"
       url: "https://www.geeksforgeeks.org/java/operators-in-java/"
 
 - day: 4
   date: "2026-06-14"
-  topic: "Type Casting - Implicit & Explicit conversions"
+  topic: "Type Casting – Primitive Conversions and Data Loss"
   folder: "Topics/TypeCasting"
   key_concepts:
-    - "Widening order (safe, automatic): byte → short → int → long → float → double."
-    - "Narrowing can silently corrupt data: (int) 3.99 = 3 (truncated), (byte) 130 = -126 (overflow wraps around)."
-    - "char can be cast to int to get its Unicode value: (int) 'A' = 65."
-    - "String conversions: Integer.parseInt(\"42\") → int, String.valueOf(42) or (\"\" + 42) → String."
+    - "Learned widening and narrowing conversions."
+    - "Explored implicit and explicit casting."
+    - "Observed overflow, truncation, and precision loss."
+    - "Converted between primitive types and Strings."
   resources:
     - title: "Type Casting in Java"
       url: "https://www.geeksforgeeks.org/java/type-conversion-java-examples/"
 
 - day: 5
   date: "2026-06-16"
-  topic: "Control Statements - if, if-else, switch, loops, break and continue"
+  topic: "Control Statements – Decision Making & Iteration"
   folder: "Topics/ControlStatements"
   key_concepts:
-    - "switch works with int, char, String, and enums. Always use break to prevent fall-through to the next case."
-    - "Java 14+ switch expressions use arrow syntax and don't need break: int result = switch(x) { case 1 -> 10; default -> 0; }."
-    - "Enhanced for loop (for-each): for (int x : array) — cleaner for traversal but gives no access to the index."
-    - "Labeled break/continue can exit or skip a specific outer loop in nested scenarios: outer: for(...) { ... break outer; }."
+    - "Practiced if, if-else, nested if, switch, loops, break, and continue."
+    - "Learned enhanced for-loops and labeled statements."
+    - "Explored Java 14+ switch expressions."
+    - "Solved multiple decision-making practice problems."
   resources:
-    - title: "Control Flow Statements in Java"
+    - title: "Control Flow Statements"
       url: "https://www.geeksforgeeks.org/java/decision-making-javaif-else-switch-break-continue-jump/"
 
 - day: 6
   date: "2026-06-17"
-  topic: "Input Output in Java using Scanner and BufferedReader"
+  topic: "Input & Output – Scanner, BufferedReader and Console Input"
   folder: "Topics/IO"
   key_concepts:
-    - "Scanner is simpler but slower — it tokenizes input. BufferedReader reads full lines and is significantly faster for large input."
-    - "Scanner: sc.nextInt(), sc.nextDouble(), sc.next() (single token), sc.nextLine() (full line)."
-    - "BufferedReader always reads a String — you must parse manually: Integer.parseInt(br.readLine())."
-    - "The Scanner nextLine() bug: calling nextLine() right after nextInt() reads the leftover newline. Fix by adding a dummy sc.nextLine() in between."
-    - "Always close streams or use try-with-resources to prevent resource leaks: try (Scanner sc = new Scanner(System.in)) { ... }."
+    - "Compared Scanner and BufferedReader performance."
+    - "Handled primitive and String input."
+    - "Learned common Scanner pitfalls such as nextLine() after nextInt()."
+    - "Implemented safe input handling practices."
   resources:
-    - title: "Input Output in Java"
+    - title: "Java Input Output"
       url: "https://www.geeksforgeeks.org/java/java-io-input-output-in-java-with-examples/"
 
 - day: 7
   date: "2026-06-18"
-  topic: "Arrays in Java"
+  topic: "Arrays – Fundamentals, Memory & Traversal"
   folder: "Topics/Arrays"
   key_concepts:
-    - "Arrays are objects in Java — the reference sits on the Stack, the actual data lives on the Heap."
-    - "Size is fixed at creation and cannot be changed. Use ArrayList if you need a resizable structure."
-    - "Arrays.sort() uses dual-pivot Quicksort for primitives and TimSort (merge + insertion) for objects."
-    - "Useful utility methods: Arrays.fill(), Arrays.copyOf(), Arrays.copyOfRange(), System.arraycopy()."
-    - "Accessing index < 0 or >= array.length throws ArrayIndexOutOfBoundsException at runtime."
+    - "Learned array declaration, initialization, and traversal."
+    - "Explored memory representation of arrays."
+    - "Practiced searching and sorting basics."
+    - "Used Arrays utility methods for common operations."
   resources:
     - title: "Arrays in Java"
       url: "https://www.geeksforgeeks.org/java/arrays-in-java/"
 
 - day: 8
   date: "2026-06-19"
-  topic: "Arrays in Java - Practice and Scenarios"
+  topic: "Arrays – Practice Problems & Multi-dimensional Arrays"
   folder: "Topics/Arrays"
   key_concepts:
-    - "2D arrays are arrays of arrays: int[][] matrix = new int[3][4]. Jagged arrays are allowed — rows can have different lengths."
-    - "Linear search is O(n). Binary search is O(log n) but requires the array to be sorted first."
-    - "Arrays.binarySearch() returns a negative value if the element is not found — don't treat it as an index without checking."
-    - "Arrays are passed by reference — modifications inside a method affect the original array. Primitives are passed by value."
+    - "Solved practical array-based coding problems."
+    - "Worked with 2D and jagged arrays."
+    - "Implemented linear and binary search."
+    - "Strengthened indexing and traversal concepts."
   resources:
     - title: "Arrays in Java"
       url: "https://www.geeksforgeeks.org/java/arrays-in-java/"
 
 - day: 9
   date: "2026-06-20"
-  topic: "IntegerCache and Wrapper Classes in Java"
+  topic: "Integer Cache & Wrapper Classes – Autoboxing Internals"
   folder: "Topics/IntegerCache"
   key_concepts:
-    - "Autoboxing (int → Integer) internally calls Integer.valueOf(), which reuses cached objects for -128 to 127."
-    - "new Integer(x) always creates a new object, bypassing the cache. Deprecated since Java 9 — prefer Integer.valueOf()."
-    - "The Integer cache upper bound can be raised via JVM flag: -XX:AutoBoxCacheMax=<size>. The lower bound (-128) is fixed."
+    - "Studied Integer Cache and object reuse."
+    - "Learned autoboxing and unboxing."
+    - "Compared Integer.valueOf() with constructors."
+    - "Explored wrapper class behavior during comparisons."
   resources:
     - title: "Integer Cache in Java"
       url: "https://www.geeksforgeeks.org/java/java-integer-cache/"
+    - title: "Wrapper Classes in Java"
+      url: "https://www.geeksforgeeks.org/java/wrapper-classes-in-java/"
 
 - day: 10
   date: "2026-06-21"
-  topic: "Command Line Arguments in Java"
+  topic: "Command Line Arguments – Passing Runtime Parameters"
   folder: "Topics/CommandLineArgs"
   key_concepts:
-    - "args[] in main(String[] args) is a plain String array — every argument arrives as a String regardless of its intended type."
-    - "args[0] is the FIRST argument, not the program name (unlike C/C++). The program name is not included."
-    - "Always guard with args.length before accessing: if (args.length < 1) { ... } to avoid ArrayIndexOutOfBoundsException."
-    - "Parse as needed: int n = Integer.parseInt(args[0]), double d = Double.parseDouble(args[1])."
-    - "Useful for passing runtime configuration (file paths, flags, modes) without hardcoding or recompiling."
+    - "Learned how Java receives command-line arguments."
+    - "Parsed runtime input into primitive types."
+    - "Handled argument validation safely."
+    - "Explored practical use cases for runtime configuration."
   resources:
     - title: "Command Line Arguments in Java"
       url: "https://www.geeksforgeeks.org/java/command-line-arguments-in-java/"
 
 - day: 11
   date: "2026-06-22"
-  topic: "Variables in Java"
+  topic: "Variables in Java – Scope, Lifetime & Memory"
   folder: "Topics/Variables"
   key_concepts:
-    - "Three kinds: local (method/block scope), instance (one per object), static/class (shared across all instances)."
-    - "Local variables have no default value and MUST be initialized before use — the compiler will refuse otherwise."
-    - "Instance and static variables are automatically initialized to defaults: 0, 0.0, false, '\\u0000', or null."
-    - "Storage: local variables live on the Stack; instance and static variables live on the Heap."
-    - "final makes a variable a constant — it must be assigned exactly once and cannot be reassigned afterward."
+    - "Studied local, instance, and static variables."
+    - "Understood variable scope, lifetime, and default values."
+    - "Learned memory allocation for different variable types."
+    - "Practiced variable declaration and initialization."
   resources:
     - title: "Variables in Java"
       url: "https://www.geeksforgeeks.org/java/variables-in-java/"
+    - title: "Oracle Java Variables"
+      url: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html"
 
 - day: 12
   date: "2026-06-23"
-  topic: "Varargs in Java"
+  topic: "Varargs – Variable Length Arguments"
   folder: "Topics/Varargs"
   key_concepts:
-    - "Varargs syntax: void method(int... nums). Inside the method, nums is treated exactly like an int[] array."
-    - "Varargs must be the LAST parameter, and only one varargs parameter is allowed per method."
-    - "A varargs method can be called with zero arguments, one argument, many arguments, or by passing an existing array directly."
-    - "Overloading with varargs can cause ambiguity — the compiler may fail to resolve which method to call. Avoid it unless necessary."
-    - "Prefer varargs over passing explicit arrays when the number of arguments is genuinely variable and unknown at design time."
+    - "Learned how varargs simplify method invocation."
+    - "Compared varargs with arrays."
+    - "Understood method overloading with varargs."
+    - "Explored compiler behavior for variable arguments."
   resources:
-    - title: "Variable Arguments in Java"
+    - title: "Variable Arguments (Varargs)"
       url: "https://www.geeksforgeeks.org/java/variable-arguments-varargs-in-java/"
 
 - day: 13
   date: "2026-06-29"
-  topic: "String in Java - Immutability, String Pool and Key Methods"
+  topic: "String – Immutability, Pool & Essential Methods"
   folder: "Topics/Strings/String"
   key_concepts:
-    - "String is immutable in Java — once created, its value cannot be changed; every modification (concat, replace, etc.) produces a new String object."
-    - "Two creation methods: literal (\"hello\") stores the string in the String Pool (Heap); new String(\"hello\") always creates a new Heap object outside the pool."
-    - "String Pool: JVM deduplicates literals — \"abc\" == \"abc\" is true (same pool reference), but new String(\"abc\") == new String(\"abc\") is false (different Heap objects)."
-    - "Always use .equals() for value comparison, never ==. Use String.intern() to explicitly move a heap string into the pool and enable reference equality."
-    - "Key methods: length(), charAt(i), substring(start, end), indexOf(), contains(), replace(), toUpperCase(), toLowerCase(), trim(), strip(), split(), startsWith(), endsWith(), isEmpty(), isBlank()."
+    - "Learned String immutability and memory model."
+    - "Explored String Pool and heap allocation."
+    - "Compared == and equals()."
+    - "Practiced commonly used String methods."
   resources:
-    - title: "Strings in Java - GeeksforGeeks"
+    - title: "Java String"
       url: "https://www.geeksforgeeks.org/java/strings-in-java/"
-    - title: "String class in Java - GeeksforGeeks"
-      url: "https://www.geeksforgeeks.org/java/string-class-in-java/"
-    - title: "Java String Pool - GeeksforGeeks"
-      url: "https://www.geeksforgeeks.org/java/java-string-pool/"
-    - title: "String (Java 17 Official Docs)"
-      url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/String.html"
+    - title: "Oracle String API"
+      url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html"
 
 - day: 14
   date: "2026-06-29"
-  topic: "StringBuilder in Java - Mutable Strings and Performance"
+  topic: "StringBuilder – Efficient Mutable Strings"
   folder: "Topics/Strings/StringBuilder"
   key_concepts:
-    - "StringBuilder is mutable — it modifies the character sequence in place without creating new objects, making it memory-efficient for repeated changes."
-    - "Not thread-safe (no synchronization), but significantly faster than StringBuffer in single-threaded applications."
-    - "Key methods: append(), insert(index, str), delete(start, end), deleteCharAt(i), replace(start, end, str), reverse(), charAt(i), setCharAt(i, ch), length(), capacity(), toString()."
-    - "Internally backed by a resizable char[] array with a default initial capacity of 16; auto-grows when exceeded using: newCapacity = (oldCapacity * 2) + 2."
-    - "Prefer StringBuilder over String + in loops — repeated String concatenation creates O(n) intermediate objects and runs in O(n²) time; StringBuilder runs in O(n)."
+    - "Learned mutable string manipulation."
+    - "Compared StringBuilder with String."
+    - "Studied internal capacity expansion."
+    - "Practiced append(), insert(), delete(), replace(), and reverse()."
   resources:
-    - title: "StringBuilder class in Java - GeeksforGeeks"
+    - title: "StringBuilder in Java"
       url: "https://www.geeksforgeeks.org/java/stringbuilder-class-in-java-with-examples/"
-    - title: "StringBuilder (Java 17 Official Docs)"
-      url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringBuilder.html"
+    - title: "Oracle StringBuilder API"
+      url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html"
 
 - day: 15
   date: "2026-06-30"
-  topic: "StringBuffer in Java - Thread-Safe Mutable Strings"
+  topic: "StringBuffer – Thread-safe Mutable Strings"
   folder: "Topics/Strings/StringBuffer"
   key_concepts:
-    - "StringBuffer is mutable and thread-safe — all its methods are synchronized, preventing race conditions when accessed concurrently by multiple threads."
-    - "API is nearly identical to StringBuilder: append(), insert(), delete(), replace(), reverse(), charAt(), length(), toString() — same contract, different thread-safety guarantee."
-    - "Slower than StringBuilder due to synchronization overhead — use StringBuffer only when the buffer is genuinely shared across threads."
-    - "Decision rule: no modification needed → String; single-threaded modification → StringBuilder (faster); multi-threaded modification → StringBuffer (safe)."
-    - "Both StringBuilder and StringBuffer default to an initial capacity of 16 and share the same growth strategy: newCapacity = (oldCapacity * 2) + 2."
+    - "Learned synchronized mutable strings."
+    - "Compared StringBuffer with StringBuilder."
+    - "Understood performance trade-offs."
+    - "Practiced common StringBuffer operations."
   resources:
-    - title: "StringBuffer class in Java - GeeksforGeeks"
+    - title: "StringBuffer in Java"
       url: "https://www.geeksforgeeks.org/java/stringbuffer-class-in-java/"
-    - title: "String vs StringBuilder vs StringBuffer in Java"
-      url: "https://www.geeksforgeeks.org/java/string-vs-stringbuilder-vs-stringbuffer-in-java/"
-    - title: "StringBuffer (Java 17 Official Docs)"
-      url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringBuffer.html"
+    - title: "Oracle StringBuffer API"
+      url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html"
 
 - day: 16
   date: "2026-07-01"
-  topic: "String Pool - Interview-Oriented Programs and JVM Memory Diagrams"
+  topic: "String Pool – JVM Memory & Interview Concepts"
   folder: "Topics/Strings/StringPool"
   key_concepts:
-    - "String literals are placed in the String Pool (part of the Heap since Java 7); new String() always creates a separate object outside the pool, even for identical content."
-    - "== compares object references, .equals() compares actual character content — pool reference equality only holds when both sides are literals (or interned)."
-    - "Compile-time concatenation of literals (e.g. \"a\" + \"b\") is folded by the compiler into a single pooled constant; runtime concatenation (using variables) always produces a new Heap object, regardless of whether an identical literal exists in the pool."
-    - "Object-creation counting questions (a common interview trap) require tracking literals vs new String() vs concatenation separately, since each follows different pooling rules."
-    - "The String Pool is a deduplicated cache within Heap memory, distinct from general object allocation — this separation is what interview questions on 'how many objects were created' are testing."
+    - "Studied String Pool internals."
+    - "Learned compile-time vs runtime String creation."
+    - "Practiced interview-oriented object creation questions."
+    - "Visualized String memory using JVM diagrams."
   resources:
-    - title: "Java String Pool - GeeksforGeeks"
+    - title: "Java String Pool"
       url: "https://www.geeksforgeeks.org/java/java-string-pool/"
-    - title: "String class in Java - GeeksforGeeks"
-      url: "https://www.geeksforgeeks.org/java/string-class-in-java/"
 
 - day: 17
   date: "2026-07-02"
-  topic: "StringTokenizer in Java - Parsing and Comparison with split()"
+  topic: "StringTokenizer – Tokenizing Text Data"
   folder: "Topics/Strings/StringTokenizer"
   key_concepts:
-    - "StringTokenizer breaks a string into tokens using a set of delimiter characters (default: whitespace); nextToken() retrieves tokens one at a time, countTokens() reports how many remain."
-    - "Custom delimiters are passed as a String of individual characters to the constructor (e.g. new StringTokenizer(str, \",;\")) — each character is treated as a separate possible delimiter, not as a multi-character substring."
-    - "The returnDelims constructor flag causes delimiter characters to be returned as tokens themselves, useful when the delimiter positions matter for parsing."
-    - "StringTokenizer is a legacy class that predates the Collections Framework — String.split() (regex-based) and Scanner are the generally recommended modern alternatives for new code."
-    - "Practical parsing use cases include splitting CSV rows and log file lines into fields, though split() is preferred in most real-world code for its regex flexibility."
+    - "Learned StringTokenizer usage."
+    - "Compared StringTokenizer with split()."
+    - "Parsed structured text data."
+    - "Understood legacy parsing techniques."
   resources:
-    - title: "StringTokenizer Class in Java - GeeksforGeeks"
+    - title: "StringTokenizer"
       url: "https://www.geeksforgeeks.org/java/stringtokenizer-class-in-java/"
-    - title: "StringTokenizer (Java 17 Official Docs)"
-      url: "https://docs.oracle.com/en/java/jdk/17/docs/api/java.base/java/lang/StringTokenizer.html"
+    - title: "Oracle StringTokenizer API"
+      url: "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/StringTokenizer.html"
 
 - day: 18
   date: "2026-07-05"
-  topic: "Wrapper Classes in Java - Autoboxing, Unboxing and Interview Concepts"
+  topic: "Wrapper Classes – Object Representation of Primitive Types"
   folder: "Topics/WrapperClasses"
   key_concepts:
-    - "Wrapper classes provide an object representation for each of the 8 primitives, letting them be used in Collections, Generics, and anywhere an Object is required."
-    - "Three ways to create wrapper objects: deprecated constructors (new Integer(5)), valueOf() (preferred, benefits from caching), and autoboxing (compiler-inserted conversion)."
-    - "Autoboxing converts primitive to wrapper automatically (int → Integer via valueOf()); unboxing converts wrapper back to primitive (Integer → int via intValue())."
-    - "parseX() methods (parseInt(), parseDouble(), etc.) return primitives, while valueOf() methods return wrapper objects — a common interview distinction."
-    - "Always use .equals() to compare wrapper objects, never == (reference equality only holds for cached values); unboxing a null wrapper throws NullPointerException."
-    - "Deliberately scoped out IntegerCache internals and JVM caching mechanics — those are covered separately in the dedicated IntegerCache module (Day 9)."
+    - "Studied wrapper classes for all primitive types."
+    - "Learned autoboxing and unboxing."
+    - "Compared parseX() and valueOf()."
+    - "Practiced wrapper class interview questions."
   resources:
-    - title: "Wrapper Classes in Java - GeeksforGeeks"
+    - title: "Wrapper Classes in Java"
       url: "https://www.geeksforgeeks.org/java/wrapper-classes-in-java/"
 
 - day: 19
   date: "2026-07-07"
-  topic: "Classes and Objects in Java - Foundations of OOP"
+  topic: "Classes & Objects – Building Blocks of Object-Oriented Programming"
   folder: "Topics/OOP/ClassesAndObjects"
   key_concepts:
-    - "A class is a blueprint (defines fields and methods); an object is a runtime instance of that class, created using the new keyword."
-    - "Objects are created on the Heap; the reference variable pointing to the object lives on the Stack."
-    - "A class can have instance variables (state, unique per object) and instance methods (behavior, shared across objects but operating on that object's state)."
-    - "Object creation involves three steps: declaration (Type ref), instantiation (new Type()), and initialization (constructor runs to set initial state)."
-    - "Multiple objects of the same class are independent — changing one object's instance variables does not affect another object's copy."
-    - "A .java file can have multiple classes, but only one can be public, and the public class name must match the filename."
+    - "Learned the relationship between classes and objects."
+    - "Studied object creation and initialization."
+    - "Understood heap and stack memory for objects."
+    - "Practiced designing simple Java classes."
   resources:
-    - title: "Classes and Objects in Java - GeeksforGeeks"
+    - title: "Classes and Objects in Java"
       url: "https://www.geeksforgeeks.org/java/classes-objects-java/"
+    - title: "Oracle OOP Tutorial"
+      url: "https://docs.oracle.com/javase/tutorial/java/concepts/"
 
-# -----------------------------------------------------------------------
-# Add new entries below this line as you progress.
-# Template:
-#
-# - day: 20
-#   date: "YYYY-MM-DD"
-#   topic: "Topic Name"
-#   folder: "Topics/FolderName"
-#   key_concepts:
-#     - ""
-#   resources:
-#     - title: "Title"
-#       url: "https://..."
-# -----------------------------------------------------------------------
+- day: 20
+  date: "2026-07-08"
+  topic: "Introduction to OOP, Class & Object – Foundations of Java Object-Oriented Programming"
+  folder: "Topics/OOP/OOP_Handbook/01_Introduction_to_OOP"
+  key_concepts:
+    - "Revisited the four pillars of Object-Oriented Programming."
+    - "Differentiated classes from objects using real-world examples."
+    - "Learned blueprint vs instance concepts."
+    - "Established the conceptual foundation for the Java OOP Handbook."
+  resources:
+    - title: "Object-Oriented Programming in Java"
+      url: "https://www.geeksforgeeks.org/java/object-oriented-programming-oops-concept-in-java/"
+    - title: "Oracle Java OOP Concepts"
+      url: "https://docs.oracle.com/javase/tutorial/java/concepts/"
+
+- day: 21
+  date: "2026-07-09"
+  topic: "Constructors & Instance Variables – Object Initialization"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned the purpose of constructors in object creation."
+    - "Explored default, parameterized, and constructor overloading."
+    - "Studied instance variables and their lifecycle."
+    - "Understood how constructors initialize object state."
+  resources:
+    - title: "Constructors in Java"
+      url: "https://www.geeksforgeeks.org/java/constructors-in-java/"
+    - title: "Instance Variables in Java"
+      url: "https://www.geeksforgeeks.org/java/instance-variable-in-java/"
+
+- day: 22
+  date: "2026-07-10"
+  topic: "Static Variables & Local Variables – Variable Scope and Lifetime"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Compared static, instance, and local variables."
+    - "Studied memory allocation and lifecycle differences."
+    - "Learned when shared state is useful."
+    - "Practiced scope-based coding examples."
+  resources:
+    - title: "Static Variables in Java"
+      url: "https://www.geeksforgeeks.org/java/static-keyword-java/"
+    - title: "Local Variables in Java"
+      url: "https://www.geeksforgeeks.org/java/local-variable-in-java/"
+
+- day: 23
+  date: "2026-07-11"
+  topic: "Variable Shadowing, Instance Methods & Static Methods"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned how variable shadowing occurs."
+    - "Compared instance methods with static methods."
+    - "Understood method invocation based on object and class."
+    - "Explored best practices for method design."
+  resources:
+    - title: "Methods in Java"
+      url: "https://www.geeksforgeeks.org/java/methods-in-java/"
+    - title: "Static Methods"
+      url: "https://www.geeksforgeeks.org/java/static-method-in-java/"
+
+- day: 24
+  date: "2026-07-12"
+  topic: "Method Overloading & Instance Initialization Blocks"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Studied compile-time polymorphism using method overloading."
+    - "Learned constructor resolution rules."
+    - "Explored instance initialization blocks."
+    - "Understood object initialization sequence."
+  resources:
+    - title: "Method Overloading"
+      url: "https://www.geeksforgeeks.org/java/method-overloading-in-java/"
+    - title: "Initialization Blocks"
+      url: "https://www.geeksforgeeks.org/java/order-of-execution-of-initialization-blocks-constructors-in-java/"
+
+- day: 25
+  date: "2026-07-13"
+  topic: "Static Initialization Blocks, this Keyword & static Keyword"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Studied static initialization blocks."
+    - "Learned practical uses of the this keyword."
+    - "Explored static members and class loading."
+    - "Practiced constructor chaining using this()."
+  resources:
+    - title: "this Keyword"
+      url: "https://www.geeksforgeeks.org/java/this-reference-in-java/"
+    - title: "Static Keyword"
+      url: "https://www.geeksforgeeks.org/java/static-keyword-java/"
+
+- day: 26
+  date: "2026-07-14"
+  topic: "final Keyword & super Keyword"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned final variables, methods, and classes."
+    - "Explored inheritance initialization using super."
+    - "Compared this and super."
+    - "Practiced constructor chaining with inheritance."
+  resources:
+    - title: "final Keyword"
+      url: "https://www.geeksforgeeks.org/java/final-keyword-java/"
+    - title: "super Keyword"
+      url: "https://www.geeksforgeeks.org/java/super-keyword/"
+
+- day: 27
+  date: "2026-07-15"
+  topic: "Encapsulation & Access Modifiers"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Implemented encapsulation using private fields."
+    - "Created getter and setter methods."
+    - "Compared all Java access modifiers."
+    - "Learned principles of information hiding."
+  resources:
+    - title: "Encapsulation in Java"
+      url: "https://www.geeksforgeeks.org/java/encapsulation-in-java/"
+    - title: "Access Modifiers"
+      url: "https://www.geeksforgeeks.org/java/access-modifiers-java/"
+
+- day: 28
+  date: "2026-07-16"
+  topic: "Packages – Organizing Java Applications"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned package creation and organization."
+    - "Understood package naming conventions."
+    - "Worked with import statements."
+    - "Explored package visibility."
+  resources:
+    - title: "Packages in Java"
+      url: "https://www.geeksforgeeks.org/java/packages-in-java/"
+
+- day: 29
+  date: "2026-07-17"
+  topic: "Inheritance – Code Reusability and IS-A Relationship"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Studied single, multilevel, and hierarchical inheritance."
+    - "Learned method overriding."
+    - "Explored IS-A relationship."
+    - "Practiced inheritance-based design."
+  resources:
+    - title: "Inheritance in Java"
+      url: "https://www.geeksforgeeks.org/java/inheritance-in-java/"
+
+- day: 30
+  date: "2026-07-18"
+  topic: "Polymorphism – Runtime and Compile-time Behavior"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Compared compile-time and runtime polymorphism."
+    - "Studied dynamic method dispatch."
+    - "Explored overriding and overloading together."
+    - "Implemented polymorphism using inheritance."
+  resources:
+    - title: "Polymorphism in Java"
+      url: "https://www.geeksforgeeks.org/java/polymorphism-in-java/"
+
+- day: 31
+  date: "2026-07-19"
+  topic: "Abstraction – Hiding Implementation and Exposing Behavior"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned the purpose of abstraction in software design."
+    - "Compared abstract classes with concrete classes."
+    - "Implemented abstraction using abstract methods."
+    - "Understood when abstraction improves maintainability."
+  resources:
+    - title: "Abstraction in Java"
+      url: "https://www.geeksforgeeks.org/java/abstraction-in-java-2/"
+
+- day: 32
+  date: "2026-07-20"
+  topic: "Interfaces – Achieving Multiple Inheritance of Type"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned interface declaration and implementation."
+    - "Compared interfaces with abstract classes."
+    - "Studied default and static methods."
+    - "Practiced interface-based design."
+  resources:
+    - title: "Interfaces in Java"
+      url: "https://www.geeksforgeeks.org/java/interfaces-in-java/"
+
+- day: 33
+  date: "2026-07-21"
+  topic: "Object Class & Association – Root of the Java Class Hierarchy"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Explored Object class methods."
+    - "Learned equals(), hashCode(), toString() and clone()."
+    - "Understood association relationships."
+    - "Practiced object collaboration design."
+  resources:
+    - title: "Object Class in Java"
+      url: "https://www.geeksforgeeks.org/java/object-class-in-java/"
+
+- day: 34
+  date: "2026-07-22"
+  topic: "Aggregation & Composition – HAS-A Relationships"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Compared association, aggregation and composition."
+    - "Learned ownership relationships."
+    - "Designed reusable object models."
+    - "Applied HAS-A relationships in Java."
+  resources:
+    - title: "Aggregation and Composition"
+      url: "https://www.geeksforgeeks.org/java/association-composition-aggregation-java/"
+
+- day: 35
+  date: "2026-07-23"
+  topic: "Nested Classes & Anonymous Classes"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned member, local and static nested classes."
+    - "Created anonymous class implementations."
+    - "Compared nested classes with top-level classes."
+    - "Understood encapsulation using nested types."
+  resources:
+    - title: "Nested Classes in Java"
+      url: "https://www.geeksforgeeks.org/java/nested-classes-java/"
+    - title: "Anonymous Classes"
+      url: "https://www.geeksforgeeks.org/java/anonymous-inner-class-java/"
+
+- day: 36
+  date: "2026-07-24"
+  topic: "Enums & Records – Modern Java Language Features"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned enum constants and behavior."
+    - "Studied Java Records for immutable data models."
+    - "Compared records with traditional POJOs."
+    - "Explored practical use cases."
+  resources:
+    - title: "Enums in Java"
+      url: "https://www.geeksforgeeks.org/java/enum-in-java/"
+    - title: "Records in Java"
+      url: "https://www.geeksforgeeks.org/java-records/"
+
+- day: 37
+  date: "2026-07-25"
+  topic: "Sealed Classes & Immutability"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Studied sealed classes introduced in modern Java."
+    - "Learned controlled inheritance."
+    - "Explored immutable object design."
+    - "Applied best practices for immutable classes."
+  resources:
+    - title: "Sealed Classes in Java"
+      url: "https://www.geeksforgeeks.org/java/sealed-classes-in-java/"
+    - title: "Immutable Class in Java"
+      url: "https://www.geeksforgeeks.org/create-immutable-class-java/"
+
+- day: 38
+  date: "2026-07-26"
+  topic: "Object Cloning & Reflection"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned shallow and deep cloning."
+    - "Studied Cloneable interface."
+    - "Explored Java Reflection API."
+    - "Inspected classes dynamically at runtime."
+  resources:
+    - title: "Object Cloning"
+      url: "https://www.geeksforgeeks.org/java/object-cloning-in-java/"
+    - title: "Reflection in Java"
+      url: "https://www.geeksforgeeks.org/java/reflection-in-java/"
+
+- day: 39
+  date: "2026-07-27"
+  topic: "Annotations & Generics"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned built-in and custom annotations."
+    - "Studied Java Generics."
+    - "Implemented generic classes and methods."
+    - "Understood compile-time type safety."
+  resources:
+    - title: "Annotations in Java"
+      url: "https://www.geeksforgeeks.org/java/annotations-in-java/"
+    - title: "Generics in Java"
+      url: "https://www.geeksforgeeks.org/java/generics-in-java/"
+
+- day: 40
+  date: "2026-07-28"
+  topic: "Comparable, Comparator & SOLID Principles"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Compared Comparable and Comparator."
+    - "Implemented custom sorting strategies."
+    - "Studied all five SOLID principles."
+    - "Applied object-oriented design best practices."
+  resources:
+    - title: "Comparable vs Comparator"
+      url: "https://www.geeksforgeeks.org/java/comparable-vs-comparator-in-java/"
+    - title: "SOLID Principles"
+      url: "https://www.geeksforgeeks.org/java/solid-principle-in-programming-understand-with-real-life-examples/"
+
+- day: 41
+  date: "2026-07-29"
+  topic: "Dependency Injection & Object Lifecycle"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Learned Dependency Injection fundamentals."
+    - "Compared constructor and setter injection."
+    - "Studied Java object lifecycle."
+    - "Prepared for Spring Framework concepts."
+  resources:
+    - title: "Dependency Injection"
+      url: "https://www.geeksforgeeks.org/dependency-injection-design-pattern/"
+    - title: "Object Lifecycle"
+      url: "https://www.geeksforgeeks.org/lifecycle-of-a-java-object/"
+
+- day: 42
+  date: "2026-07-30"
+  topic: "JVM Memory Management, Garbage Collection, Class Loading & Method Dispatch"
+  folder: "Topics/OOP/OOP_Handbook"
+  key_concepts:
+    - "Explored JVM runtime memory areas."
+    - "Studied modern Garbage Collection algorithms."
+    - "Learned Java Class Loading Mechanism."
+    - "Understood static, dynamic and virtual method dispatch."
+    - "Connected OOP concepts with JVM internals."
+  resources:
+    - title: "JVM Memory Model"
+      url: "https://www.geeksforgeeks.org/java/jvm-works-jvm-architecture/"
+    - title: "Garbage Collection in Java"
+      url: "https://www.geeksforgeeks.org/java/garbage-collection-java/"
+    - title: "Class Loading Mechanism"
+      url: "https://www.geeksforgeeks.org/java/classloader-in-java/"    
