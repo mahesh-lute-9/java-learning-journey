@@ -1071,3 +1071,440 @@ unless there is a very specific reason to extend Thread.
 > Extending `Thread` is mainly useful for learning or in rare specialized cases.
 >
 > In production applications, `Runnable` (or higher-level concurrency APIs) is generally preferred.
+
+---
+
+# 18. Common Mistakes
+
+Understanding the common mistakes while using `Runnable` is important for interviews and real-world development.
+
+---
+
+## ❌ Mistake 1: Calling `run()` Instead of `start()`
+
+Many beginners write:
+
+```java
+Runnable task = new MyTask();
+
+Thread thread = new Thread(task);
+
+thread.run();
+```
+
+Output
+
+```text
+Task Running
+```
+
+Although the output appears correct, **no new thread is created**.
+
+Execution Flow
+
+```text
+Main Thread
+      │
+      ▼
+run()
+      │
+      ▼
+Main Thread Continues
+```
+
+### Correct Way
+
+```java
+thread.start();
+```
+
+Execution Flow
+
+```text
+Main Thread
+      │
+      ├─────────────► Continues
+      │
+      ▼
+New Thread
+      │
+      ▼
+run()
+```
+
+> [!WARNING]
+> `run()` is just a normal method call.
+>
+> `start()` creates a new thread.
+
+---
+
+## ❌ Mistake 2: Forgetting to Create a Thread
+
+```java
+Runnable task = new MyTask();
+```
+
+Many beginners expect the task to execute automatically.
+
+It won't.
+
+A Runnable object only represents the work.
+
+You must pass it to a Thread.
+
+Correct
+
+```java
+Thread thread = new Thread(task);
+
+thread.start();
+```
+
+---
+
+## ❌ Mistake 3: Extending Thread Unnecessarily
+
+Some developers write
+
+```java
+class MyThread extends Thread {
+
+}
+```
+
+even when no Thread-specific behavior is required.
+
+Preferred
+
+```java
+class MyTask implements Runnable {
+
+}
+```
+
+This provides better design and flexibility.
+
+---
+
+## ❌ Mistake 4: Assuming Runnable Creates a Thread
+
+Many interview candidates think
+
+```java
+Runnable task = new MyTask();
+```
+
+creates another thread.
+
+It does not.
+
+Only
+
+```java
+thread.start();
+```
+
+creates another path of execution.
+
+---
+
+## ❌ Mistake 5: Mixing Task and Thread
+
+Bad Design
+
+```text
+Thread
+     │
+Contains Business Logic
+```
+
+Better Design
+
+```text
+Runnable
+      │
+Business Logic
+
+Thread
+      │
+Execution
+```
+
+Keeping them separate makes the application easier to maintain.
+
+---
+
+# 19. Internal Summary
+
+When we write
+
+```java
+Runnable task = new MyTask();
+
+Thread thread = new Thread(task);
+
+thread.start();
+```
+
+Internally the flow is approximately
+
+```text
+Create Runnable Object
+          │
+          ▼
+Create Thread Object
+          │
+Stores Runnable Reference
+          │
+          ▼
+start()
+          │
+JVM Creates New Thread
+          │
+Scheduler Selects Thread
+          │
+Thread Executes
+          │
+task.run()
+```
+
+Notice carefully
+
+The Thread object invokes
+
+```java
+task.run();
+```
+
+The Runnable object never creates the thread.
+
+---
+
+# 20. Interview Questions
+
+## 1. What is Runnable?
+
+Runnable is a Functional Interface that represents a task to be executed by a thread.
+
+---
+
+## 2. Is Runnable a Functional Interface?
+
+Yes.
+
+It contains only one abstract method.
+
+```java
+void run();
+```
+
+---
+
+## 3. Which package contains Runnable?
+
+```java
+java.lang
+```
+
+---
+
+## 4. Does Runnable create a new thread?
+
+No.
+
+Runnable only defines the task.
+
+The Thread class creates the thread.
+
+---
+
+## 5. Which method does Runnable contain?
+
+```java
+run()
+```
+
+---
+
+## 6. Difference between Runnable and Thread?
+
+| Runnable | Thread |
+|----------|---------|
+| Interface | Class |
+| Task | Worker |
+| Cannot create thread | Creates thread |
+| Preferred | Older approach |
+
+---
+
+## 7. Why is Runnable preferred?
+
+- Better Object-Oriented Design
+- Code Reusability
+- Supports Multiple Inheritance
+- Supports Lambda Expressions
+- Used by Executor Framework
+
+---
+
+## 8. Can multiple threads execute the same Runnable?
+
+Yes.
+
+One Runnable object can be shared by multiple Thread objects.
+
+---
+
+## 9. Can Runnable return a value?
+
+No.
+
+Its `run()` method returns
+
+```java
+void
+```
+
+To return a value, Java provides
+
+```java
+Callable<V>
+```
+
+---
+
+## 10. Why does ExecutorService use Runnable?
+
+ExecutorService executes **tasks**, not Thread subclasses.
+
+Runnable represents the task.
+
+---
+
+## 11. Can Runnable throw checked exceptions?
+
+No.
+
+The `run()` method does not declare checked exceptions.
+
+---
+
+## 12. Which is preferred in modern Java?
+
+Runnable.
+
+Higher-level concurrency APIs like `ExecutorService` and `CompletableFuture` are built around the idea of submitting tasks rather than extending `Thread`.
+
+---
+
+# 21. Quick Revision
+
+```text
+Runnable
+      │
+Functional Interface
+      │
+Contains
+      │
+run()
+
+Runnable
+      │
+Represents Task
+
+Thread
+      │
+Represents Worker
+
+Runnable
+      │
+Cannot Create Thread
+
+Thread
+      │
+Creates Thread
+
+Runnable
+      │
+Passed to Thread
+
+Thread
+      │
+Calls run()
+
+Modern Java
+      │
+Runnable
+      │
+ExecutorService
+      │
+Thread Pool
+      │
+CompletableFuture
+```
+
+---
+
+# 🎯 SDE Checklist
+
+After completing this topic, you should be able to answer:
+
+- [x] What is Runnable?
+- [x] Why Runnable was introduced
+- [x] Runnable Interface
+- [x] How to create a thread using Runnable
+- [x] Thread vs Runnable
+- [x] Execution Flow
+- [x] Anonymous Runnable
+- [x] Lambda Runnable
+- [x] Passing Runnable to Thread
+- [x] Multiple Threads using Same Runnable
+- [x] Advantages of Runnable
+- [x] Limitations of Runnable
+- [x] Common Mistakes
+- [x] Interview Questions
+
+---
+
+# 💡 Key Takeaways
+
+- `Runnable` represents **what to execute**.
+- `Thread` represents **who executes it**.
+- `Runnable` does **not** create a thread.
+- `Thread.start()` creates a new thread and eventually invokes `run()`.
+- One Runnable object can be executed by multiple threads.
+- `Runnable` supports lambda expressions because it is a Functional Interface.
+- Modern Java applications prefer `Runnable` over extending `Thread`.
+
+> [!TIP]
+> **Interview Rule**
+>
+> **Thread = Worker**
+>
+> **Runnable = Task**
+>
+> A worker performs a task.
+
+---
+
+# 📖 What's Next?
+
+➡️ **03_Thread_Lifecycle.md**
+
+In the next chapter, we'll study:
+
+- Thread States
+- NEW State
+- RUNNABLE State
+- BLOCKED State
+- WAITING State
+- TIMED_WAITING State
+- TERMINATED State
+- State Transition Diagram
+- Lifecycle Flow
+- Thread Scheduler Interaction
+- Interview Questions
+- JVM Internals of Thread Lifecycle
+
+This is one of the most frequently asked Java multithreading interview topics.
